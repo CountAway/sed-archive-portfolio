@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SED_ARCHIVE — Personal Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       NOISE / GRAIN TEXTURE OVERLAY
+       ============================================ -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ============================================
+       LOADING SCREEN
+       ============================================ -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-inner">
+      <span class="loading-label">SED_ARCHIVE</span>
+      <div class="loading-bar-track">
+        <div class="loading-bar-fill" id="loadingBarFill"></div>
+      </div>
+      <span class="loading-status">INITIALIZING ARCHIVE...</span>
+    </div>
+  </div>
+
+  <!-- ============================================
+       NAVIGATION BAR (fixed top)
+       ============================================ -->
+  <nav class="nav-bar" id="navBar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" data-section="about">SED_ARCHIVE</a>
+      <ul class="nav-links">
+        <li><a href="#" class="nav-link active" data-section="about">About</a></li>
+        <li><a href="#" class="nav-link" data-section="archive">Portfolio</a></li>
+        <li><a href="#" class="nav-link" data-section="experience">Experience</a></li>
+        <li><a href="#" class="nav-link" data-section="blog">Blog</a></li>
+      </ul>
+      <a href="#" class="nav-connect-btn">Connect</a>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       MAIN CONTENT
+       ============================================ -->
+  <main id="mainContent">
+
+    <!-- ========================================
+         ABOUT SECTION
+         ======================================== -->
+    <section class="section section-about" id="sectionAbout" aria-label="About">
+      <div class="about-container">
+        <!-- Left column: identity (个人简介) -->
+        <div class="about-identity">
+          <span class="about-section-label">SECTION_01</span>
+          <h1 class="about-name">Y. CHEN</h1>
+          <p class="about-title">Design Researcher &amp; Visual Analyst</p>
+          <div class="about-divider"></div>
+          <p class="about-bio">
+            Operating at the intersection of humanistic perception and empirical methodology.
+            Current research focuses on the lithification of digital artifacts — how raw data
+            undergoes compression, stratification, and eventual crystallization into coherent
+            visual narratives. Field work encompasses urban texture mapping, computational
+            analysis, and cross-disciplinary material studies.
+          </p>
+          <p class="about-bio">
+            This archive serves as a living record of ongoing investigations, catalogued
+            by geological time periods rather than conventional chronology.
+          </p>
+          <div class="about-tags">
+            <span class="tag">VISUAL ANALYSIS</span>
+            <span class="tag">DESIGN RESEARCH</span>
+            <span class="tag">COMPUTATIONAL METHODS</span>
+            <span class="tag">FIELD DOCUMENTATION</span>
+          </div>
+        </div>
+
+        <!-- Center: circular specimen image -->
+        <div class="about-specimen">
+          <div class="specimen-frame">
+            <div class="specimen-image-wrapper" id="specimenImageWrapper">
+              <img src="main.png" alt="Specimen — Lithification cross-section" class="specimen-image" id="specimenImage">
+            </div>
+            <span class="specimen-caption">FIG. 01 — Thin-section micrograph, 40x magnification</span>
+          </div>
+        </div>
+
+        <!-- Right column: specimen metadata (元数据) -->
+        <div class="about-meta">
+          <div class="meta-block">
+            <span class="meta-label">SPECIMEN_ID</span>
+            <span class="meta-value">SED-2024-001</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">STATUS</span>
+            <span class="meta-value status-active">ACTIVE — FIELD OPERATIONS</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">COORDINATES</span>
+            <span class="meta-value">31.2304&deg; N, 121.4737&deg; E</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">CLASSIFICATION</span>
+            <span class="meta-value">CLASTIC SEDIMENTARY</span>
+          </div>
+          <div class="meta-block">
+            <span class="meta-label">LAST_UPDATED</span>
+            <span class="meta-value">2024.12.15</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         ARCHIVE / PORTFOLIO SECTION
+         ======================================== -->
+    <section class="section section-archive" id="sectionArchive" aria-label="Portfolio">
+      <!-- Full-screen geological cross-section background -->
+      <div class="archive-bg-image">
+        <img src="main.png" alt="Geological cross-section — Lithification process">
+      </div>
+
+      <!-- Section header (matching Experience/Blog style) -->
+      <div class="archive-header">
+        <span class="archive-section-label">SECTION_02</span>
+        <h2 class="archive-title">The Lithification Process</h2>
+        <p class="archive-subtitle">A stratigraphic record of creative and research output, organized by geological time periods.</p>
+      </div>
+
+      <!-- Left side: Era labels -->
+      <div class="archive-era-nav">
+        <div class="era-block" data-era="cenozoic" id="eraCenozoic">
+          <span class="era-chinese">新生代</span>
+          <span class="era-english">CENOZOIC</span>
+          <span class="era-date">2024 — PRESENT</span>
+        </div>
+        <div class="era-block" data-era="mesozoic" id="eraMesozoic">
+          <span class="era-chinese">中生代</span>
+          <span class="era-english">MESOZOIC</span>
+          <span class="era-date">2022 — 2023</span>
+        </div>
+        <div class="era-block" data-era="paleozoic" id="eraPaleozoic">
+          <span class="era-chinese">古生代</span>
+          <span class="era-english">PALEOZOIC</span>
+          <span class="era-date">2020 — 2021</span>
+        </div>
+      </div>
+
+      <!-- Right side: Slide-in project panel -->
+      <div class="archive-project-panel" id="archiveProjectPanel">
+        <div class="project-panel-header">
+          <span class="project-panel-era" id="projectPanelEra"></span>
+          <span class="project-panel-count" id="projectPanelCount"></span>
+        </div>
+        <div class="project-panel-list" id="projectPanelList">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Bottom: Legend -->
+      <div class="archive-legend" id="archiveLegend">
+        <div class="legend-item" data-category="RESEARCH">
+          <span class="legend-color" style="background: var(--color-accent);"></span>
+          <span class="legend-label">RESEARCH</span>
+        </div>
+        <div class="legend-item" data-category="PLATFORM">
+          <span class="legend-color" style="background: var(--color-slate);"></span>
+          <span class="legend-label">PLATFORM</span>
+        </div>
+        <div class="legend-item" data-category="FIELDWORK">
+          <span class="legend-color" style="background: var(--color-mist);"></span>
+          <span class="legend-label">FIELDWORK</span>
+        </div>
+        <div class="legend-item" data-category="STUDY">
+          <span class="legend-color" style="background: #8B7355;"></span>
+          <span class="legend-label">STUDY</span>
+        </div>
+        <div class="legend-item" data-category="TOOL">
+          <span class="legend-color" style="background: #6B8E6B;"></span>
+          <span class="legend-label">TOOL</span>
+        </div>
+      </div>
+
+      <!-- Legend Filter Results Panel -->
+      <div class="legend-filter-panel" id="legendFilterPanel">
+        <div class="legend-filter-header">
+          <span class="legend-filter-category" id="legendFilterCategory"></span>
+          <span class="legend-filter-count" id="legendFilterCount"></span>
+        </div>
+        <div class="legend-filter-list" id="legendFilterList"></div>
+      </div>
+
+      <!-- Vertical marginalia -->
+      <div class="archive-marginalia" aria-hidden="true">
+        <span>FOUND_LITHOLOGY_V2.0</span>
+      </div>
+    </section>
+
+    <!-- ========================================
+         EXPERIENCE SECTION
+         ======================================== -->
+    <section class="section section-experience" id="sectionExperience" aria-label="Experience">
+      <div class="experience-container">
+        <div class="experience-header">
+          <span class="experience-section-label">SECTION_03</span>
+          <h2 class="experience-title">Field Report</h2>
+          <p class="experience-subtitle">A chronological record of institutional affiliations and research deployments.</p>
+        </div>
+
+        <div class="timeline">
+          <!-- Entry 1 -->
+          <div class="timeline-entry" data-entry-id="exp-1">
+            <div class="timeline-marker"></div>
+            <div class="timeline-line"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2024 — PRESENT</span>
+              <h3 class="timeline-role">Research Fellow</h3>
+              <span class="timeline-org">Institute of Visual Sciences, Shanghai</span>
+              <p class="timeline-desc">
+                Leading cross-disciplinary research initiatives at the intersection of
+                computational design and empirical analysis. Current investigations focus
+                on the synthesis of large-scale urban datasets into coherent visual
+                narratives. Supervising a team of three graduate researchers.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">LEADERSHIP</span>
+                <span class="tag">RESEARCH</span>
+                <span class="tag">VISUALIZATION</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entry 2 -->
+          <div class="timeline-entry" data-entry-id="exp-2">
+            <div class="timeline-marker"></div>
+            <div class="timeline-line"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2023 — 2024</span>
+              <h3 class="timeline-role">Design Researcher</h3>
+              <span class="timeline-org">Bureau of Material Culture, Hangzhou</span>
+              <p class="timeline-desc">
+                Conducted field documentation and urban texture mapping across
+                six metropolitan areas. Developed computational analysis tools
+                for processing architectural survey data. Published findings
+                in the Journal of Applied Aesthetics.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">FIELDWORK</span>
+                <span class="tag">ANALYSIS</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entry 3 -->
+          <div class="timeline-entry" data-entry-id="exp-3">
+            <div class="timeline-marker"></div>
+            <div class="timeline-line"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2022 — 2023</span>
+              <h3 class="timeline-role">Junior Analyst</h3>
+              <span class="timeline-org">Data Stratigraphy Lab, Shanghai</span>
+              <p class="timeline-desc">
+                Performed computational analysis on heterogeneous datasets.
+                Contributed to the development of material study frameworks
+                for digital artifact classification. Assisted in the design
+                and implementation of data visualization prototypes.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">DATA</span>
+                <span class="tag">COMPUTATION</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entry 4 -->
+          <div class="timeline-entry" data-entry-id="exp-4">
+            <div class="timeline-marker"></div>
+            <div class="timeline-line"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2021 — 2022</span>
+              <h3 class="timeline-role">Research Assistant</h3>
+              <span class="timeline-org">Department of Visual Communication, Tongji University</span>
+              <p class="timeline-desc">
+                Supported foundational research in design methodology and
+                visual perception. Assisted in experimental data collection,
+                literature review, and preliminary analysis for multiple
+                ongoing research projects.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">RESEARCH</span>
+                <span class="tag">METHODOLOGY</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Entry 5 -->
+          <div class="timeline-entry" data-entry-id="exp-5">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <span class="timeline-date">2020 — 2021</span>
+              <h3 class="timeline-role">Intern — Visual Documentation</h3>
+              <span class="timeline-org">Studio for Empirical Aesthetics, Shanghai</span>
+              <p class="timeline-desc">
+                Participated in the documentation and archiving of visual
+                research materials. Gained foundational exposure to
+                systematic observation methods and specimen cataloguing
+                protocols.
+              </p>
+              <div class="timeline-tags">
+                <span class="tag">DOCUMENTATION</span>
+                <span class="tag">ARCHIVING</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================
+         BLOG SECTION
+         ======================================== -->
+    <section class="section section-blog" id="sectionBlog" aria-label="Blog">
+      <div class="blog-container">
+        <div class="blog-header">
+          <span class="blog-section-label">SECTION_04</span>
+          <h2 class="blog-title">Research Notes</h2>
+          <p class="blog-subtitle">Selected writings on design, data, and the stratification of knowledge.</p>
+        </div>
+
+        <div class="blog-list">
+          <!-- Article 1 -->
+          <article class="blog-entry" data-entry-id="blog-1">
+            <div class="blog-entry-meta">
+              <span class="blog-date">2024.11.28</span>
+              <span class="blog-category">ESSAY</span>
+            </div>
+            <h3 class="blog-entry-title">On the Convergence of Art and Data</h3>
+            <p class="blog-entry-excerpt">
+              The boundary between aesthetic judgment and empirical observation
+              has never been particularly well-defined. What we call "data
+              visualization" is, in many respects, an act of translation —
+              the conversion of numerical relationships into spatial and
+              chromatic ones. This essay examines the epistemological
+              implications of that translation, arguing that the most
+              effective visualizations are those that acknowledge their
+              own artificiality rather than pretending to transparent
+              representation.
+            </p>
+            <a href="#" class="blog-read-more">READ FULL TEXT &rarr;</a>
+          </article>
+
+          <!-- Article 2 -->
+          <article class="blog-entry" data-entry-id="blog-2">
+            <div class="blog-entry-meta">
+              <span class="blog-date">2024.09.14</span>
+              <span class="blog-category">FIELD NOTES</span>
+            </div>
+            <h3 class="blog-entry-title">Field Notes: Observing Urban Strata</h3>
+            <p class="blog-entry-excerpt">
+              Over the course of six weeks, I walked every major commercial
+              corridor in three districts of Shanghai, photographing and
+              cataloguing the visible layers of architectural history.
+              What emerged was not a simple narrative of old giving way to
+              new, but a complex palimpsest in which successive generations
+              of construction, renovation, and demolition had created a
+              stratified record — readable, if you knew how to look.
+            </p>
+            <a href="#" class="blog-read-more">READ FULL TEXT &rarr;</a>
+          </article>
+
+          <!-- Article 3 -->
+          <article class="blog-entry" data-entry-id="blog-3">
+            <div class="blog-entry-meta">
+              <span class="blog-date">2024.06.03</span>
+              <span class="blog-category">REFLECTION</span>
+            </div>
+            <h3 class="blog-entry-title">The Aesthetics of Empiricism</h3>
+            <p class="blog-entry-excerpt">
+              There is a particular beauty in the systematic — in the
+              careful arrangement of specimens, the precise calibration
+              of instruments, the patient accumulation of observations.
+              This reflection considers whether the aesthetic dimension
+              of scientific practice is merely incidental or whether it
+              plays a constitutive role in the production of knowledge.
+              Drawing on examples from geological survey, astronomical
+              observation, and data visualization, I argue for the latter.
+            </p>
+            <a href="#" class="blog-read-more">READ FULL TEXT &rarr;</a>
+          </article>
+
+          <!-- Article 4 -->
+          <article class="blog-entry" data-entry-id="blog-4">
+            <div class="blog-entry-meta">
+              <span class="blog-date">2024.02.19</span>
+              <span class="blog-category">TECHNICAL</span>
+            </div>
+            <h3 class="blog-entry-title">Computational Methods in Material Analysis</h3>
+            <p class="blog-entry-excerpt">
+              A technical overview of the computational pipeline developed
+              for the Material Study series. Covers image segmentation,
+              texture feature extraction, and the classification algorithm
+              used to categorize surface patterns according to geological
+              analogues. Includes discussion of limitations and potential
+              refinements for future iterations.
+            </p>
+            <a href="#" class="blog-read-more">READ FULL TEXT &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       PROJECT DETAIL MODAL
+       ============================================ -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-container" id="modalContainer">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
+      <div class="modal-header">
+        <span class="modal-specimen-id" id="modalSpecimenId"></span>
+        <h2 class="modal-title" id="modalTitle"></h2>
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta" id="modalMeta"></div>
+        <p class="modal-description" id="modalDescription"></p>
+        <div class="modal-tags" id="modalTags"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
