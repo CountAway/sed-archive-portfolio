@@ -234,6 +234,15 @@
     });
   }
 
+  function closeLegendFilterPanel() {
+    const legendFilterPanel = document.getElementById('legendFilterPanel');
+    if (legendFilterPanel) {
+      legendFilterPanel.classList.remove('visible');
+    }
+    document.querySelectorAll('.legend-item').forEach(i => i.classList.remove('active'));
+    currentActiveCategory = null;
+  }
+
   function showLegendFilterPanel(category) {
     const legendFilterPanel = document.getElementById('legendFilterPanel');
     const legendFilterCategory = document.getElementById('legendFilterCategory');
@@ -358,6 +367,11 @@
       link.classList.toggle('active', link.dataset.section === targetSection);
     });
 
+    // Close legend filter panel when leaving Portfolio
+    if (targetSection.toLowerCase() !== 'archive') {
+      closeLegendFilterPanel();
+    }
+
     const navHeight = navBar.offsetHeight;
     const targetPosition = targetEl.offsetTop - navHeight;
 
@@ -389,6 +403,11 @@
           navLinks.forEach(link => {
             link.classList.toggle('active', link.dataset.section === sectionId);
           });
+
+          // Close legend filter panel when scrolling away from Portfolio
+          if (sectionId !== 'archive') {
+            closeLegendFilterPanel();
+          }
         }
       });
     });
