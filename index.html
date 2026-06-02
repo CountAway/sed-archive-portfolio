@@ -182,6 +182,50 @@
       background-color: #B6B2B3;
       border-radius: 3px;
     }
+    
+    /* Modal animations */
+    .modal-overlay {
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .modal-overlay.active {
+      opacity: 1;
+    }
+    
+    .modal-content {
+      opacity: 0;
+      transform: scale(0.96) translateY(20px);
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                  transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .modal-overlay.active .modal-content {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    
+    /* Tag modal - index card style */
+    .tag-modal-content {
+      max-width: 320px;
+      max-height: 50vh;
+    }
+    
+    /* Modal backdrop blur enhancement */
+    .modal-backdrop {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    
+    /* Microscope circle hover interaction */
+    .microscope-circle:hover .microscope-inner {
+      border-color: rgba(123, 144, 163, 0.55);
+      transform: scale(1.1);
+    }
+    
+    .microscope-circle:hover {
+      transform: scale(1.08);
+    }
   </style>
 </head>
 <body class="bg-sed-bg text-sed-text font-sans font-light overflow-y-scroll">
@@ -281,8 +325,9 @@
           <p class="text-base text-sed-text max-w-xl mx-auto">A stratigraphic record of creative and research output, organized by geological time periods.</p>
         </div>
         
-        <!-- Era Navigation - Full Width -->
+        <!-- Era Navigation - Full Width with Projects -->
         <div class="w-full px-8 mb-8">
+          <!-- 新生代 -->
           <div class="era-block py-6 px-8 cursor-pointer reveal-on-scroll" data-era="cenozoic">
             <div class="flex items-center gap-8">
               <span class="font-serif text-3xl">新生代</span>
@@ -290,14 +335,13 @@
               <span class="font-mono text-xs text-sed-slate ml-auto">2024 — PRESENT</span>
             </div>
             <div class="era-content mt-4 pt-4 border-t border-sed-mist">
-              <p class="text-sm text-sed-text/80 mb-3">Recent projects exploring the intersection of computational design and empirical research methodologies.</p>
-              <div class="flex gap-2 flex-wrap">
-                <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">RESEARCH</span>
-                <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">PLATFORM</span>
-                <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">TOOL</span>
-              </div>
+              <p class="text-sm text-sed-text/80">
+                主导<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="urban-atlas">城市纹理图谱</span>项目，开发<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="strata-tools">开源地层分析工具</span>，建立<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="visual-lab">可视化研究实验室</span>。
+              </p>
             </div>
           </div>
+          
+          <!-- 中生代 -->
           <div class="era-block py-6 px-8 cursor-pointer reveal-on-scroll" data-era="mesozoic">
             <div class="flex items-center gap-8">
               <span class="font-serif text-3xl">中生代</span>
@@ -305,13 +349,13 @@
               <span class="font-mono text-xs text-sed-slate ml-auto">2022 — 2023</span>
             </div>
             <div class="era-content mt-4 pt-4 border-t border-sed-mist">
-              <p class="text-sm text-sed-text/80 mb-3">Mid-period work focusing on urban texture mapping and field documentation across metropolitan areas.</p>
-              <div class="flex gap-2 flex-wrap">
-                <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">FIELDWORK</span>
-                <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">STUDY</span>
-              </div>
+              <p class="text-sm text-sed-text/80">
+                完成<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="urban-strata">城市地层观测</span>田野调查，出版<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="texture-atlas">建筑纹理图谱</span>，建立<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="digital-archive">数字化档案系统</span>。
+              </p>
             </div>
           </div>
+          
+          <!-- 古生代 -->
           <div class="era-block py-6 px-8 cursor-pointer reveal-on-scroll" data-era="paleozoic">
             <div class="flex items-center gap-8">
               <span class="font-serif text-3xl">古生代</span>
@@ -319,11 +363,9 @@
               <span class="font-mono text-xs text-sed-slate ml-auto">2020 — 2021</span>
             </div>
             <div class="era-content mt-4 pt-4 border-t border-sed-mist">
-              <p class="text-sm text-sed-text/80 mb-3">Early foundational work in visual documentation and material analysis methodologies.</p>
-              <div class="flex gap-2 flex-wrap">
-                <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">STUDY</span>
-                <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">TOOL</span>
-              </div>
+              <p class="text-sm text-sed-text/80">
+                参与<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="visual-doc">视觉文献整理</span>项目，开发<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="catalogue-system">标本编目系统</span>，完成<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="method-research">方法论基础研究</span>。
+              </p>
             </div>
           </div>
         </div>
@@ -331,36 +373,55 @@
       </div>
       
       <!-- Legend - Outside background image -->
-      <div class="relative z-20 py-12 flex justify-center border-t border-sed-mist">
-        <div class="flex items-center gap-4 px-6 py-3 bg-sed-bg border border-sed-mist">
-          <div class="legend-item flex items-center gap-2 px-2 py-1" data-category="RESEARCH">
-            <span class="w-3 h-3 bg-sed-accent"></span>
-            <span class="font-mono text-xs tracking-widest uppercase">RESEARCH</span>
+      <div class="relative z-20 py-16 flex flex-col items-center border-t border-sed-mist">
+        <div class="bg-sed-bg border border-sed-mist" id="legendBar">
+          <div class="flex items-center gap-4 px-6 py-3">
+            <div class="legend-item flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-sed-slate/10 transition-colors" data-category="RESEARCH">
+              <span class="w-3 h-3 bg-sed-accent"></span>
+              <span class="font-mono text-xs tracking-widest uppercase">RESEARCH</span>
+            </div>
+            <div class="legend-item flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-sed-slate/10 transition-colors" data-category="PLATFORM">
+              <span class="w-3 h-3 bg-sed-slate"></span>
+              <span class="font-mono text-xs tracking-widest uppercase">PLATFORM</span>
+            </div>
+            <div class="legend-item flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-sed-slate/10 transition-colors" data-category="FIELDWORK">
+              <span class="w-3 h-3 bg-sed-mist"></span>
+              <span class="font-mono text-xs tracking-widest uppercase">FIELDWORK</span>
+            </div>
+            <div class="legend-item flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-sed-slate/10 transition-colors" data-category="STUDY">
+              <span class="w-3 h-3 bg-[#8B7355]"></span>
+              <span class="font-mono text-xs tracking-widest uppercase">STUDY</span>
+            </div>
+            <div class="legend-item flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-sed-slate/10 transition-colors" data-category="TOOL">
+              <span class="w-3 h-3 bg-[#6B8E6B]"></span>
+              <span class="font-mono text-xs tracking-widest uppercase">TOOL</span>
+            </div>
           </div>
-          <div class="legend-item flex items-center gap-2 px-2 py-1" data-category="PLATFORM">
-            <span class="w-3 h-3 bg-sed-slate"></span>
-            <span class="font-mono text-xs tracking-widest uppercase">PLATFORM</span>
-          </div>
-          <div class="legend-item flex items-center gap-2 px-2 py-1" data-category="FIELDWORK">
-            <span class="w-3 h-3 bg-sed-mist"></span>
-            <span class="font-mono text-xs tracking-widest uppercase">FIELDWORK</span>
-          </div>
-          <div class="legend-item flex items-center gap-2 px-2 py-1" data-category="STUDY">
-            <span class="w-3 h-3 bg-[#8B7355]"></span>
-            <span class="font-mono text-xs tracking-widest uppercase">STUDY</span>
-          </div>
-          <div class="legend-item flex items-center gap-2 px-2 py-1" data-category="TOOL">
-            <span class="w-3 h-3 bg-[#6B8E6B]"></span>
-            <span class="font-mono text-xs tracking-widest uppercase">TOOL</span>
+          
+          <!-- Tag Projects Panel - Embedded inside legend bar -->
+          <div id="tagProjectsPanel" class="hidden bg-sed-bg/80 backdrop-blur-sm border-t border-sed-mist/30" style="transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1); max-height: 0; opacity: 0; overflow: hidden;">
+            <div class="px-6 py-4 border-b border-sed-mist/30 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-sm tracking-widest" id="tagPanelTitle">RESEARCH</span>
+                <span class="font-mono text-xs text-sed-mist" id="tagPanelCount">2</span>
+              </div>
+              <button id="closeTagPanel" class="font-mono text-xl text-sed-text/60 hover:text-sed-accent transition-all duration-300">×</button>
+            </div>
+            <div class="p-6">
+              <div id="tagPanelProjects" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Projects injected via JS -->
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      
     </section>
     
     <!-- Section Divider - Microscope View -->
-    <div class="section-divider py-24 flex items-center justify-center">
-      <div class="w-20 h-20 rounded-full border border-sed-mist flex items-center justify-center">
-        <div class="w-12 h-12 rounded-full border border-sed-mist/50"></div>
+    <div class="section-divider h-screen flex items-center justify-center relative -mt-32">
+      <div class="microscope-circle w-12 h-12 rounded-full border border-sed-mist flex items-center justify-center cursor-pointer transition-all duration-700 ease-out hover:border-sed-slate/70">
+        <div class="microscope-inner w-6 h-6 rounded-full border border-sed-mist/50 transition-all duration-700 ease-out delay-100"></div>
       </div>
     </div>
     
@@ -368,7 +429,8 @@
     <section class="section bg-sed-bg relative z-10" id="experience">
       <div class="flex min-h-screen">
         <!-- Left Side - Fixed -->
-        <div class="w-1/3 sticky top-0 h-screen flex flex-col justify-center px-12">
+        <div class="w-1/3 sticky top-0 h-screen flex flex-col justify-center px-12 relative">
+          <div class="absolute left-0 top-1/2 -translate-y-1/2 w-px h-32 bg-sed-mist"></div>
           <span class="font-mono text-xs tracking-widest text-sed-mist block mb-4">SECTION_03</span>
           <h2 class="font-serif text-5xl font-light mb-4">Field Report</h2>
           <p class="text-base text-sed-mist mb-8">A chronological record of institutional affiliations and research deployments.</p>
@@ -376,7 +438,7 @@
         </div>
         
         <!-- Right Side - Scrollable -->
-        <div class="w-2/3 px-12 py-24">
+        <div class="w-2/3 px-12 py-16">
           <!-- Experience entries -->
           <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="research-fellow">
             <div class="py-8 border-t border-sed-mist">
@@ -478,15 +540,15 @@
     </section>
     
     <!-- Section Divider - Microscope View -->
-    <div class="section-divider py-24 flex items-center justify-center">
-      <div class="w-20 h-20 rounded-full border border-sed-mist flex items-center justify-center">
-        <div class="w-12 h-12 rounded-full border border-sed-mist/50"></div>
+    <div class="section-divider h-screen flex items-center justify-center relative -mt-32">
+      <div class="microscope-circle w-12 h-12 rounded-full border border-sed-mist flex items-center justify-center cursor-pointer transition-all duration-700 ease-out hover:border-sed-slate/70">
+        <div class="microscope-inner w-6 h-6 rounded-full border border-sed-mist/50 transition-all duration-700 ease-out delay-100"></div>
       </div>
     </div>
     
     <!-- Blog Section -->
     <section class="section bg-sed-bg relative z-10" id="blog">
-      <div class="max-w-3xl mx-auto px-8 py-24">
+      <div class="max-w-3xl mx-auto px-8 py-16">
         <div class="mb-16">
           <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">SECTION_04</span>
           <h2 class="font-serif text-5xl font-light mb-2">Research Notes</h2>
@@ -544,22 +606,31 @@
         </div>
         
         <!-- Research Document Modal -->
-        <div id="docModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-sed-text/50 backdrop-blur-sm">
-          <div class="bg-sed-bg w-full max-w-3xl max-h-[80vh] overflow-y-auto mx-4 border border-sed-mist shadow-2xl">
-            <div class="sticky top-0 bg-sed-bg border-b border-sed-mist px-8 py-4 flex items-center justify-between">
-              <div>
-                <span class="font-mono text-xs tracking-widest text-sed-mist block" id="modalDocId">DOC-2024-001</span>
-                <h3 class="font-serif text-2xl" id="modalTitle">Document Title</h3>
-              </div>
-              <button id="closeModal" class="font-mono text-xs tracking-widest uppercase hover:text-sed-accent transition-colors">CLOSE ✕</button>
+        <div id="docModal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center bg-sed-text/40 modal-backdrop">
+          <div class="modal-content bg-white w-full max-w-2xl max-h-[80vh] overflow-y-auto mx-4 shadow-xl">
+            <div class="sticky top-0 bg-white px-12 py-6 flex items-center justify-between">
+              <span class="font-mono text-xs tracking-widest text-sed-mist">BLOG</span>
+              <button id="closeModal" class="font-mono text-2xl text-sed-text/60 hover:text-sed-accent transition-all duration-300">×</button>
             </div>
-            <div class="p-8">
-              <div class="flex gap-4 mb-6 text-sm">
-                <span class="font-mono text-xs tracking-widest text-sed-mist" id="modalDate">2024.11.28</span>
-                <span class="font-mono text-xs tracking-widest text-sed-accent border border-sed-accent px-2 py-0.5" id="modalType">ESSAY</span>
-                <span class="font-mono text-xs tracking-widest text-sed-slate" id="modalReadTime">8 min read</span>
+            <div class="px-12 pb-12">
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-3" id="modalDocId">DOC-2024-001</span>
+              <h3 class="font-serif text-4xl mb-8 text-sed-text" id="modalTitle">Document Title</h3>
+              <div class="grid grid-cols-3 gap-8 mb-8">
+                <div>
+                  <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">DATE</span>
+                  <span class="font-mono text-sm text-sed-text" id="modalDate">2024.11.28</span>
+                </div>
+                <div>
+                  <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">CATEGORY</span>
+                  <span class="font-mono text-sm text-sed-text" id="modalType">ESSAY</span>
+                </div>
+                <div>
+                  <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">CONTEXT</span>
+                  <span class="font-mono text-sm text-sed-text" id="modalReadTime">8 min read</span>
+                </div>
               </div>
-              <div class="prose prose-slate max-w-none" id="modalContent">
+              <div class="w-full h-px bg-sed-mist/50 mb-8"></div>
+              <div class="prose prose-slate max-w-none leading-relaxed" id="modalContent">
                 <!-- Content injected via JS -->
               </div>
             </div>
@@ -567,6 +638,50 @@
         </div>
       </div>
     </section>
+    
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center bg-sed-text/40 modal-backdrop">
+      <div class="modal-content bg-white w-full max-w-2xl max-h-[80vh] overflow-y-auto mx-4 shadow-xl">
+        <div class="sticky top-0 bg-white px-12 py-6 flex items-center justify-end">
+          <button id="closeProjectModal" class="font-mono text-2xl text-sed-text/60 hover:text-sed-accent transition-all duration-300">×</button>
+        </div>
+        <div class="px-12 pb-12">
+          <span class="font-mono text-xs tracking-widest text-sed-mist block mb-3" id="projectModalId">SED-2024-001</span>
+          <h3 class="font-serif text-4xl mb-8 text-sed-text" id="projectModalTitle">Project Title</h3>
+          
+          <!-- Metadata row -->
+          <div class="grid grid-cols-3 gap-8 mb-8">
+            <div>
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">DATE</span>
+              <span class="font-mono text-sm text-sed-text" id="projectModalDate">2024.01 — PRESENT</span>
+            </div>
+            <div>
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">CATEGORY</span>
+              <span class="font-mono text-sm text-sed-text" id="projectModalCategory">RESEARCH</span>
+            </div>
+            <div>
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">ERA</span>
+              <span class="font-mono text-sm text-sed-text" id="projectModalEra">新生代 CENOZOIC</span>
+            </div>
+          </div>
+          
+          <!-- Divider -->
+          <div class="w-full h-px bg-sed-mist/50 mb-8"></div>
+          
+          <!-- Content -->
+          <div class="prose prose-slate max-w-none mb-8 leading-relaxed" id="projectModalContent">
+            <!-- Content injected via JS -->
+          </div>
+          
+          <!-- Tags -->
+          <div class="flex gap-3 flex-wrap" id="projectModalTags">
+            <!-- Tags injected via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
     
   </main>
   
@@ -632,6 +747,7 @@
       if (!ticking) {
         window.requestAnimationFrame(function() {
           handleScroll();
+          checkTagModalVisibility();
           ticking = false;
         });
         ticking = true;
@@ -640,6 +756,23 @@
     
     // Initial call
     handleScroll();
+    
+    // Close tag panel when scrolling out of Portfolio section
+    function checkTagModalVisibility() {
+      const portfolioSection = document.getElementById('portfolio');
+      
+      if (!portfolioSection || !tagProjectsPanel || tagProjectsPanel.classList.contains('hidden')) {
+        return;
+      }
+      
+      const portfolioRect = portfolioSection.getBoundingClientRect();
+      const isInPortfolio = portfolioRect.top < window.innerHeight && portfolioRect.bottom > 0;
+      
+      if (!isInPortfolio) {
+        closeTagPanel();
+        legendItems.forEach(i => i.classList.remove('active'));
+      }
+    }
     
     // Smooth scroll for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -700,6 +833,366 @@
           }
         }
       });
+    });
+    
+    // ==========================================
+    // PROJECT KEYWORDS & TAGS - Portfolio
+    // ==========================================
+    
+    // Project data
+    const projectData = {
+      'urban-atlas': {
+        id: 'SED-2024-003',
+        title: '城市纹理图谱',
+        date: '2024.03 — PRESENT',
+        category: 'RESEARCH',
+        era: '新生代 CENOZOIC',
+        tags: ['RESEARCH', 'PLATFORM'],
+        content: `
+          <p class="mb-4">城市纹理图谱是一个跨学科研究项目，旨在通过系统性的视觉文档记录，建立城市建筑表面的材质、纹理和历史变迁的数字档案。</p>
+          <p class="mb-4">项目涵盖了上海、杭州、南京等六个主要城市的商业走廊，记录了超过10,000张高分辨率图像。通过 computational analysis，我们识别出超过200种独特的建筑纹理模式。</p>
+          <h4 class="font-serif text-xl mt-6 mb-3">研究成果</h4>
+          <ul class="list-disc pl-5 mb-4 space-y-2">
+            <li>出版《中国城市建筑纹理图谱》专著</li>
+            <li>建立可检索的数字档案系统</li>
+            <li>开发纹理识别算法工具</li>
+          </ul>
+        `
+      },
+      'strata-tools': {
+        id: 'SED-2024-002',
+        title: '开源地层分析工具',
+        date: '2024.01 — 2024.06',
+        category: 'TOOL',
+        era: '新生代 CENOZOIC',
+        tags: ['TOOL', 'PLATFORM'],
+        content: `
+          <p class="mb-4">一套开源的 Python 工具包，用于建筑和城市环境的"地层学"分析。灵感来自地质学的地层概念，将城市视为随时间沉积的多层结构。</p>
+          <p class="mb-4">工具包包含图像分割、纹理分析、时间序列可视化等模块，支持研究者对城市变迁进行定量分析。</p>
+          <h4 class="font-serif text-xl mt-6 mb-3">技术栈</h4>
+          <ul class="list-disc pl-5 mb-4 space-y-2">
+            <li>Python + OpenCV 图像处理</li>
+            <li>深度学习纹理分类模型</li>
+            <li>WebGL 3D 地层可视化</li>
+          </ul>
+        `
+      },
+      'visual-lab': {
+        id: 'SED-2024-001',
+        title: '可视化研究实验室',
+        date: '2024.01 — PRESENT',
+        category: 'PLATFORM',
+        era: '新生代 CENOZOIC',
+        tags: ['RESEARCH', 'PLATFORM'],
+        content: `
+          <p class="mb-4">建立跨学科的可视化研究实验室，汇聚设计、计算机科学、建筑史等领域的研究者，共同探索数据可视化在城市研究中的应用。</p>
+          <p class="mb-4">实验室配备高精度扫描设备、VR 可视化工作站，以及用于大规模图像处理的 GPU 计算集群。</p>
+          <h4 class="font-serif text-xl mt-6 mb-3">研究方向</h4>
+          <ul class="list-disc pl-5 mb-4 space-y-2">
+            <li>城市数据的视觉叙事</li>
+            <li>沉浸式历史重建</li>
+            <li>公众参与式城市档案</li>
+          </ul>
+        `
+      },
+      'urban-strata': {
+        id: 'SED-2023-003',
+        title: '城市地层观测',
+        date: '2023.06 — 2023.12',
+        category: 'FIELDWORK',
+        era: '中生代 MESOZOIC',
+        tags: ['FIELDWORK', 'STUDY'],
+        content: `
+          <p class="mb-4">为期六周的田野调查项目，在上海三个历史街区进行系统的视觉文档记录。采用"地层学"方法，将城市建筑视为随时间沉积的多层结构。</p>
+          <p class="mb-4">通过步行调查、摄影记录、居民访谈等方式，记录了建筑立面、店铺招牌、街道设施等可见的城市层积。</p>
+          <h4 class="font-serif text-xl mt-6 mb-3">调查范围</h4>
+          <ul class="list-disc pl-5 mb-4 space-y-2">
+            <li>静安区南京西路商业带</li>
+            <li>黄浦区外滩历史街区</li>
+            <li>徐汇区衡山路-复兴路风貌区</li>
+          </ul>
+        `
+      },
+      'texture-atlas': {
+        id: 'SED-2023-002',
+        title: '建筑纹理图谱',
+        date: '2023.03 — 2023.08',
+        category: 'STUDY',
+        era: '中生代 MESOZOIC',
+        tags: ['STUDY', 'FIELDWORK'],
+        content: `
+          <p class="mb-4">出版项目，收录了长三角地区六个城市的建筑立面纹理样本。每种纹理都配有详细的材质分析、历史背景和使用情境说明。</p>
+          <p class="mb-4">图谱采用地质学图例的编排方式，将建筑纹理按年代、材质、工艺等维度分类，为建筑保护和修复提供参考。</p>
+          <h4 class="font-serif text-xl mt-6 mb-3">图谱结构</h4>
+          <ul class="list-disc pl-5 mb-4 space-y-2">
+            <li>石材纹理卷：花岗岩、大理石、砂岩等</li>
+            <li>砖材纹理卷：青砖、红砖、釉面砖等</li>
+            <li>装饰纹理卷：浮雕、马赛克、水刷石等</li>
+          </ul>
+        `
+      },
+      'digital-archive': {
+        id: 'SED-2023-001',
+        title: '数字化档案系统',
+        date: '2023.01 — 2023.06',
+        category: 'PLATFORM',
+        era: '中生代 MESOZOIC',
+        tags: ['TOOL', 'PLATFORM'],
+        content: `
+          <p class="mb-4">为杭州材料文化局开发的数字化档案管理系统，支持大规模图像资料的存储、检索和可视化展示。</p>
+          <p class="mb-4">系统采用分布式存储架构，支持高分辨率图像的快速预览和详细查看，内置基于内容的图像检索功能。</p>
+          <h4 class="font-serif text-xl mt-6 mb-3">核心功能</h4>
+          <ul class="list-disc pl-5 mb-4 space-y-2">
+            <li>批量图像上传和元数据标注</li>
+            <li>基于视觉相似度的智能检索</li>
+            <li>时间轴和地图双重视图</li>
+          </ul>
+        `
+      },
+      'visual-doc': {
+        id: 'SED-2021-003',
+        title: '视觉文献整理',
+        date: '2021.06 — 2021.12',
+        category: 'STUDY',
+        era: '古生代 PALEOZOIC',
+        tags: ['STUDY', 'FIELDWORK'],
+        content: `
+          <p class="mb-4">参与整理上海经验美学工作室的历史摄影档案，对5000余张20世纪上海城市景观照片进行数字化和编目。</p>
+          <p class="mb-4">工作包括图像修复、元数据标注、地理定位等，为后续的城市变迁研究奠定了数据基础。</p>
+          <h4 class="font-serif text-xl mt-6 mb-3">档案内容</h4>
+          <ul class="list-disc pl-5 mb-4 space-y-2">
+            <li>1920-1940年代外滩建筑群</li>
+            <li>1950-1970年代里弄生活场景</li>
+            <li>1980-2000年代城市改造记录</li>
+          </ul>
+        `
+      },
+      'catalogue-system': {
+        id: 'SED-2021-002',
+        title: '标本编目系统',
+        date: '2021.03 — 2021.08',
+        category: 'TOOL',
+        era: '古生代 PALEOZOIC',
+        tags: ['TOOL'],
+        content: `
+          <p class="mb-4">为视觉材料整理开发的编目管理系统，采用博物馆标本管理的逻辑，为每件视觉材料建立标准化的描述档案。</p>
+          <p class="mb-4">系统支持自定义字段、批量导入导出、权限管理等功能，已被多个研究机构采用。</p>
+          <h4 class="font-serif text-xl mt-6 mb-3">技术特点</h4>
+          <ul class="list-disc pl-5 mb-4 space-y-2">
+            <li>符合 Dublin Core 元数据标准</li>
+            <li>支持多用户协作和版本控制</li>
+            <li>API 接口便于与其他系统集成</li>
+          </ul>
+        `
+      },
+      'method-research': {
+        id: 'SED-2021-001',
+        title: '方法论基础研究',
+        date: '2021.01 — 2021.06',
+        category: 'STUDY',
+        era: '古生代 PALEOZOIC',
+        tags: ['STUDY'],
+        content: `
+          <p class="mb-4">关于视觉研究方法论的基础性探索，梳理了从19世纪民族志摄影到当代数字人文的视觉研究方法谱系。</p>
+          <p class="mb-4">研究重点关注视觉材料作为证据的可靠性、视觉叙事的建构性，以及数字工具对视觉研究方法的革新。</p>
+          <h4 class="font-serif text-xl mt-6 mb-3">核心议题</h4>
+          <ul class="list-disc pl-5 mb-4 space-y-2">
+            <li>视觉材料的认识论地位</li>
+            <li>数字档案的伦理问题</li>
+            <li>算法辅助的视觉分析</li>
+          </ul>
+        `
+      }
+    };
+    
+    // Tag to projects mapping
+    const tagProjects = {
+      'RESEARCH': ['urban-atlas', 'visual-lab', 'texture-atlas', 'method-research'],
+      'PLATFORM': ['urban-atlas', 'strata-tools', 'visual-lab', 'digital-archive'],
+      'TOOL': ['strata-tools', 'digital-archive', 'catalogue-system'],
+      'FIELDWORK': ['urban-strata', 'texture-atlas', 'visual-doc'],
+      'STUDY': ['texture-atlas', 'visual-doc', 'method-research']
+    };
+    
+    // Project modal elements
+    const projectModal = document.getElementById('projectModal');
+    const closeProjectModalBtn = document.getElementById('closeProjectModal');
+    const projectModalId = document.getElementById('projectModalId');
+    const projectModalTitle = document.getElementById('projectModalTitle');
+    const projectModalDate = document.getElementById('projectModalDate');
+    const projectModalCategory = document.getElementById('projectModalCategory');
+    const projectModalEra = document.getElementById('projectModalEra');
+    const projectModalTags = document.getElementById('projectModalTags');
+    const projectModalContent = document.getElementById('projectModalContent');
+    
+    // Tag panel elements (embedded in page)
+    const tagProjectsPanel = document.getElementById('tagProjectsPanel');
+    const tagPanelTitle = document.getElementById('tagPanelTitle');
+    const tagPanelCount = document.getElementById('tagPanelCount');
+    const tagPanelProjects = document.getElementById('tagPanelProjects');
+    const closeTagPanelBtn = document.getElementById('closeTagPanel');
+    
+    function openProjectModal(projectKey) {
+      const data = projectData[projectKey];
+      if (!data) return;
+      
+      projectModalId.textContent = data.id;
+      projectModalTitle.textContent = data.title;
+      projectModalDate.textContent = data.date;
+      projectModalCategory.textContent = data.category;
+      projectModalEra.textContent = data.era;
+      projectModalContent.innerHTML = data.content;
+      
+      // Generate tags
+      projectModalTags.innerHTML = data.tags.map(tag => 
+        `<span class="font-mono text-xs tracking-widest border px-3 py-1.5 ${getTagColorClass(tag)}">${tag}</span>`
+      ).join('');
+      
+      projectModal.classList.remove('hidden');
+      projectModal.classList.add('flex');
+      
+      // Trigger animation
+      requestAnimationFrame(() => {
+        projectModal.classList.add('active');
+      });
+      
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeProjectModal() {
+      projectModal.classList.remove('active');
+      
+      // Wait for animation to complete
+      setTimeout(() => {
+        projectModal.classList.add('hidden');
+        projectModal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+    
+    function openTagPanel(tag) {
+      const projects = tagProjects[tag] || [];
+      const color = tagColors[tag];
+      
+      // Set title with tag color
+      tagPanelTitle.textContent = tag;
+      tagPanelTitle.className = `font-mono text-sm tracking-widest ${color.text}`;
+      tagPanelCount.textContent = `${projects.length}`;
+      
+      // Generate project list - card style
+      tagPanelProjects.innerHTML = projects.map(key => {
+        const proj = projectData[key];
+        return `
+          <div class="project-panel-item cursor-pointer bg-sed-bg/50 hover:bg-sed-slate/10 transition-all duration-200 p-4 border border-sed-mist/30" data-project="${key}">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs text-sed-mist">${proj.id}</span>
+              <span class="font-mono text-xs tracking-widest ${color.text}">${proj.era.split(' ')[1]}</span>
+            </div>
+            <h4 class="font-serif text-lg text-sed-text">${proj.title}</h4>
+            <p class="font-mono text-xs text-sed-slate mt-1">${proj.date}</p>
+          </div>
+        `;
+      }).join('');
+      
+      // Add click handlers to project list items
+      tagPanelProjects.querySelectorAll('.project-panel-item').forEach(item => {
+        item.addEventListener('click', function() {
+          const projectKey = this.dataset.project;
+          closeTagPanel();
+          setTimeout(() => openProjectModal(projectKey), 200);
+        });
+      });
+      
+      // Show panel with slow animation
+      tagProjectsPanel.classList.remove('hidden');
+      // Force reflow
+      void tagProjectsPanel.offsetHeight;
+      
+      requestAnimationFrame(() => {
+        tagProjectsPanel.style.maxHeight = '600px';
+        tagProjectsPanel.style.opacity = '1';
+      });
+    }
+    
+    function closeTagPanel() {
+      tagProjectsPanel.style.maxHeight = '0';
+      tagProjectsPanel.style.opacity = '0';
+      
+      setTimeout(() => {
+        tagProjectsPanel.classList.add('hidden');
+      }, 600);
+    }
+    
+    function getTagColorClass(tag) {
+      const colors = {
+        'RESEARCH': 'border-sed-accent text-sed-accent',
+        'PLATFORM': 'border-sed-slate text-sed-slate',
+        'TOOL': 'border-[#6B8E6B] text-[#6B8E6B]',
+        'FIELDWORK': 'border-sed-mist text-sed-mist',
+        'STUDY': 'border-[#8B7355] text-[#8B7355]'
+      };
+      return colors[tag] || 'border-sed-mist text-sed-mist';
+    }
+    
+    // Project keyword click handlers
+    document.querySelectorAll('.project-keyword').forEach(keyword => {
+      keyword.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const projectKey = this.dataset.project;
+        openProjectModal(projectKey);
+      });
+    });
+    
+    // Project tag click handlers
+    document.querySelectorAll('.project-tag').forEach(tag => {
+      tag.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const tagName = this.dataset.tag;
+        openTagModal(tagName);
+      });
+    });
+    
+    // Close modal handlers
+    if (closeProjectModalBtn) {
+      closeProjectModalBtn.addEventListener('click', closeProjectModal);
+    }
+    
+    if (closeTagPanelBtn) {
+      closeTagPanelBtn.addEventListener('click', function() {
+        closeTagPanel();
+        legendItems.forEach(i => i.classList.remove('active'));
+      });
+    }
+    
+    // Click outside to close tag panel
+    document.addEventListener('click', function(e) {
+      if (!tagProjectsPanel.classList.contains('hidden')) {
+        const isClickInsidePanel = tagProjectsPanel.contains(e.target);
+        const isClickOnLegend = e.target.closest('.legend-item');
+        const isClickOnLegendBar = e.target.closest('#legendBar');
+        
+        if (!isClickInsidePanel && !isClickOnLegend && !isClickOnLegendBar) {
+          closeTagPanel();
+          legendItems.forEach(i => i.classList.remove('active'));
+        }
+      }
+    });
+    
+    if (projectModal) {
+      projectModal.addEventListener('click', function(e) {
+        if (e.target === projectModal) closeProjectModal();
+      });
+    }
+    
+    // Escape key to close modals
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (!projectModal.classList.contains('hidden')) closeProjectModal();
+        if (!tagProjectsPanel.classList.contains('hidden')) {
+          closeTagPanel();
+          legendItems.forEach(i => i.classList.remove('active'));
+        }
+      }
     });
     
     // ==========================================
@@ -789,13 +1282,24 @@
       
       docModal.classList.remove('hidden');
       docModal.classList.add('flex');
+      
+      // Trigger animation
+      requestAnimationFrame(() => {
+        docModal.classList.add('active');
+      });
+      
       document.body.style.overflow = 'hidden';
     }
     
     function closeModal() {
-      docModal.classList.add('hidden');
-      docModal.classList.remove('flex');
-      document.body.style.overflow = '';
+      docModal.classList.remove('active');
+      
+      // Wait for animation to complete
+      setTimeout(() => {
+        docModal.classList.add('hidden');
+        docModal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }, 300);
     }
     
     // Blog article click handlers
@@ -896,29 +1400,35 @@
     });
     
     // ==========================================
-    // LEGEND FILTER - Portfolio
+    // LEGEND FILTER - Portfolio - Open modal
     // ==========================================
     const legendItems = document.querySelectorAll('.legend-item');
+    
+    // Tag color mapping (matching legend colors)
+    const tagColors = {
+      'RESEARCH': { bg: 'bg-sed-accent', text: 'text-sed-accent', border: 'border-sed-accent' },
+      'PLATFORM': { bg: 'bg-sed-slate', text: 'text-sed-slate', border: 'border-sed-slate' },
+      'FIELDWORK': { bg: 'bg-sed-mist', text: 'text-sed-mist', border: 'border-sed-mist' },
+      'STUDY': { bg: 'bg-[#8B7355]', text: 'text-[#8B7355]', border: 'border-[#8B7355]' },
+      'TOOL': { bg: 'bg-[#6B8E6B]', text: 'text-[#6B8E6B]', border: 'border-[#6B8E6B]' }
+    };
     
     legendItems.forEach(item => {
       item.addEventListener('click', function() {
         const category = this.dataset.category;
-        const isActive = this.classList.contains('active');
         
         // Toggle active state
-        legendItems.forEach(l => l.classList.remove('active'));
+        const isActive = this.classList.contains('active');
+        
+        // Remove active from all items
+        legendItems.forEach(i => i.classList.remove('active'));
+        
         if (!isActive) {
           this.classList.add('active');
+          openTagPanel(category);
+        } else {
+          closeTagPanel();
         }
-        
-        // Filter era blocks (demo functionality)
-        eraBlocks.forEach(block => {
-          if (!isActive) {
-            block.style.opacity = '1';
-          } else {
-            block.style.opacity = '0.5';
-          }
-        });
       });
     });
   </script>
