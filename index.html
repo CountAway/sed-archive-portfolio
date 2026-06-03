@@ -226,6 +226,73 @@
     .microscope-circle:hover {
       transform: scale(1.08);
     }
+    
+    /* Typewriter overlay */
+    .typewriter-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(224, 221, 220, 0.92);
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.8s ease;
+    }
+    
+    .typewriter-overlay.active {
+      opacity: 1;
+    }
+    
+    .typewriter-text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 380px;
+      width: 90%;
+      z-index: 101;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: #353338;
+      text-align: left;
+      opacity: 0;
+      transition: opacity 0.6s ease 0.3s;
+    }
+    
+    .typewriter-text.active {
+      opacity: 1;
+    }
+    
+    .typewriter-paragraph {
+      margin-bottom: 1.2em;
+      text-indent: 2em;
+    }
+    
+    .typewriter-paragraph:last-child {
+      margin-bottom: 0;
+    }
+    
+    .typewriter-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background-color: #353338;
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+      vertical-align: text-bottom;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    .rock-hover-trigger {
+      cursor: pointer;
+    }
   </style>
 </head>
 <body class="bg-sed-bg text-sed-text font-sans font-light overflow-y-scroll">
@@ -260,26 +327,31 @@
       <div class="max-w-7xl mx-auto px-8 w-full">
         <div class="grid grid-cols-3 gap-16 items-center">
           <!-- Left: Identity -->
-          <div class="text-right">
+          <div class="text-right" id="aboutLeft">
             <span class="font-mono text-xs tracking-widest text-sed-mist block mb-4">SECTION_01</span>
-            <h1 class="font-serif text-6xl font-light mb-2">Y. CHEN</h1>
-            <p class="font-mono text-sm tracking-widest text-sed-slate uppercase mb-6">Design Researcher & Visual Analyst</p>
+            <h1 class="font-serif text-6xl font-light mb-2">宋计遥</h1>
+            <p class="font-mono text-sm tracking-widest text-sed-slate uppercase mb-6">JIYAO SONG</p>
             <div class="w-16 h-px bg-sed-accent ml-auto mb-6"></div>
-            <p class="text-base leading-relaxed mb-4 max-w-md ml-auto">
-              Operating at the intersection of humanistic perception and empirical methodology.
-              Current research focuses on the lithification of digital artifacts — how raw data
-              undergoes compression, stratification, and eventual crystallization into coherent
-              visual narratives.
-            </p>
+            <p class="font-mono text-xs tracking-widest text-sed-slate mb-6">STRATIGRAPHIC OBSERVATION & CO-CREATION</p>
             <div class="flex flex-wrap gap-2 justify-end">
-              <span class="font-mono text-xs tracking-widest border border-sed-mist px-3 py-1">VISUAL ANALYSIS</span>
-              <span class="font-mono text-xs tracking-widest border border-sed-mist px-3 py-1">DESIGN RESEARCH</span>
-              <span class="font-mono text-xs tracking-widest border border-sed-mist px-3 py-1">COMPUTATIONAL METHODS</span>
+              <span class="font-mono text-xs tracking-widest border border-sed-mist px-3 py-1">我对文字的执着</span>
+              <span class="font-mono text-xs tracking-widest border border-sed-mist px-3 py-1">我对问题的专注</span>
+              <span class="font-mono text-xs tracking-widest border border-sed-mist px-3 py-1">我对世界的参与</span>
+            </div>
+            <p class="text-base leading-relaxed mt-6 max-w-md ml-auto text-sed-text/70">
+              欢迎来到工作现场，欢迎参观这个永远的半成品。
+            </p>
+          </div>
+          
+          <!-- Typewriter Overlay -->
+          <div class="typewriter-overlay" id="typewriterOverlay">
+            <div class="typewriter-text" id="typewriterText">
+              <div id="typewriterContent"></div><span class="typewriter-cursor" id="typewriterCursor"></span>
             </div>
           </div>
           
           <!-- Center: Spacer for rock image -->
-          <div class="flex flex-col items-center justify-center">
+          <div class="flex flex-col items-center justify-center rock-hover-trigger" id="rockTrigger">
             <span class="font-mono text-xs tracking-widest text-sed-mist mt-96">FIG. 01 — Thin-section micrograph, 40x magnification</span>
           </div>
           
@@ -287,15 +359,15 @@
           <div class="text-left">
             <div class="mb-4 pb-2 border-b border-sed-mist">
               <span class="font-mono text-xs tracking-widest text-sed-mist block mb-1">SPECIMEN_ID</span>
-              <span class="font-mono text-sm">SED-2024-001</span>
+              <span class="font-mono text-sm">SED-2026-001</span>
             </div>
             <div class="mb-4 pb-2 border-b border-sed-mist">
               <span class="font-mono text-xs tracking-widest text-sed-mist block mb-1">STATUS</span>
-              <span class="font-mono text-sm text-sed-accent">ACTIVE — FIELD OPERATIONS</span>
+              <span class="font-mono text-sm text-sed-accent">To Be Activated — POSTGRADUATE</span>
             </div>
             <div class="mb-4 pb-2 border-b border-sed-mist">
               <span class="font-mono text-xs tracking-widest text-sed-mist block mb-1">COORDINATES</span>
-              <span class="font-mono text-sm">31.2304° N, 121.4737° E</span>
+              <span class="font-mono text-sm">120°46'21.99"N, 31°18'16.65"E; 32°6'20"N 118°54'15"E</span>
             </div>
             <div class="mb-4 pb-2 border-b border-sed-mist">
               <span class="font-mono text-xs tracking-widest text-sed-mist block mb-1">CLASSIFICATION</span>
@@ -303,7 +375,7 @@
             </div>
             <div>
               <span class="font-mono text-xs tracking-widest text-sed-mist block mb-1">LAST_UPDATED</span>
-              <span class="font-mono text-sm">2024.12.15</span>
+              <span class="font-mono text-sm">2026.06.03</span>
             </div>
           </div>
         </div>
@@ -432,104 +504,140 @@
         <div class="w-1/3 sticky top-0 h-screen flex flex-col justify-center px-12 relative">
           <div class="absolute left-0 top-1/2 -translate-y-1/2 w-px h-32 bg-sed-mist"></div>
           <span class="font-mono text-xs tracking-widest text-sed-mist block mb-4">SECTION_03</span>
-          <h2 class="font-serif text-5xl font-light mb-4">Field Report</h2>
-          <p class="text-base text-sed-mist mb-8">A chronological record of institutional affiliations and research deployments.</p>
+          <h2 class="font-serif text-5xl font-light mb-2">经历层序</h2>
+          <p class="font-mono text-sm tracking-widest text-sed-slate uppercase mb-6">EXPERIENCE</p>
+          <p class="font-mono text-xs tracking-widest text-sed-slate mb-6">STRATIGRAPHIC EXTRACTION OF GROWTH</p>
+          <p class="text-base text-sed-mist mb-8">个人成长的层序剥离</p>
           <div class="w-16 h-px bg-sed-accent"></div>
         </div>
         
         <!-- Right Side - Scrollable -->
         <div class="w-2/3 px-12 py-16">
-          <!-- Experience entries -->
-          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="research-fellow">
+          <!-- STRATUM 01: Education -->
+          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="education">
             <div class="py-8 border-t border-sed-mist">
               <div class="flex items-baseline justify-between mb-2">
-                <h3 class="font-serif text-2xl">Research Fellow</h3>
-                <span class="font-mono text-xs tracking-widest text-sed-accent">2024 — PRESENT</span>
+                <h3 class="font-serif text-2xl">南京师范大学</h3>
+                <span class="font-mono text-xs tracking-widest text-sed-accent">2022.09 — 2026.06</span>
               </div>
-              <span class="font-mono text-sm text-sed-slate block mb-3">Institute of Visual Sciences, Shanghai</span>
+              <span class="font-mono text-sm text-sed-slate block mb-1">汉语言文学（本科） // BA in Chinese Language and Literature</span>
+              <span class="font-mono text-xs text-sed-mist block mb-3">211 · 优秀毕业生</span>
               <p class="text-base leading-relaxed text-sed-text/80">
-                Leading cross-disciplinary research initiatives at the intersection of computational design and empirical analysis.
+                专业排名 1/61（GPA: 4.21 / 5.00，综合测评排名第1）
               </p>
               <div class="exp-content mt-4 overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0;">
-                <p class="text-base leading-relaxed text-sed-text/70 mb-4">
-                  Current research focuses on developing new methodologies for visualizing complex datasets in the context of urban planning and architectural history. Collaborating with a team of five researchers to build open-source tools for stratigraphic analysis of built environments.
-                </p>
+                <div class="space-y-3 text-base leading-relaxed text-sed-text/70 mb-4">
+                  <p><strong class="text-sed-text">学术荣誉：</strong>上海文学发展基金会青年评论跟踪人才、蓝桥杯计设AI赛道国家级二等奖（一主）</p>
+                  <p><strong class="text-sed-text">语言能力：</strong>IELTS 7 / CET-6 597</p>
+                  <p><strong class="text-sed-text">研究兴趣：</strong>接受美学、新现象学、身体-空间批评、儿童文学</p>
+                </div>
                 <div class="flex gap-2 flex-wrap">
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">EDUCATION</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">RANK 1/61</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">CHINESE LITERATURE</span>
+                </div>
+              </div>
+              <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
+            </div>
+          </div>
+          
+          <!-- STRATUM 02: Work & Projects -->
+          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="duke">
+            <div class="py-8 border-t border-sed-mist">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-serif text-2xl">读客文化（三个圈经典文库）</h3>
+                <span class="font-mono text-xs tracking-widest text-sed-accent">2026.03 — 2026.06</span>
+              </div>
+              <span class="font-mono text-sm text-sed-slate block mb-3">全流程编辑实习生</span>
+              <p class="text-base leading-relaxed text-sed-text/80">
+                开展公版书产品市场调研与竞品分析，参与SKU设计、营销策划及内容传播；运用AI工具优化资料整理与编辑流程。
+              </p>
+              <div class="exp-content mt-4 overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0;">
+                <div class="space-y-3 text-base leading-relaxed text-sed-text/70 mb-4">
+                  <p><strong class="text-sed-text">营销运营：</strong>聚焦文化出版与数字内容消费市场，运营3个不同定位的垂直账号。一周实现1账号从0-1的冷启动，产出自然流万读爆款；深度开发2个垂类账号，通过对目标受众痛点与专业需求内容的精准建构，持续产出多篇千赞级、高互动内容。</p>
+                  <p><strong class="text-sed-text">差异化产品全流程研发：</strong>深入开展公版书细分赛道的定性市场分析与产品研发。通过对读者评价、核心话题及消费心理的扎实文本归纳，洞察消费者母体；结合客户、销售需求制定差异化产品（SKU）研发方向与成本。独立负责项目3项，其中包销万册项目2项。</p>
+                  <p><strong class="text-sed-text">商业方法论实战：</strong>深度参与公司商业传播方法论的实战转化，应用"超级词根、核心设定、购买理由"等标准化分析模型进行产品定位。运用行业开卷数据等开展定量市场调研，绘制价格区间、选品种类分布与营销模式对比图表，实现完整商业研究闭环。</p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">PUBLISHING</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">MARKETING</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">PRODUCT DESIGN</span>
+                </div>
+              </div>
+              <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
+            </div>
+          </div>
+          
+          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="viva">
+            <div class="py-8 border-t border-sed-mist">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-serif text-2xl">Viva La Vida（国际NGO）</h3>
+                <span class="font-mono text-xs tracking-widest text-sed-accent">2025.09 — 2026.03</span>
+              </div>
+              <span class="font-mono text-sm text-sed-slate block mb-3">国际合作部运营实习生</span>
+              <p class="text-base leading-relaxed text-sed-text/80">
+                参与生命教育与艺术疗愈项目运营，对接艺术家及合作机构；通过活动反馈分析与社群观察，优化项目设计并研究文化公益组织运营机制。
+              </p>
+              <div class="exp-content mt-4 overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0;">
+                <div class="space-y-3 text-base leading-relaxed text-sed-text/70 mb-4">
+                  <p><strong class="text-sed-text">活动策划与数据监控：</strong>负责国际跨文化艺术项目的落地执行与全球青年社群运营。参与并落地生活方式、女性向品牌及组织共创活动 5+，设计互动机制与参与激励逻辑，提升用户参与度与内容完成率。独立完成活动核心文案撰写及基础页面物料构思。在内容发布与活动执行后，整理基础数据指标（阅读量、互动率、参与转化率），为后续内容与用户策略调整提供参考。</p>
+                  <p><strong class="text-sed-text">用户/创作者沟通与需求反馈：</strong>高频对接国内外社交平台创作者、合作机构与用户群体，在内容共创与活动执行过程中收集多方反馈；通过整理沟通记录，归纳常见需求与痛点，为流程与内容优化提供参考。协助建立标准化筛选、沟通、交付与审核SOP。</p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">NGO</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">COMMUNITY</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">OPERATIONS</span>
+                </div>
+              </div>
+              <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
+            </div>
+          </div>
+          
+          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="mental-health">
+            <div class="py-8 border-t border-sed-mist">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-serif text-2xl">南京师范大学心理健康教育中心</h3>
+                <span class="font-mono text-xs tracking-widest text-sed-accent">2025.05 — 2025.09</span>
+              </div>
+              <span class="font-mono text-sm text-sed-slate block mb-3">学生助理</span>
+              <p class="text-base leading-relaxed text-sed-text/80">
+                协助开展心理健康教育工作；参与来访学生初步接待与心理档案电子化管理；协助策划实施心理科普活动（含讲座、团体辅导）；辅助心理测评的组织实施与数据统计分析；学习心理咨询基本理论与实务技能。
+              </p>
+              <div class="exp-content mt-4 overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0;">
+                <div class="space-y-3 text-base leading-relaxed text-sed-text/70 mb-4">
+                  <p>协助老师开展校心理教育的日常工作，负责525心理博览会等校级大型活动筹备开展、常规活动与创新活动的审核跟进。</p>
+                  <p>活动对象以在校大学生为主体。独立负责5次创新活动，单次参与人次超800人，并将其打造为品牌活动，活动单篇推送超4000次浏览；参与组织大小活动10余次，单次参与人数最高达2000人；培养了突出的组织能力与协调能力；在职期间申报校心站成为江苏高校心理协会副理事长单位。</p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">MENTAL HEALTH</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">EVENT PLANNING</span>
                   <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">LEADERSHIP</span>
-                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">RESEARCH</span>
-                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">PUBLICATION</span>
                 </div>
               </div>
               <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
             </div>
           </div>
           
-          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="design-researcher">
+          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="cfps">
             <div class="py-8 border-t border-sed-mist">
               <div class="flex items-baseline justify-between mb-2">
-                <h3 class="font-serif text-2xl">Design Researcher</h3>
-                <span class="font-mono text-xs tracking-widest text-sed-accent">2023 — 2024</span>
+                <h3 class="font-serif text-2xl">中国社会科学调查中心（CFPS）</h3>
+                <span class="font-mono text-xs tracking-widest text-sed-accent">2024.07 — 2024.09</span>
               </div>
-              <span class="font-mono text-sm text-sed-slate block mb-3">Bureau of Material Culture, Hangzhou</span>
+              <span class="font-mono text-sm text-sed-slate block mb-3">调研助理</span>
               <p class="text-base leading-relaxed text-sed-text/80">
-                Conducted field documentation and urban texture mapping across six metropolitan areas.
+                累计完成240+小时入户访谈与问卷调查，参与数据清洗与质量核验；结合定性访谈与定量分析，支持社会调查研究开展。
               </p>
               <div class="exp-content mt-4 overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0;">
-                <p class="text-base leading-relaxed text-sed-text/70 mb-4">
-                  Developed a comprehensive methodology for documenting urban material culture, resulting in a published atlas of architectural textures. The project involved extensive fieldwork, photographic documentation, and the creation of a searchable digital archive containing over 10,000 images.
-                </p>
-                <div class="flex gap-2 flex-wrap">
-                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">FIELDWORK</span>
-                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">ANALYSIS</span>
-                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">ARCHIVE</span>
+                <div class="space-y-3 text-base leading-relaxed text-sed-text/70 mb-4">
+                  <p><strong class="text-sed-text">一线调研执行：</strong>通过三轮选拔，成为CFPS上海地区项目一线核心成员。累计参与实地入户访问240+h，全面负责调查问卷的发放与回收、样本户信息核实、现场异常处理；针对拒访、回答偏差等问题动态调整沟通策略，提高样本有效性。</p>
+                  <p><strong class="text-sed-text">定量数据整理与分析：</strong>参与调查数据清洗、逻辑核验与异常值筛查工作，对样本完整性、回答一致性及异常情况进行持续跟踪，保障数据质量。</p>
+                  <p><strong class="text-sed-text">社会议题研究：</strong>结合访谈记录与调查数据，观察城乡家庭结构、教育观念及青年发展议题，提升从个体叙事中识别共性问题与社会趋势的研究能力。</p>
                 </div>
-              </div>
-              <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
-            </div>
-          </div>
-          
-          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="junior-analyst">
-            <div class="py-8 border-t border-sed-mist">
-              <div class="flex items-baseline justify-between mb-2">
-                <h3 class="font-serif text-2xl">Junior Analyst</h3>
-                <span class="font-mono text-xs tracking-widest text-sed-accent">2022 — 2023</span>
-              </div>
-              <span class="font-mono text-sm text-sed-slate block mb-3">Data Stratigraphy Lab, Shanghai</span>
-              <p class="text-base leading-relaxed text-sed-text/80">
-                Performed computational analysis on heterogeneous datasets.
-              </p>
-              <div class="exp-content mt-4 overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0;">
-                <p class="text-base leading-relaxed text-sed-text/70 mb-4">
-                  Built and maintained data processing pipelines for large-scale material analysis projects. Developed custom Python scripts for automated image segmentation and feature extraction. Contributed to three peer-reviewed publications on computational methods in architectural history.
-                </p>
                 <div class="flex gap-2 flex-wrap">
-                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">DATA</span>
-                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">COMPUTATION</span>
-                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">PYTHON</span>
-                </div>
-              </div>
-              <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
-            </div>
-          </div>
-          
-          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="intern">
-            <div class="py-8 border-t border-sed-mist">
-              <div class="flex items-baseline justify-between mb-2">
-                <h3 class="font-serif text-2xl">Intern — Visual Documentation</h3>
-                <span class="font-mono text-xs tracking-widest text-sed-accent">2020 — 2021</span>
-              </div>
-              <span class="font-mono text-sm text-sed-slate block mb-3">Studio for Empirical Aesthetics, Shanghai</span>
-              <p class="text-base leading-relaxed text-sed-text/80">
-                Participated in the documentation and archiving of visual research materials.
-              </p>
-              <div class="exp-content mt-4 overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0;">
-                <p class="text-base leading-relaxed text-sed-text/70 mb-4">
-                  Assisted senior researchers in cataloguing and digitizing a collection of 5,000+ historical photographs. Learned systematic observation methods and specimen cataloguing protocols. Developed foundational skills in visual analysis and archival organization.
-                </p>
-                <div class="flex gap-2 flex-wrap">
-                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">DOCUMENTATION</span>
-                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">ARCHIVING</span>
-                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">TRAINING</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">FIELD RESEARCH</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">DATA ANALYSIS</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">SOCIAL SCIENCE</span>
                 </div>
               </div>
               <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
@@ -756,6 +864,94 @@
     
     // Initial call
     handleScroll();
+    
+    // ==========================================
+    // TYPEWRITER EFFECT - About Section
+    // ==========================================
+    const rockTrigger = document.getElementById('rockTrigger');
+    const typewriterOverlay = document.getElementById('typewriterOverlay');
+    const typewriterText = document.getElementById('typewriterText');
+    const typewriterContent = document.getElementById('typewriterContent');
+    const typewriterCursor = document.getElementById('typewriterCursor');
+    
+    const typewriterParagraphs = [
+      '沉积岩是我很早以前就想好的一个题目，一个时间的、往来无穷的题目。',
+      '人生永远是一场关于时间的旅行，这样说很俗气，但我认为的确如此。一段段时间被文字封存成所谓曾经的模样，然后抬升，皱褶，崩裂，风蚀……成为一片小小的丘陵。',
+      '在每一层中，或许会有化石，会有地泉，会有矿脉，或者仅仅是有岩石的纹理，但这一切不关岩石的事情，它只是生长。',
+      '我们如何看见，又如何被看见？我将这份追问延续到更广阔的领域。文学创作、批评写作、学术研究、实习实践……它们不再是彼此割裂的标签，而是同一片岩层中不同的矿物脉络，是一道又一道的逃逸线。',
+      '我以专业的态度对待每一个项目，也以个人的温度对待每一次表达。'
+    ];
+    
+    let typewriterTyping = false;
+    let typewriterTimeout = null;
+    let typewriterParaIndex = 0;
+    let typewriterCharIndex = 0;
+    
+    function startTypewriter() {
+      if (typewriterTyping) return;
+      typewriterTyping = true;
+      typewriterParaIndex = 0;
+      typewriterCharIndex = 0;
+      typewriterContent.innerHTML = '';
+      
+      typewriterOverlay.classList.add('active');
+      typewriterText.classList.add('active');
+      
+      typeNextChar();
+    }
+    
+    function typeNextChar() {
+      if (typewriterParaIndex < typewriterParagraphs.length) {
+        const currentPara = typewriterParagraphs[typewriterParaIndex];
+        
+        if (typewriterCharIndex === 0) {
+          // Create new paragraph element
+          const para = document.createElement('p');
+          para.className = 'typewriter-paragraph';
+          typewriterContent.appendChild(para);
+        }
+        
+        const currentParaEl = typewriterContent.lastElementChild;
+        
+        if (typewriterCharIndex < currentPara.length) {
+          currentParaEl.textContent += currentPara.charAt(typewriterCharIndex);
+          typewriterCharIndex++;
+          
+          // Random typing speed for natural feel
+          const delay = 35 + Math.random() * 45;
+          typewriterTimeout = setTimeout(typeNextChar, delay);
+        } else {
+          // Move to next paragraph
+          typewriterParaIndex++;
+          typewriterCharIndex = 0;
+          
+          // Pause between paragraphs
+          const delay = 400 + Math.random() * 200;
+          typewriterTimeout = setTimeout(typeNextChar, delay);
+        }
+      } else {
+        // Keep cursor blinking for a while then hide
+        setTimeout(() => {
+          typewriterCursor.style.display = 'none';
+        }, 2000);
+      }
+    }
+    
+    function stopTypewriter() {
+      typewriterTyping = false;
+      if (typewriterTimeout) {
+        clearTimeout(typewriterTimeout);
+        typewriterTimeout = null;
+      }
+      typewriterOverlay.classList.remove('active');
+      typewriterText.classList.remove('active');
+      typewriterCursor.style.display = 'inline-block';
+    }
+    
+    if (rockTrigger) {
+      rockTrigger.addEventListener('mouseenter', startTypewriter);
+      rockTrigger.addEventListener('mouseleave', stopTypewriter);
+    }
     
     // Close tag panel when scrolling out of Portfolio section
     function checkTagModalVisibility() {
