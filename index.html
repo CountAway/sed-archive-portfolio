@@ -200,11 +200,13 @@
     /* Garden index cards */
     .garden-card {
       border: 1px solid #B6B2B3;
-      padding: 1.25rem;
+      padding: 1.75rem;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       opacity: 0;
       transform: translateY(12px);
+      display: flex;
+      flex-direction: column;
     }
     .garden-card.revealed {
       opacity: 1;
@@ -212,15 +214,12 @@
     }
     .garden-card:hover {
       border-color: #7B90A3;
-      box-shadow: 0 2px 12px rgba(123, 144, 163, 0.08);
     }
     .garden-card[data-type="PAPER"]:hover {
       border-color: #C25B56;
-      box-shadow: 0 2px 12px rgba(194, 91, 86, 0.08);
     }
     .garden-card[data-type="FRAGMENT"]:hover {
       border-color: #8B7355;
-      box-shadow: 0 2px 12px rgba(139, 115, 85, 0.08);
     }
     .garden-card.hidden-card {
       display: none;
@@ -700,8 +699,8 @@
     
     <!-- Blog Section -->
     <section class="section bg-sed-bg relative z-10" id="blog">
-      <div class="max-w-3xl mx-auto px-8 py-16">
-        <div class="mb-16">
+      <div class="max-w-3xl mx-auto px-8 py-24">
+        <div class="mb-20">
           <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">SECTION_04</span>
           <h2 class="font-serif text-5xl font-light mb-2">灵感种子</h2>
           <p class="font-mono text-sm tracking-widest text-sed-slate uppercase mb-6">GARDEN</p>
@@ -716,7 +715,7 @@
         </div>
         
         <!-- Search & Filter Bar -->
-        <div class="mb-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+        <div class="mb-12 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
           <div class="relative flex-1 w-full">
             <input id="gardenSearch" type="text" placeholder="SEARCH / 检索..." class="w-full font-mono text-xs tracking-wider bg-transparent border border-sed-mist px-4 py-2.5 text-sed-text placeholder-sed-mist/60 focus:outline-none focus:border-sed-accent transition-colors">
           </div>
@@ -727,7 +726,7 @@
           </div>
         </div>
         
-        <div id="blogList" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div id="blogList" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <!-- Blog articles rendered via JS -->
         </div>
         
@@ -1821,12 +1820,12 @@
       
       blogList.innerHTML = filtered.map(([key, data], index) => `
         <article class="garden-card reveal-on-scroll" data-article="${key}" data-type="${data.type}" style="transition-delay: ${index * 60}ms">
-          <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center justify-between mb-4">
             <span class="font-mono text-xs text-sed-mist">${data.id}</span>
             <span class="font-mono text-xs tracking-widest ${categoryColors[data.type] || 'text-sed-accent border-sed-accent'} border px-2 py-0.5">${data.type}</span>
           </div>
-          <h3 class="font-serif text-lg mb-3 leading-snug">${data.title}</h3>
-          <div class="flex items-center justify-between">
+          <h3 class="font-serif text-xl mb-4 leading-snug">${data.title}</h3>
+          <div class="flex items-center justify-between mt-auto">
             <div class="flex gap-3">
               <span class="font-mono text-xs text-sed-mist">${data.date}</span>
               <span class="font-mono text-xs text-sed-mist">${data.readTime}</span>
@@ -1913,7 +1912,8 @@
       modalType.className = `font-mono text-sm border px-2 py-0.5 inline-block ${categoryColors[data.type] || 'text-sed-text border-sed-mist'}`;
       modalReadTime.textContent = data.readTime;
       modalContent.innerHTML = data.content;
-      modalContent.scrollTop = 0;
+      const modalContentEl = docModal.querySelector('.modal-content');
+      if (modalContentEl) modalContentEl.scrollTop = 0;
       
       docModal.classList.remove('hidden');
       docModal.classList.add('flex');
