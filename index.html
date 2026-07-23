@@ -203,12 +203,12 @@
     
     /* Garden index cards */
     .garden-card {
-      border: 1px solid #B6B2B3;
-      padding: 1.75rem;
+      border-bottom: 1px solid #B6B2B3;
+      padding: 0;
       cursor: pointer;
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       opacity: 0;
-      transform: translateY(12px);
+      transform: translateY(8px);
       display: flex;
       flex-direction: column;
     }
@@ -216,15 +216,98 @@
       opacity: 1;
       transform: translateY(0);
     }
-    .garden-card:hover {
-      border-color: #7B90A3;
+    
+    /* Speed Index main row */
+    .speed-row {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 0;
+      transition: all 0.25s ease;
+      gap: 1rem;
     }
-    .garden-card[data-type="PAPER"]:hover {
-      border-color: #C25B56;
+    .speed-row:hover {
+      padding-left: 0.5rem;
     }
-    .garden-card[data-type="FRAGMENT"]:hover {
-      border-color: #8B7355;
+    .garden-card:hover .speed-row {
+      border-bottom-color: transparent;
     }
+    .garden-card[data-type="PAPER"] .speed-row:hover .speed-title { color: #C25B56; }
+    .garden-card[data-type="FRAGMENT"] .speed-row:hover .speed-title { color: #8B7355; }
+    .garden-card[data-type="FILM"] .speed-row:hover .speed-title { color: #4A6B7C; }
+    
+    .speed-index {
+      font-mono text-xs text-sed-mist;
+      min-width: 5rem;
+      flex-shrink: 0;
+    }
+    .speed-type-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .speed-type-dot[data-type="PAPER"] { background: #C25B56; }
+    .speed-type-dot[data-type="FRAGMENT"] { background: #8B7355; }
+    .speed-type-dot[data-type="FILM"] { background: #4A6B7C; }
+    .speed-type-dot[data-type="ESSAY"] { background: #7B90A3; }
+    
+    .speed-title {
+      font-serif text-base;
+      flex: 1;
+      transition: color 0.25s ease;
+      line-height: 1.4;
+    }
+    .speed-meta {
+      font-mono text-xs text-sed-mist;
+      flex-shrink: 0;
+      text-align: right;
+      min-width: 4rem;
+    }
+    .speed-arrow {
+      font-mono text-xs text-sed-mist;
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+      opacity: 0;
+    }
+    .speed-row:hover .speed-arrow {
+      opacity: 1;
+    }
+    .garden-card.expanded .speed-arrow {
+      opacity: 1;
+      transform: rotate(90deg);
+    }
+    
+    /* Speed Index detail panel */
+    .speed-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease, opacity 0.3s ease;
+      opacity: 0;
+      padding: 0 0 0 0;
+    }
+    .garden-card.expanded .speed-detail {
+      max-height: 300px;
+      opacity: 1;
+      padding: 0.5rem 0 1rem 0;
+    }
+    .speed-detail-inner {
+      padding-left: calc(5rem + 1rem + 6px + 1rem);
+      border-left: 1px solid #B6B2B3;
+      margin-left: calc(3px);
+    }
+    .speed-detail p {
+      font-serif text-sm text-sed-mist leading-relaxed;
+      margin-bottom: 0.5rem;
+    }
+    .speed-detail .speed-read-full {
+      font-mono text-xs tracking-widest text-sed-slate hover:text-sed-accent transition-colors cursor-pointer;
+      display: inline-block;
+      margin-top: 0.25rem;
+    }
+    .speed-detail .speed-read-full:hover {
+      color: #C25B56;
+    }
+    
     .garden-card.hidden-card {
       display: none;
     }
@@ -847,16 +930,20 @@
     </div>
     
     <!-- Blog Section -->
-    <section class="section bg-sed-bg relative z-10" id="blog">
-      <div class="max-w-3xl mx-auto px-8 py-24">
+    <section class="section relative z-10 overflow-hidden -mt-[40vh]" id="blog">
+      <!-- Background image layer with reveal animation -->
+      <div id="gardenBg" class="absolute inset-0 z-0" style="background-image:url('images/garden-bg.png');background-size:cover;background-position:center;background-attachment:fixed;opacity:0;transform:scale(1.2);transition:opacity 2.2s cubic-bezier(0.22,0.61,0.36,1), transform 2.2s cubic-bezier(0.22,0.61,0.36,1);"></div>
+      <!-- Overlay for readability -->
+      <div class="absolute inset-0 z-0" style="background:linear-gradient(to bottom, rgba(245,243,240,0.45) 0%, rgba(245,243,240,0.55) 50%, rgba(245,243,240,0.75) 100%);"></div>
+      <div class="relative z-10 max-w-2xl mx-auto px-8 pt-[40vh] pb-24">
         <div class="mb-20">
-          <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">SECTION_04</span>
+          <span class="font-mono text-xs tracking-widest block mb-2" style="color:#7B90A3">SECTION_04</span>
           <h2 class="font-serif text-5xl font-light mb-2">灵感种子</h2>
-          <p class="font-mono text-sm tracking-widest text-sed-slate uppercase mb-6">GARDEN</p>
+          <p class="font-mono text-sm tracking-widest uppercase mb-6" style="color:#5A6F7F">GARDEN</p>
           <div class="w-16 h-px bg-sed-accent mb-6"></div>
-          <p class="font-mono text-xs tracking-widest text-sed-slate mb-2">SEEDS, SHARDS & SEDIMENTS</p>
-          <p class="text-base text-sed-mist mb-6">思想种子的生长与沉淀</p>
-          <button id="randomArticleBtn" class="group flex items-center gap-2 font-mono text-xs tracking-widest text-sed-slate hover:text-sed-accent transition-colors cursor-pointer">
+          <p class="font-mono text-xs tracking-widest mb-2" style="color:#5A6F7F">SEEDS, SHARDS & SEDIMENTS</p>
+          <p class="text-base mb-6" style="color:#8A8685">思想种子的生长与沉淀</p>
+          <button id="randomArticleBtn" class="group flex items-center gap-2 font-mono text-xs tracking-widest hover:text-sed-accent transition-colors cursor-pointer" style="color:#6A7F8F">
             <span class="w-2 h-2 rounded-full bg-sed-accent group-hover:scale-125 transition-transform"></span>
             <span>RANDOM PICK</span>
             <span class="text-sed-mist">— 随机推荐一篇</span>
@@ -866,18 +953,18 @@
         <!-- Search & Filter Bar -->
         <div class="mb-12 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
           <div class="relative flex-1 w-full">
-            <input id="gardenSearch" type="text" placeholder="SEARCH / 检索..." class="w-full font-mono text-xs tracking-wider bg-transparent border border-sed-mist px-4 py-2.5 text-sed-text placeholder-sed-mist/60 focus:outline-none focus:border-sed-accent transition-colors">
+            <input id="gardenSearch" type="text" placeholder="SEARCH / 检索..." class="w-full font-mono text-xs tracking-wider bg-transparent px-4 py-2.5 transition-colors" style="border:1px solid #6A6A6A;color:#4A4A4A;outline:none;" onfocus="this.style.borderColor='#AF474E'" onblur="this.style.borderColor='#6A6A6A'">
           </div>
           <div class="flex gap-2">
-            <button class="garden-filter active font-mono text-xs tracking-widest border px-3 py-2 transition-colors cursor-pointer" data-filter="ALL">ALL</button>
-            <button class="garden-filter font-mono text-xs tracking-widest border border-sed-mist px-3 py-2 text-sed-mist hover:border-sed-accent hover:text-sed-accent transition-colors cursor-pointer" data-filter="PAPER">PAPER</button>
-            <button class="garden-filter font-mono text-xs tracking-widest border border-sed-mist px-3 py-2 text-sed-mist hover:border-[#8B7355] hover:text-[#8B7355] transition-colors cursor-pointer" data-filter="FRAGMENT">FRAGMENT</button>
-            <button class="garden-filter font-mono text-xs tracking-widest border border-sed-mist px-3 py-2 text-sed-mist hover:border-[#4A6B7C] hover:text-[#4A6B7C] transition-colors cursor-pointer" data-filter="FILM">FILM</button>
+            <button class="garden-filter active font-mono text-xs tracking-widest px-3 py-2 transition-colors cursor-pointer" style="border:1px solid #5A6F7F;color:#5A6F7F" data-filter="ALL">ALL</button>
+            <button class="garden-filter font-mono text-xs tracking-widest px-3 py-2 transition-colors cursor-pointer" style="border:1px solid #8A8685;color:#8A8685" data-filter="PAPER" onmouseenter="if(!this.classList.contains('active')){this.style.borderColor='#C25B56';this.style.color='#C25B56'}" onmouseleave="if(!this.classList.contains('active')){this.style.borderColor='#8A8685';this.style.color='#8A8685'}">PAPER</button>
+            <button class="garden-filter font-mono text-xs tracking-widest px-3 py-2 transition-colors cursor-pointer" style="border:1px solid #8A8685;color:#8A8685" data-filter="FRAGMENT" onmouseenter="if(!this.classList.contains('active')){this.style.borderColor='#8B7355';this.style.color='#8B7355'}" onmouseleave="if(!this.classList.contains('active')){this.style.borderColor='#8A8685';this.style.color='#8A8685'}">FRAGMENT</button>
+            <button class="garden-filter font-mono text-xs tracking-widest px-3 py-2 transition-colors cursor-pointer" style="border:1px solid #8A8685;color:#8A8685" data-filter="FILM" onmouseenter="if(!this.classList.contains('active')){this.style.borderColor='#4A6B7C';this.style.color='#4A6B7C'}" onmouseleave="if(!this.classList.contains('active')){this.style.borderColor='#8A8685';this.style.color='#8A8685'}">FILM</button>
           </div>
         </div>
         
-        <div id="blogList" class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <!-- Blog articles rendered via JS -->
+        <div id="blogList" class="flex flex-col">
+          <!-- Blog articles rendered via JS (Speed Index) -->
         </div>
         
         <!-- Research Document Modal -->
@@ -1516,23 +1603,19 @@
     const modalContent = document.getElementById('modalContent');
     
     
-    // Render blog list dynamically
+    // Render blog list dynamically (Speed Index style)
+    function extractExcerpt(content, maxLen = 120) {
+      const temp = document.createElement('div');
+      temp.innerHTML = content;
+      const text = temp.textContent || temp.innerText || '';
+      const clean = text.replace(/\s+/g, ' ').trim();
+      if (clean.length <= maxLen) return clean;
+      return clean.substring(0, maxLen) + '...';
+    }
+    
     function renderBlogList(filter = 'ALL', search = '') {
       const blogList = document.getElementById('blogList');
       if (!blogList) return;
-      
-      const categoryColors = {
-        'PAPER': 'text-sed-accent border-sed-accent',
-        'ESSAY': 'text-sed-slate border-sed-slate',
-        'FRAGMENT': 'text-[#8B7355] border-[#8B7355]',
-        'FILM': 'text-[#4A6B7C] border-[#4A6B7C]'
-      };
-
-      const typeAccents = {
-        'PAPER': '#C25B56',
-        'FRAGMENT': '#8B7355',
-        'FILM': '#4A6B7C'
-      };
       
       const filtered = Object.entries(docData).filter(([key, data]) => {
         const matchType = filter === 'ALL' || data.type === filter;
@@ -1540,30 +1623,53 @@
         return matchType && matchSearch;
       });
       
-      blogList.innerHTML = filtered.map(([key, data], index) => `
-        <article class="garden-card reveal-on-scroll" data-article="${key}" data-type="${data.type}" style="transition-delay: ${index * 60}ms">
-          <div class="flex items-center justify-between mb-4">
-            <span class="font-mono text-xs text-sed-mist">${data.id}</span>
-            <span class="font-mono text-xs tracking-widest ${categoryColors[data.type] || 'text-sed-accent border-sed-accent'} border px-2 py-0.5">${data.type}</span>
-          </div>
-          <h3 class="font-serif text-xl mb-4 leading-snug">${data.title}</h3>
-          <div class="flex items-center justify-between mt-auto">
-            <div class="flex gap-3">
-              <span class="font-mono text-xs text-sed-mist">${data.date}</span>
-              <span class="font-mono text-xs text-sed-mist">${data.readTime}</span>
+      blogList.innerHTML = filtered.map(([key, data], index) => {
+        const excerpt = extractExcerpt(data.content);
+        return `
+          <article class="garden-card reveal-on-scroll" data-article="${key}" data-type="${data.type}" style="transition-delay: ${index * 40}ms">
+            <div class="speed-row">
+              <span class="font-mono text-xs" style="min-width:5rem;flex-shrink:0;color:#8A8685">${data.id}</span>
+              <span class="speed-type-dot" data-type="${data.type}"></span>
+              <span class="font-serif text-base speed-title" style="flex:1;transition:color 0.25s ease;line-height:1.4">${data.title}</span>
+              <span class="font-mono text-xs" style="flex-shrink:0;text-align:right;min-width:4rem;color:#8A8685">${data.readTime}</span>
+              <span class="speed-arrow font-mono text-xs" style="transition:all 0.25s ease;flex-shrink:0;color:#8A8685">→</span>
             </div>
-            <span class="font-mono text-xs tracking-widest text-sed-slate hover:text-sed-accent transition-colors">VIEW →</span>
-          </div>
-        </article>
-      `).join('');
+            <div class="speed-detail">
+              <div class="speed-detail-inner">
+                <p class="font-serif text-sm leading-relaxed" style="color:#8A8685">${excerpt}</p>
+                <span class="speed-read-full font-mono text-xs tracking-widest" style="color:#6A7F8F">READ FULL →</span>
+              </div>
+            </div>
+          </article>
+        `}).join('');
       
-      // Re-attach click handlers
+      // Re-attach click handlers (Speed Index two-level interaction)
       blogList.querySelectorAll('.garden-card').forEach(article => {
         article.addEventListener('click', function(e) {
           e.preventDefault();
           const articleKey = this.dataset.article;
-          openModal(articleKey);
+          
+          if (this.classList.contains('expanded')) {
+            // Already expanded → open full document modal
+            openModal(articleKey);
+          } else {
+            // Collapse others, expand this one
+            blogList.querySelectorAll('.garden-card.expanded').forEach(card => {
+              card.classList.remove('expanded');
+            });
+            this.classList.add('expanded');
+          }
         });
+        
+        // "READ FULL" link inside detail
+        const readFull = article.querySelector('.speed-read-full');
+        if (readFull) {
+          readFull.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const articleKey = article.dataset.article;
+            openModal(articleKey);
+          });
+        }
       });
       
       // Re-observe for scroll reveal
@@ -1574,10 +1680,40 @@
             observer.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.05 });
       
       blogList.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
     }
+    
+    // Click on blank area of blog section to collapse all expanded panels
+    const blogSection = document.getElementById('blog');
+    if (blogSection) {
+      blogSection.addEventListener('click', function(e) {
+        if (!e.target.closest('.garden-card') && !e.target.closest('.garden-filter') && !e.target.closest('#gardenSearch') && !e.target.closest('#randomArticleBtn')) {
+          blogList.querySelectorAll('.garden-card.expanded').forEach(card => {
+            card.classList.remove('expanded');
+          });
+        }
+      });
+    }
+    
+    // Garden background reveal on scroll (re-triggerable)
+    (function() {
+      const gardenBg = document.getElementById('gardenBg');
+      if (!gardenBg) return;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            gardenBg.style.opacity = '1';
+            gardenBg.style.transform = 'scale(1)';
+          } else {
+            gardenBg.style.opacity = '0';
+            gardenBg.style.transform = 'scale(1.2)';
+          }
+        });
+      }, { threshold: 0.05 });
+      observer.observe(gardenBg);
+    })();
     
     // Garden search & filter
     let currentFilter = 'ALL';
