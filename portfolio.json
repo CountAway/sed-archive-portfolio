@@ -1,0 +1,118 @@
+{
+  "projects": {
+    "time-music-concert": {
+      "id": "SED-2022-TM",
+      "title": "校园共创项目 \"Time Music Concert\"",
+      "date": "2022.03 — 2022.06",
+      "category": "PROJECT",
+      "era": "古生代 PALEOZOIC",
+      "tags": [
+        "PROJECT",
+        "EVENT"
+      ],
+      "content": "<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[01 // BASELINE / 我的动机与起点]</h4>\n\n<p class=\"mb-4\">大家普遍承受着隐性的情绪压力，但学校传统的心理活动往往过于严肃和干预化，大家第一反应是习惯性地关上心门。大家心底那些关于成长、遗憾或关系的真实故事，找不到一个低防御、能被温柔接纳的出口。</p>\n\n<p class=\"mb-4\">我想，能不能用\"音乐\"和\"匿名信件\"做一次柔软的尝试？我希望在夜色的草地上搭建一个没有讲台、没有高低的场域。不用去讲大道理，就让同龄人把心事写下来，再由另一些同龄人用歌声回应。这就是我发起\"时光音乐会\"最朴素的初衷：用艺术作为解药，在硬质的校园环境中，为彼此撑开一片可以坦然呼吸和共鸣的温床。</p>\n\n<p class=\"mb-4\">时光音乐会似乎是对我青春心理的最大满足，回到那个与朋友们为了学期特色活动讨论了近三小时的无名夜晚，那时我们都没想到一场小小的音乐会会办越大，会一直办下去。我们当时对于这样一个想法激动万分——在操场、月亮湾或栖霞坡的草地上，我们可以围坐在一起，聆听歌曲，分享歌曲背后的故事。如果同学们有自己的故事想要诉说，我们也会以歌曲回应。一场温暖的、在夜晚熠熠闪光的音乐会，我们就这样一步步把这个想法落地。</p>\n\n[INSERT_ARTIFACT: tm_dusk_grass]\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[02 // FIELDWORK &amp; MECHANICS / 机制与现场]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 情绪筛选与内容润色机制（SOP）</h5>\n\n<p class=\"mb-4\">项目没有采用无序的现场随机点歌，而是建立了一套兼顾安全性与共情力的筛信流程：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>线上征集</strong>：通过官方邮箱接收学生投稿（涵盖个人烦恼、想对特定人说的话、或某首歌背后的个人故事）。</li>\n  <li><strong>交叉复核</strong>：由团队干事进行首轮信件筛选与曲目匹配，再由负责教师进行二次复核与托底，确保内容不触及严重心理危机风险，并在串词中恰当嵌入心理学共情知识。</li>\n  <li><strong>专业演唱</strong>：将筛选出的故事交由主持人现场朗读，并由音乐学院及吉他协会的选拔歌手进行现场演唱回应。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 低防御度的物理场域塑造</h5>\n\n<p class=\"mb-4\">为了最大程度打破舞台与观众的隔阂，现场放弃了高台与硬质隔断：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>去舞台化布局</strong>：使用野餐布、草坪围坐、画架与麻绳装饰，配合低亮度的手持星星灯与氛围灯带，将光影聚焦在倾听者本身，营造出夜色中的包裹感。</li>\n  <li><strong>弹性互动环节</strong>：主环节（读信与预设曲目）结束后，开放自由点歌、现场清唱及群体合唱（如《稻香》《海阔天空》），让现场气氛从静态倾听自然过渡到群体互动。</li>\n</ul>\n\n[INSERT_ARTIFACT: tm_setup]\n\n<pre class=\"font-mono text-xs text-sed-text/70 my-6 bg-sed-mist/10 p-4 overflow-x-auto\">\n[项目运行流线/SITE PROTOCOL]\n\n [线上信件/故事投稿] ──> [双组复核/曲目匹配] ──> [主持人朗读/歌手回应]\n                                                     │\n [现场群体合唱/互动] <── [自由点歌/现场清唱] <── [草坪氛围场域/星星灯]\n</pre>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[03 // DATA &amp; ARTIFACTS / 数据与现场标本]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 运营与传播数据</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>稿件与触达</strong>：首次活动即收到百余份信件投稿；线上宣传推送获得数百次转发与数千次阅读。</li>\n  <li><strong>物资与成本</strong>：项目严格控制在低预算内运作，核心物资包括手指灯（200个）、荧光手环（200个）、手持星星灯（100个）及串灯等，极低成本完成了数百人次的大型线下场域搭建。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 现场真实切片记录</h5>\n\n[INSERT_ARTIFACT: tm_crowd]\n\n<p class=\"mb-4\">时光音乐会变成我与朋友们的心灵锚点之一。我们在大雨延期的时候遇到过参加了第一场，带着朋友来看第二场的女生，她抓着我的手希望我们务必要把第二场办下来；我们遇到过打的从另一个校区赶过来参加的男生，给在场的同学们清唱了一首《我的太阳》；我们遇到过偶然来参与的老师，她在最后祝我们都要幸福快乐；经常有同学说好喜欢这个活动，你们是什么组织，我们会非常高兴地回答我们是校心理气象站，感谢你喜欢我们的活动……我们一起听过各式各样的心声；我们一起合唱过《稻香》《海阔天空》；我们在《开心向前飞》里一起蹦跳着开小火车……我在时光音乐会当过负责人，当过歌曲登记员，当过主持人，当过气氛组，在学长学姐的帮助下一点点办好一个活动，再帮助学弟学妹一步步理解时光音乐会，最后我成为一名观众。</p>\n\n[INSERT_ARTIFACT: tm_group]\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[04 // SEDIMENTATION / 我的沉淀与生长]</h4>\n\n<p class=\"mb-4\">这个项目对我而言，绝不仅仅是一次成功的校园活动落地，更是我个人从一个单纯的\"执行者\"真正蜕变为\"全流程主导者\"的成长样本。</p>\n\n<p class=\"mb-4\">在整个过程中，我一手搭建了跨部门协调机制、完成了物资采购的精细化控本，并摸索出一套应对突发天气与现场情绪走势的标准化 SOP。当看着它从我脑海里的一丝闪念，变成能够跨届延续、成为校心理气象站标志性特色 IP 的品牌活动时，我获得了极大的效能感。</p>\n\n<p class=\"mb-4\">更重要的是，它印证了我一直以来的信念：当\"我\"愿意主动退居幕后、去用心搭建一个安全且有温度的场域时，那些看似孤立的个体叙事就能被认真看见；而当这些故事与音乐碰撞在一起时，所爆发出的群体连接力，远比任何说教都更加震撼和持久。</p>\n\n[INSERT_ARTIFACT: tm_dusk_square]",
+      "artifacts": [
+        {
+          "id": "tm_dusk_grass",
+          "type": "image",
+          "src": "images/tm_dusk_grass.png",
+          "caption": "FIG 1.1 // 晚霞下的草坡——同学们在音乐会开始前聚集在草地上等待日落"
+        },
+        {
+          "id": "tm_setup",
+          "type": "image",
+          "src": "images/tm_setup.png",
+          "caption": "FIG 2.1 // 现场场域搭建：串灯围成的弧形边界、音箱与草坪围坐"
+        },
+        {
+          "id": "tm_crowd",
+          "type": "image",
+          "src": "images/tm_crowd.png",
+          "caption": "FIG 3.1 // 夜色中的听众：手机闪光灯与荧光棒交织成一片流动的光海"
+        },
+        {
+          "id": "tm_group",
+          "type": "image",
+          "src": "images/tm_group.png",
+          "caption": "FIG 3.2 // 活动结束后团队手持发光球灯的合影留念"
+        },
+        {
+          "id": "tm_dusk_square",
+          "type": "image",
+          "src": "images/tm_dusk_square.png",
+          "caption": "FIG 4.1 // 活动散场后的广场——黄昏的光与即将到来的夜晚"
+        }
+      ]
+    },
+    "yunnan-laodabao": {
+      "id": "SED-2023-YD",
+      "title": "云南老达保民族村寨跨文化田野调研",
+      "date": "2023.06 — 2023.08",
+      "category": "FIELDWORK",
+      "era": "中生代 MESOZOIC",
+      "tags": [
+        "FIELDWORK",
+        "STUDY"
+      ],
+      "content": "<p class=\"mb-4\">承接了早期在校园共创中沉淀下来的项目推力，本次行动将半径延伸至更真实的土地。深入拉祜族村寨，倾听村民吟唱，并在高强度下完成了 240+ 小时的一线入户访谈与社会学数据清洗。</p>\n\n[INSERT_ARTIFACT: m_fig1]\n\n<p class=\"mb-4\">在极具张力的真实社会样本面前，纯粹的人文主义感知开始与严谨的实证思维相交融，这也为现阶段在 <a data-jump=\"cenozoic_02\" class=\"geo-link\">【新生代：读客全流程编辑】</a> 的工业化生产线中进行大规模内容审计打下了敏锐度的根基。</p>",
+      "artifacts": [
+        {
+          "id": "m_fig1",
+          "type": "image",
+          "src": "images/laodabao_field.jpg",
+          "caption": "FIG 2.1 // 云南澜沧老达保村寨入户社会学访谈切片"
+        }
+      ]
+    },
+    "wechat-ops": {
+      "id": "SED-2022-WO",
+      "title": "SHSSIPtube 数字自媒体",
+      "date": "2022.06 — 2023.06",
+      "category": "PROJECT",
+      "era": "古生代 PALEOZOIC",
+      "tags": [
+        "PROJECT",
+        "MEDIA"
+      ],
+      "content": "<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[01 // BASELINE / 我的动机与起点]</h4>\n\n<p class=\"mb-4\">创办与运营 <strong>SHSSIPtube</strong> 的起点，源于对时代性焦虑的一次集体回应：当功利主义与应试逻辑早早侵蚀了青年人的精神世界，我们是否还能在象牙塔与现实之间，保留一份\"鲜活地活\"的可能？</p>\n\n<p class=\"mb-4\">在这个平台上，我不想去重复那些高高在上的成功学或功利的保研/求职指南。正如我们发刊词与代表作所表达的：我们要留下那些真实的、甚至带着阵痛的生命切片。</p>\n\n<p class=\"mb-4\">从对\"无用素质教育\"的追问，到对自己曾经是\"功利机灵鬼\"的剖析，再到允许自己在大学迷茫期\"有一季枯枝\"的坦然——我想建立的，是一个<strong>去中心化的\"同辈精神档案馆\"</strong>。在算法洪流与精英包袱中，为那些清醒的迷茫者提供一份\"已有前鉴的药方\"，至少让大家知道：你并不孤独，且不必麻木。</p>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[02 // FIELDWORK &amp; MECHANICS / 内容建模与全链路运营]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 基于\"思辨性与鲜活感\"的内容模型</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>打破\"有用性\"批判，重塑公共写作</strong>：继承人文教育中\"想他人之未能想\"的思辨传统，摒弃同质化的鸡汤，鼓励作者拿出现实的矛盾、逻辑的审视与私密的阵痛进行公共表达。</li>\n  <li><strong>\"主体性\"共创与深度协同</strong>：建立\"双向沟通—文本润色—视觉重构\"的全流程协同 SOP。把每一次稿件处理都变成一次同辈间的探讨与启发，确保\"每一篇推文都真正属于作者自己\"。</li>\n  <li><strong>议题降维与共情升维</strong>：将看似严肃的哲学思考（齐奥朗、鲁迅、石黑一雄）与青年当下的真实生存困境（高考后遗症、象牙塔坍塌、大学麻木感）相融合，形成极具粘性的共鸣向内容模型。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 算法环境下的\"技术性善意\"（SEO &amp; 视觉）</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>SEO 与算法分发</strong>：精研平台算法与搜索逻辑，通过精准的标题拟定与关键词布局，在零预算投放的前提下，让这些充满私人温度与人文深度的文章突破原有圈层。</li>\n  <li><strong>视觉美编（视觉叙事）</strong>：使用秀米、Canva 等工具搭建具备\"呼吸感与人文质感\"的排版规范，用有视觉气场的图文设计，为严肃深刻的文字赋予仪式感与阅读舒适度。</li>\n</ul>\n\n\n\n[INSERT_ARTIFACT: wo_about_us]\n\n<pre class=\"font-mono text-xs text-sed-text/70 my-6 bg-sed-mist/10 p-4 overflow-x-auto\">\n[同辈精神档案/MEDIA PROTOCOL]\n\n [青年真实阵痛/思辨性写作] ──> [深度双向编辑/共同排版] ──> [视觉排版/视觉叙事]\n                                                               │\n [拒绝麻木/精神避难所] <── [SEO算法分发/零成本扩散] <── [数字档案馆/经验沉淀]\n</pre>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[03 // DATA &amp; ARTIFACTS / 数据与代表性文本标本]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 运营与传播数据</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>内容沉淀</strong>：主导全链路工作（选题、约稿、脚本、美编与发布），累计产出 <strong>28 篇</strong> 高质量原创内容。</li>\n  <li><strong>零成本传播</strong>：在<strong>零投放成本</strong>的情况下，精准命中垂直受众，实现单篇最高 <strong>2000+</strong> 浏览量，建立了极高信任度的读者社群。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 标志性文本切片（代表作品阵列）</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>定位发刊词《留给谁，以及留下什么》</strong>：确立了\"记录真实可能性、提供同辈经验解药\"的平台基调。</li>\n  <li><strong>《当我说\"我来自苏州中学园区校\"的时候》</strong>：探讨\"选择情怀是否错了\"与\"无用素质教育\"在功利社会中的撕扯，引发关于教育本质与清醒边缘者角色的深度讨论。</li>\n  <li><strong>《我终于不是百分之百的功利机灵鬼了》</strong>：坦白个人从追逐精英/功利指标到被老师与文字唤醒的自我剖析，喊出\"学着鲜活地活\"的青年宣言。</li>\n  <li><strong>《允许一季的枯枝》</strong>：借由苏州与青岛的冬日景色，引入齐奥朗与鲁迅的哲学思考，探讨在大学迷茫与虚无中\"拒绝麻木、允许痛苦\"的精神重建路径。</li>\n</ul>\n\n\n\n[INSERT_ARTIFACT: wo_utility_guy]\n\n[INSERT_ARTIFACT: wo_nanjing_noodle]\n\n<p class=\"mb-4\">这些推文截图中精心设计的头图、排版与引言，共同构成了 SHSSIPtube 的视觉辨识度——我们坚持用有温度的视觉叙事，为每一个真实的个体经验赋予尊严与仪式感。</p>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[04 // SEDIMENTATION / 我的沉淀与生长]</h4>\n\n<p class=\"mb-4\">对于我而言，SHSSIPtube 不仅仅是一个数据指标的记录板，它更是一次将\"人文素养\"转化为\"数字建设力\"的完整实践。</p>\n\n<p class=\"mb-4\">它让我完整训练了自媒体从零到一的全链路主导能力（选题、约稿、深度编辑、美编、SEO 分发），更重要的是，它印证了我对数字传播的理解：</p>\n\n<p class=\"mb-4\">技术与算法不该是冷冰冰的流量筛选器，而应当是人文关怀的放大器。当我们以极大的耐心去倾听每一个具体的个体，并用专业的技术去赋予这些真实经验以传播力时，数字平台就能成为一座温暖的\"精神避难所\"与\"成长档案馆\"。</p>",
+      "artifacts": [
+        {
+          "id": "wo_about_us",
+          "type": "image",
+          "src": "images/wo_about_us.png",
+          "caption": "FIG 1.1 // SHSSIPtube 发刊词《关于我们》——平台诞生的原点与萌发初心"
+        },
+        {
+          "id": "wo_utility_guy",
+          "type": "image",
+          "src": "images/wo_utility_guy.png",
+          "caption": "FIG 3.1 // 代表作品《我终于不是百分之百的功利机灵鬼了》——青年觉醒的真实剖白"
+        },
+        {
+          "id": "wo_nanjing_noodle",
+          "type": "image",
+          "src": "images/wo_nanjing_noodle.png",
+          "caption": "FIG 3.2 // 代表作品《南京无汤面》——大一新生视角下的城市温度与青春切片"
+        }
+      ]
+    }
+  },
+  "tagProjects": {
+    "PROJECT": [
+      "time-music-concert",
+      "wechat-ops"
+    ],
+    "EVENT": [
+      "time-music-concert"
+    ],
+    "FIELDWORK": [
+      "yunnan-laodabao"
+    ],
+    "STUDY": [
+      "yunnan-laodabao"
+    ],
+    "MEDIA": [
+      "wechat-ops"
+    ]
+  }
+}

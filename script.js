@@ -493,11 +493,65 @@
       }
     });
 
+    // Connect modal
+    const connectModal = document.getElementById('connectModal');
+    const closeConnectModal = document.getElementById('closeConnectModal');
+
+    function openConnectModal() {
+      if (!connectModal) return;
+      connectModal.classList.remove('hidden');
+      connectModal.classList.add('flex');
+      requestAnimationFrame(() => {
+        connectModal.classList.add('active');
+      });
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConnectModalFn() {
+      if (!connectModal) return;
+      connectModal.classList.remove('active');
+      setTimeout(() => {
+        connectModal.classList.add('hidden');
+        connectModal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+
     // Connect button
     document.querySelector('.nav-connect-btn').addEventListener('click', function (e) {
       e.preventDefault();
-      alert('Contact functionality would be implemented here.');
+      openConnectModal();
     });
+
+    // Close connect modal
+    if (closeConnectModal) {
+      closeConnectModal.addEventListener('click', closeConnectModalFn);
+    }
+
+    // Close on overlay click
+    if (connectModal) {
+      connectModal.addEventListener('click', function (e) {
+        if (e.target === connectModal) {
+          closeConnectModalFn();
+        }
+      });
+    }
+
+    // Copy email
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const copyEmailHint = document.getElementById('copyEmailHint');
+    if (copyEmailBtn) {
+      copyEmailBtn.addEventListener('click', function () {
+        navigator.clipboard.writeText('Jiyao_Song@outlook.com').then(() => {
+          if (copyEmailHint) {
+            copyEmailHint.classList.remove('opacity-0');
+            setTimeout(() => {
+              copyEmailHint.classList.add('opacity-0');
+            }, 1500);
+          }
+        });
+      });
+    }
 
     // Blog "Read more" links
     document.querySelectorAll('.blog-read-more').forEach(link => {
