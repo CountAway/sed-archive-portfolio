@@ -694,7 +694,7 @@
             </div>
             <div class="era-content mt-4 pt-4 border-t border-sed-mist">
               <p class="text-sm text-sed-text/80">
-                行动的半径走出校园与课本，进入更真实的土地。跟随调研深入到<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="yunnan-laodabao">云南老达保项目</span>的少数民族村寨，倾听村民吟唱，完成一户户入户访谈。此后，主导<span class="project-keyword">自然阅读项目立项</span>，引导儿童通过阅读亲近自然，并以此为契机成功与<span class="project-keyword">柴米多合作</span>，将文本思考转化为一场具体的空间品牌活动。
+                行动的半径走出校园与课本，进入更真实的土地。跟随调研深入到<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="yunnan-laodabao" id="lbd-hover-link">云南老达保项目</span>的少数民族村寨，倾听村民吟唱，完成一户户入户访谈。此后，主导<span class="project-keyword">自然阅读项目立项</span>，引导儿童通过阅读亲近自然，并以此为契机成功与<span class="project-keyword">柴米多合作</span>，将文本思考转化为一场具体的空间品牌活动。
               </p>
             </div>
           </div>
@@ -708,7 +708,7 @@
             </div>
             <div class="era-content mt-4 pt-4 border-t border-sed-mist">
               <p class="text-sm text-sed-text/80">
-                通过务实的付出来帮助更多的人。加入<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="psych-weather">校心理气象站</span>，并在此期间与团队共同策划了系列校园活动；其中，<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="time-music-concert" id="portfolio-tm-link">时光音乐会</span>成为第一个从零到一、自主原创并主导负责的项目。以此为触角，随后开始独立<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="wechat-ops" id="portfolio-wo-link">运营公众号</span>，邀请曾经的同学共同参与，分享彼此真实的感触、记忆与思考，成为一种原初的群体情感共创。
+                通过务实的付出来帮助更多的人。加入<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="psych-weather" id="portfolio-pw-link">校心理气象站</span>，并在此期间与团队共同策划了系列校园活动；其中，<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="time-music-concert" id="portfolio-tm-link">时光音乐会</span>成为第一个从零到一、自主原创并主导负责的项目。以此为触角，随后开始独立<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="wechat-ops" id="portfolio-wo-link">运营公众号</span>，邀请曾经的同学共同参与，分享彼此真实的感触、记忆与思考，成为一种原初的群体情感共创。
               </p>
             </div>
           </div>
@@ -911,7 +911,8 @@
                   <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">EVENT PLANNING</span>
                   <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">LEADERSHIP</span>
                 </div>
-                <p class="mt-5 text-sm text-[#4A6B7C] font-light leading-relaxed cursor-pointer project-keyword" data-project="time-music-concert" id="tm-hover-link">
+                <p class="mt-5 text-sm text-[#4A6B7C] font-light leading-relaxed cursor-pointer project-keyword" data-project="psych-weather" id="pw-hover-link">校心理气象站 —— 在此期间策划组织的系列校园活动详见独立档案</p>
+                <p class="mt-3 text-sm text-[#4A6B7C] font-light leading-relaxed cursor-pointer project-keyword" data-project="time-music-concert" id="tm-hover-link">
                   时光音乐会 —— 我在心站期间独立原创并主导负责的校园品牌活动
                 </p>
               </div>
@@ -931,10 +932,10 @@
     
     <!-- Blog Section -->
     <section class="section relative z-10 overflow-hidden -mt-[40vh]" id="blog">
-      <!-- Background image layer with reveal animation -->
-      <div id="gardenBg" class="absolute inset-0 z-0" style="background-image:url('images/garden-bg.png');background-size:cover;background-position:center;background-attachment:fixed;opacity:0;transform:scale(1.2);transition:opacity 2.2s cubic-bezier(0.22,0.61,0.36,1), transform 2.2s cubic-bezier(0.22,0.61,0.36,1);"></div>
-      <!-- Overlay for readability -->
-      <div class="absolute inset-0 z-0" style="background:linear-gradient(to bottom, rgba(245,243,240,0.45) 0%, rgba(245,243,240,0.55) 50%, rgba(245,243,240,0.75) 100%);"></div>
+      <!-- Background image layer (always visible underneath) -->
+      <div id="gardenBg" class="absolute inset-0 z-0" style="background-image:url('images/garden-bg.png');background-size:cover;background-position:center;background-attachment:fixed;"></div>
+      <!-- Single spotlight overlay (page-bg color, hole punched at cursor) -->
+      <div id="gardenOverlay" class="absolute inset-0 z-[1] pointer-events-none" style="background:rgba(224,221,220,1);"></div>
       <div class="relative z-10 max-w-2xl mx-auto px-8 pt-[40vh] pb-24">
         <div class="mb-20">
           <span class="font-mono text-xs tracking-widest block mb-2" style="color:#7B90A3">SECTION_04</span>
@@ -1011,7 +1012,7 @@
           <button id="closeProjectModal" class="font-mono text-2xl text-sed-text/80 hover:text-sed-accent transition-all duration-300">×</button>
         </div>
         <!-- Scrollable Content -->
-        <div class="flex-1 overflow-y-auto px-10 py-10 md:px-16 md:py-14">
+        <div class="flex-1 overflow-y-auto px-10 py-10 md:px-16 md:py-14" id="projectModalScroll">
           <span class="font-mono text-xs tracking-widest text-sed-text/70 block mb-3" id="projectModalId">SED-2024-001</span>
           <h3 class="font-serif text-3xl md:text-4xl mb-8 text-sed-text" id="projectModalTitle">Project Title</h3>
 
@@ -1428,10 +1429,13 @@
       ).join('');
       
       projectModal.classList.remove('hidden');
-      
+
       // Trigger slide-in animation
       requestAnimationFrame(() => {
         projectModal.classList.add('active');
+        // Reset scroll position to top after panel is visible
+        const scrollContainer = document.getElementById('projectModalScroll');
+        if (scrollContainer) scrollContainer.scrollTop = 0;
       });
       
       document.body.style.overflow = 'hidden';
@@ -1697,22 +1701,37 @@
       });
     }
     
-    // Garden background reveal on scroll (re-triggerable)
+    // Garden background cursor spotlight reveal (single overlay layer)
     (function() {
-      const gardenBg = document.getElementById('gardenBg');
-      if (!gardenBg) return;
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            gardenBg.style.opacity = '1';
-            gardenBg.style.transform = 'scale(1)';
-          } else {
-            gardenBg.style.opacity = '0';
-            gardenBg.style.transform = 'scale(1.2)';
-          }
+      const gardenOverlay = document.getElementById('gardenOverlay');
+      const blogSection = document.getElementById('blog');
+      if (!gardenOverlay || !blogSection) return;
+
+      const spotlightRadius = 67;
+      const bg = '224,221,220'; // #E0DDDC — matches page background
+      let rafId = null;
+
+      // Smooth transition so the spotlight lingers along the cursor path
+      gardenOverlay.style.transition = 'background 0.6s ease-out';
+
+      blogSection.addEventListener('mousemove', function(e) {
+        const rect = blogSection.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        // Cancel any pending fade-out; keep spotlight following cursor
+        if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        gardenOverlay.style.transition = 'none';
+        // Punch a clean circular hole at cursor; rest stays solid page-bg
+        gardenOverlay.style.background = 'radial-gradient(circle ' + spotlightRadius + 'px at ' + x + 'px ' + y + 'px, rgba(' + bg + ',0) 0%, rgba(' + bg + ',0) 70%, rgba(' + bg + ',1) 100%)';
+      });
+
+      blogSection.addEventListener('mouseleave', function() {
+        // Restore solid overlay with a delay so the path fades out gradually
+        gardenOverlay.style.transition = 'background 0.6s ease-out';
+        rafId = requestAnimationFrame(function() {
+          gardenOverlay.style.background = 'rgba(' + bg + ',1)';
         });
-      }, { threshold: 0.05 });
-      observer.observe(gardenBg);
+      });
     })();
     
     // Garden search & filter
@@ -2004,6 +2023,16 @@
     <img src="images/wo_about_us.png" alt="运营公众号" style="width:100%;height:auto;display:block;">
   </div>
 
+  <!-- Hover preview element for 校心理气象站 link -->
+  <div id="pw-hover-preview" class="hidden" style="position:fixed;pointer-events:none;z-index:9999;width:120px;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);transform:translate(12px,12px);">
+    <img src="images/psych_weather_group.jpg" alt="校心理气象站" style="width:100%;height:auto;display:block;">
+  </div>
+
+  <!-- Hover preview element for 云南老达保项目 link -->
+  <div id="lbd-hover-preview" class="hidden" style="position:fixed;pointer-events:none;z-index:9999;width:120px;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);transform:translate(12px,12px);">
+    <img src="images/laodabao_hover.jpg" alt="云南老达保" style="width:100%;height:auto;display:block;">
+  </div>
+
   <script>
     // Hover preview for 时光音乐会 links
     (function() {
@@ -2054,6 +2083,57 @@
       }
 
       attachHover('portfolio-wo-link');
+    })();
+
+    // Hover preview for 校心理气象站 links
+    (function() {
+      const preview = document.getElementById('pw-hover-preview');
+      if (!preview) return;
+
+      function attachHover(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('mouseenter', function(e) {
+          preview.classList.remove('hidden');
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mousemove', function(e) {
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mouseleave', function() {
+          preview.classList.add('hidden');
+        });
+      }
+
+      attachHover('portfolio-pw-link');
+      attachHover('pw-hover-link');
+    })();
+
+    // Hover preview for 云南老达保项目 links
+    (function() {
+      const preview = document.getElementById('lbd-hover-preview');
+      if (!preview) return;
+
+      function attachHover(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('mouseenter', function(e) {
+          preview.classList.remove('hidden');
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mousemove', function(e) {
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mouseleave', function() {
+          preview.classList.add('hidden');
+        });
+      }
+
+      attachHover('lbd-hover-link');
     })();
   </script>
 </body>
