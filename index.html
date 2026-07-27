@@ -1,442 +1,2338 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SED_ARCHIVE — Personal Portfolio</title>
-
+  
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=IBM+Plex+Mono:wght@300;400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'sed-bg': '#E0DDDC',
+            'sed-text': '#353338',
+            'sed-slate': '#7B90A3',
+            'sed-mist': '#B6B2B3',
+            'sed-accent': '#AF474E',
+          },
+          fontFamily: {
+            'serif': ['Cormorant Garamond', 'Georgia', 'serif'],
+            'mono': ['IBM Plex Mono', 'monospace'],
+            'sans': ['IBM Plex Sans', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Custom properties */
+    :root {
+      --nav-height: 60px;
+    }
+    
+    /* Noise overlay */
+    .noise-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    }
+    
+    /* Navigation */
+    .nav-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--nav-height);
+      background-color: #E0DDDC;
+      z-index: 1000;
+      border-bottom: 1px solid #B6B2B3;
+    }
+    
+    /* Rock image container - fixed position for scroll effect */
+    .rock-container {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 5;
+      pointer-events: none;
+    }
+    
+    .rock-image {
+      width: 340px;
+      height: 340px;
+      object-fit: cover;
+      will-change: transform, clip-path, opacity;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+    }
+    
+    /* Section base styles */
+    .section {
+      min-height: 100vh;
+      position: relative;
+      z-index: 10;
+    }
+    
+    /* About section */
+    .section-about {
+      padding-top: calc(var(--nav-height) + 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Portfolio section - starts below viewport */
+    .section-portfolio {
+      min-height: 100vh;
+      opacity: 0;
+      transform: translateY(50px);
+      will-change: opacity, transform;
+    }
+    
+    /* Era navigation */
+    .era-block {
+      border-bottom: 1px solid #B6B2B3;
+      transition: background-color 0.2s ease;
+    }
+    
+    .era-block:last-child {
+      border-bottom: none;
+    }
+    
+    .era-block:hover {
+      background-color: rgba(123, 144, 163, 0.08);
+    }
+    
+    /* Legend */
+    .legend-item {
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    
+    .legend-item:hover {
+      background-color: rgba(123, 144, 163, 0.2);
+    }
+    
+    .legend-item.active {
+      background-color: rgba(175, 71, 78, 0.15);
+      border-radius: 4px;
+    }
+    
+    /* Scroll Reveal Animation */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .reveal-on-scroll.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Era Block Expand */
+    .era-content {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, opacity 0.3s ease;
+    }
+    
+    .era-block.active {
+      background-color: rgba(123, 144, 163, 0.12);
+    }
+    
 
-  <link rel="stylesheet" href="style.css">
+    
+
+    
+    /* Scrollbar transparent */
+    * {
+      scrollbar-width: thin;
+      scrollbar-color: #B6B2B3 transparent;
+    }
+    
+    *::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    *::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    *::-webkit-scrollbar-thumb {
+      background-color: #B6B2B3;
+      border-radius: 3px;
+    }
+    
+    /* Garden filter buttons */
+    .garden-filter.active {
+      border-color: #7B90A3;
+      color: #7B90A3;
+    }
+    .garden-filter.active[data-filter="PAPER"] {
+      border-color: #C25B56;
+      color: #C25B56;
+    }
+    .garden-filter.active[data-filter="FRAGMENT"] {
+      border-color: #8B7355;
+      color: #8B7355;
+    }
+    .garden-filter.active[data-filter="FILM"] {
+      border-color: #4A6B7C;
+      color: #4A6B7C;
+    }
+    
+    /* Garden index cards */
+    .garden-card {
+      border-bottom: 1px solid #B6B2B3;
+      padding: 0;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      opacity: 0;
+      transform: translateY(8px);
+      display: flex;
+      flex-direction: column;
+    }
+    .garden-card.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Speed Index main row */
+    .speed-row {
+      display: flex;
+      align-items: center;
+      padding: 0.75rem 0;
+      transition: all 0.25s ease;
+      gap: 1rem;
+    }
+    .speed-row:hover {
+      padding-left: 0.5rem;
+    }
+    .garden-card:hover .speed-row {
+      border-bottom-color: transparent;
+    }
+    .garden-card[data-type="PAPER"] .speed-row:hover .speed-title { color: #C25B56; }
+    .garden-card[data-type="FRAGMENT"] .speed-row:hover .speed-title { color: #8B7355; }
+    .garden-card[data-type="FILM"] .speed-row:hover .speed-title { color: #4A6B7C; }
+    
+    .speed-index {
+      font-mono text-xs text-sed-mist;
+      min-width: 5rem;
+      flex-shrink: 0;
+    }
+    .speed-type-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .speed-type-dot[data-type="PAPER"] { background: #C25B56; }
+    .speed-type-dot[data-type="FRAGMENT"] { background: #8B7355; }
+    .speed-type-dot[data-type="FILM"] { background: #4A6B7C; }
+    .speed-type-dot[data-type="ESSAY"] { background: #7B90A3; }
+    
+    .speed-title {
+      font-serif text-base;
+      flex: 1;
+      transition: color 0.25s ease;
+      line-height: 1.4;
+    }
+    .speed-meta {
+      font-mono text-xs text-sed-mist;
+      flex-shrink: 0;
+      text-align: right;
+      min-width: 4rem;
+    }
+    .speed-arrow {
+      font-mono text-xs text-sed-mist;
+      transition: all 0.25s ease;
+      flex-shrink: 0;
+      opacity: 0;
+    }
+    .speed-row:hover .speed-arrow {
+      opacity: 1;
+    }
+    .garden-card.expanded .speed-arrow {
+      opacity: 1;
+      transform: rotate(90deg);
+    }
+    
+    /* Speed Index detail panel */
+    .speed-detail {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s ease, opacity 0.3s ease;
+      opacity: 0;
+      padding: 0 0 0 0;
+    }
+    .garden-card.expanded .speed-detail {
+      max-height: 300px;
+      opacity: 1;
+      padding: 0.5rem 0 1rem 0;
+    }
+    .speed-detail-inner {
+      padding-left: calc(5rem + 1rem + 6px + 1rem);
+      border-left: 1px solid #B6B2B3;
+      margin-left: calc(3px);
+    }
+    .speed-detail p {
+      font-serif text-sm text-sed-mist leading-relaxed;
+      margin-bottom: 0.5rem;
+    }
+    .speed-detail .speed-read-full {
+      font-mono text-xs tracking-widest text-sed-slate hover:text-sed-accent transition-colors cursor-pointer;
+      display: inline-block;
+      margin-top: 0.25rem;
+    }
+    .speed-detail .speed-read-full:hover {
+      color: #C25B56;
+    }
+    
+    .garden-card.hidden-card {
+      display: none;
+    }
+    
+    /* Modal animations */
+    .modal-overlay {
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .modal-overlay.active {
+      opacity: 1;
+    }
+    
+    .modal-content {
+      opacity: 0;
+      transform: scale(0.96) translateY(20px);
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                  transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .modal-overlay.active .modal-content {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+    
+    /* Tag modal - index card style */
+    .tag-modal-content {
+      max-width: 320px;
+      max-height: 50vh;
+    }
+    
+    /* Modal backdrop blur enhancement */
+    .modal-backdrop {
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    
+    /* Microscope circle hover interaction */
+    .microscope-circle:hover .microscope-inner {
+      border-color: rgba(123, 144, 163, 0.55);
+      transform: scale(1.1);
+    }
+    
+    .microscope-circle:hover {
+      transform: scale(1.08);
+    }
+    
+    /* Typewriter overlay */
+    .typewriter-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(224, 221, 220, 0.92);
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.8s ease;
+    }
+    
+    .typewriter-overlay.active {
+      opacity: 1;
+    }
+    
+    .typewriter-text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 380px;
+      width: 90%;
+      z-index: 101;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 0.95rem;
+      line-height: 1.9;
+      color: #353338;
+      text-align: left;
+      opacity: 0;
+      transition: opacity 0.6s ease 0.3s;
+    }
+    
+    .typewriter-text.active {
+      opacity: 1;
+    }
+    
+    .typewriter-paragraph {
+      margin-bottom: 1.2em;
+      text-indent: 2em;
+    }
+    
+    .typewriter-paragraph:last-child {
+      margin-bottom: 0;
+    }
+    
+    .typewriter-cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1em;
+      background-color: #353338;
+      margin-left: 2px;
+      animation: blink 1s step-end infinite;
+      vertical-align: text-bottom;
+    }
+    
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+    
+    .rock-hover-trigger {
+      cursor: pointer;
+    }
+
+    /* Geo-link: cross-project jump */
+    .geo-link {
+      color: #8B4513;
+      text-decoration: none;
+      border-bottom: 1px solid #8B4513;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .geo-link:hover {
+      color: #C19A6B;
+      border-bottom-color: #C19A6B;
+    }
+
+    .geo-link::after {
+      content: '';
+      display: inline-block;
+      width: 0;
+      height: 1em;
+      margin-left: 2px;
+      vertical-align: text-bottom;
+      border-right: 2px solid currentColor;
+      animation: typewriter-cursor 1s step-end infinite;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .geo-link:hover::after {
+      opacity: 1;
+    }
+
+    @keyframes typewriter-cursor {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Side Panel */
+    .side-panel-overlay {
+      transition: opacity 0.3s ease;
+    }
+    .side-panel-overlay.active {
+      opacity: 1;
+    }
+    .side-panel-overlay:not(.active) {
+      opacity: 0;
+      pointer-events: none;
+    }
+    .side-panel {
+      will-change: transform;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(20px) saturate(1.1);
+      -webkit-backdrop-filter: blur(20px) saturate(1.1);
+    }
+    .side-panel-overlay.active .side-panel {
+      transform: translateX(0);
+    }
+
+    /* Keyword → Side Panel guide line */
+    .project-keyword {
+      position: relative;
+    }
+    .project-keyword::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      right: -6px;
+      width: 1px;
+      height: 28px;
+      background: #8B7355;
+      opacity: 0;
+      transition: opacity 0.3s ease, height 0.3s ease;
+      pointer-events: none;
+    }
+    .project-keyword.panel-active::after {
+      opacity: 1;
+      height: 40px;
+    }
+
+    .side-panel .prose p {
+      font-size: 14px;
+      line-height: 2.2;
+      margin-bottom: 1.6em;
+    }
+    .side-panel .prose ul,
+    .side-panel .prose ol {
+      font-size: 14px;
+      line-height: 2.2;
+      margin-bottom: 1.6em;
+    }
+    .side-panel .prose pre {
+      font-size: 12px;
+      line-height: 1.8;
+      margin: 2.5em 0;
+    }
+    .side-panel .prose h4 {
+      margin-top: 3em;
+      margin-bottom: 1.2em;
+    }
+    .side-panel .prose h5 {
+      margin-top: 2em;
+      margin-bottom: 0.8em;
+    }
+    .side-panel .prose hr {
+      margin: 3em 0;
+    }
+
+    /* Artifact figure: no border */
+    .artifact-figure {
+      border: none;
+      padding: 0;
+      margin: 48px 0;
+    }
+
+    .artifact-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .artifact-figure table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .artifact-figure table th,
+    .artifact-figure table td {
+      border: 1px solid #D4C4A8;
+      padding: 8px 12px;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      text-align: left;
+    }
+
+    .artifact-figure figcaption {
+      margin-top: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      color: #8B7355;
+    }
+  </style>
 </head>
-<body>
-
-  <!-- ============================================
-       NOISE / GRAIN TEXTURE OVERLAY
-       ============================================ -->
+<body class="bg-sed-bg text-sed-text font-sans font-light overflow-y-scroll">
+  
+  <!-- Noise overlay -->
   <div class="noise-overlay" aria-hidden="true"></div>
-
-  <!-- ============================================
-       LOADING SCREEN
-       ============================================ -->
-  <div class="loading-screen" id="loadingScreen">
-    <div class="loading-inner">
-      <span class="loading-label">SED_ARCHIVE</span>
-      <div class="loading-bar-track">
-        <div class="loading-bar-fill" id="loadingBarFill"></div>
-      </div>
-      <span class="loading-status">INITIALIZING ARCHIVE...</span>
-    </div>
-  </div>
-
-  <!-- ============================================
-       NAVIGATION BAR (fixed top)
-       ============================================ -->
-  <nav class="nav-bar" id="navBar">
-    <div class="nav-inner">
-      <a href="#" class="nav-logo" data-section="about">SED_ARCHIVE</a>
-      <ul class="nav-links">
-        <li><a href="#" class="nav-link active" data-section="about">About</a></li>
-        <li><a href="#" class="nav-link" data-section="archive">Portfolio</a></li>
-        <li><a href="#" class="nav-link" data-section="experience">Experience</a></li>
-        <li><a href="#" class="nav-link" data-section="blog">Blog</a></li>
+  
+  <!-- Navigation -->
+  <nav class="nav-bar">
+    <div class="max-w-7xl mx-auto px-8 h-full flex items-center justify-between">
+      <a href="#" class="font-mono text-sm font-medium tracking-widest uppercase">SED_ARCHIVE</a>
+      <ul class="flex gap-8">
+        <li><a href="#about" class="nav-link font-mono text-xs tracking-widest uppercase text-sed-text hover:text-sed-accent transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-sed-text hover:after:w-full after:transition-all">About</a></li>
+        <li><a href="#portfolio" class="nav-link font-mono text-xs tracking-widest uppercase text-sed-text hover:text-sed-accent transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-sed-text hover:after:w-full after:transition-all">Portfolio</a></li>
+        <li><a href="#experience" class="nav-link font-mono text-xs tracking-widest uppercase text-sed-text hover:text-sed-accent transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-sed-text hover:after:w-full after:transition-all">Experience</a></li>
+        <li><a href="#blog" class="nav-link font-mono text-xs tracking-widest uppercase text-sed-text hover:text-sed-accent transition-colors relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-px after:bg-sed-text hover:after:w-full after:transition-all">Blog</a></li>
       </ul>
-      <a href="#" class="nav-connect-btn">Connect</a>
+      <a href="#" class="nav-connect-btn font-mono text-xs tracking-widest uppercase bg-sed-text text-sed-bg px-4 py-2 hover:bg-sed-slate transition-colors">Connect</a>
     </div>
   </nav>
-
-  <!-- ============================================
-       MAIN CONTENT
-       ============================================ -->
-  <main id="mainContent">
-
-    <!-- ========================================
-         ABOUT SECTION
-         ======================================== -->
-    <section class="section section-about" id="sectionAbout" aria-label="About">
-      <div class="about-container">
-        <!-- Left column: identity (个人简介) -->
-        <div class="about-identity">
-          <span class="about-section-label">SECTION_01</span>
-          <h1 class="about-name">Y. CHEN</h1>
-          <p class="about-title">Design Researcher &amp; Visual Analyst</p>
-          <div class="about-divider"></div>
-          <p class="about-bio">
-            Operating at the intersection of humanistic perception and empirical methodology.
-            Current research focuses on the lithification of digital artifacts — how raw data
-            undergoes compression, stratification, and eventual crystallization into coherent
-            visual narratives. Field work encompasses urban texture mapping, computational
-            analysis, and cross-disciplinary material studies.
-          </p>
-          <p class="about-bio">
-            This archive serves as a living record of ongoing investigations, catalogued
-            by geological time periods rather than conventional chronology.
-          </p>
-          <div class="about-tags">
-            <span class="tag">VISUAL ANALYSIS</span>
-            <span class="tag">DESIGN RESEARCH</span>
-            <span class="tag">COMPUTATIONAL METHODS</span>
-            <span class="tag">FIELD DOCUMENTATION</span>
-          </div>
-        </div>
-
-        <!-- Center: circular specimen image -->
-        <div class="about-specimen">
-          <div class="specimen-frame">
-            <div class="specimen-image-wrapper" id="specimenImageWrapper">
-              <img src="main.png" alt="Specimen — Lithification cross-section" class="specimen-image" id="specimenImage">
+  
+  <!-- Fixed Rock Image Container -->
+  <div class="rock-container" id="rockContainer">
+    <img src="main.png" alt="Geological cross-section" class="rock-image" id="rockImage">
+  </div>
+  
+  <!-- Main Content -->
+  <main>
+    
+    <!-- About Section -->
+    <section class="section section-about" id="about">
+      <div class="max-w-7xl mx-auto px-8 w-full">
+        <div class="grid grid-cols-3 gap-16 items-center">
+          <!-- Left: Identity -->
+          <div class="text-right" id="aboutLeft">
+            <span class="font-mono text-xs tracking-widest text-sed-mist block mb-4">SECTION_01</span>
+            <h1 class="font-serif text-6xl font-light mb-2">宋计遥</h1>
+            <p class="font-mono text-sm tracking-widest text-sed-slate uppercase mb-6">JIYAO SONG</p>
+            <div class="w-16 h-px bg-sed-accent ml-auto mb-6"></div>
+            <p class="font-mono text-xs tracking-widest text-sed-slate mb-6">STRATIGRAPHIC OBSERVATION & CO-CREATION</p>
+            <div class="flex flex-wrap gap-2 justify-end">
+              <span class="font-mono text-xs tracking-widest border border-sed-mist px-3 py-1">我对文字的执着</span>
+              <span class="font-mono text-xs tracking-widest border border-sed-mist px-3 py-1">我对问题的专注</span>
+              <span class="font-mono text-xs tracking-widest border border-sed-mist px-3 py-1">我对世界的参与</span>
             </div>
-            <span class="specimen-caption">FIG. 01 — Thin-section micrograph, 40x magnification</span>
+            <p class="text-base leading-relaxed mt-6 max-w-md ml-auto text-sed-text/70">
+              欢迎来到工作现场，欢迎参观这个永远的半成品。
+            </p>
           </div>
-        </div>
-
-        <!-- Right column: specimen metadata (元数据) -->
-        <div class="about-meta">
-          <div class="meta-block">
-            <span class="meta-label">SPECIMEN_ID</span>
-            <span class="meta-value">SED-2024-001</span>
-          </div>
-          <div class="meta-block">
-            <span class="meta-label">STATUS</span>
-            <span class="meta-value status-active">ACTIVE — FIELD OPERATIONS</span>
-          </div>
-          <div class="meta-block">
-            <span class="meta-label">COORDINATES</span>
-            <span class="meta-value">31.2304&deg; N, 121.4737&deg; E</span>
-          </div>
-          <div class="meta-block">
-            <span class="meta-label">CLASSIFICATION</span>
-            <span class="meta-value">CLASTIC SEDIMENTARY</span>
-          </div>
-          <div class="meta-block">
-            <span class="meta-label">LAST_UPDATED</span>
-            <span class="meta-value">2024.12.15</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========================================
-         ARCHIVE / PORTFOLIO SECTION
-         ======================================== -->
-    <section class="section section-archive" id="sectionArchive" aria-label="Portfolio">
-      <!-- Full-screen geological cross-section background -->
-      <div class="archive-bg-image">
-        <img src="main.png" alt="Geological cross-section — Lithification process">
-      </div>
-
-      <!-- Section header (matching Experience/Blog style) -->
-      <div class="archive-header">
-        <span class="archive-section-label">SECTION_02</span>
-        <h2 class="archive-title">The Lithification Process</h2>
-        <p class="archive-subtitle">A stratigraphic record of creative and research output, organized by geological time periods.</p>
-      </div>
-
-      <!-- Left side: Era labels -->
-      <div class="archive-era-nav">
-        <div class="era-block" data-era="cenozoic" id="eraCenozoic">
-          <span class="era-chinese">新生代</span>
-          <span class="era-english">CENOZOIC</span>
-          <span class="era-date">2024 — PRESENT</span>
-        </div>
-        <div class="era-block" data-era="mesozoic" id="eraMesozoic">
-          <span class="era-chinese">中生代</span>
-          <span class="era-english">MESOZOIC</span>
-          <span class="era-date">2022 — 2023</span>
-        </div>
-        <div class="era-block" data-era="paleozoic" id="eraPaleozoic">
-          <span class="era-chinese">古生代</span>
-          <span class="era-english">PALEOZOIC</span>
-          <span class="era-date">2020 — 2021</span>
-        </div>
-      </div>
-
-      <!-- Right side: Slide-in project panel -->
-      <div class="archive-project-panel" id="archiveProjectPanel">
-        <div class="project-panel-header">
-          <span class="project-panel-era" id="projectPanelEra"></span>
-          <span class="project-panel-count" id="projectPanelCount"></span>
-        </div>
-        <div class="project-panel-list" id="projectPanelList">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-
-      <!-- Bottom: Legend -->
-      <div class="archive-legend" id="archiveLegend">
-        <div class="legend-item" data-category="RESEARCH">
-          <span class="legend-color" style="background: var(--color-accent);"></span>
-          <span class="legend-label">RESEARCH</span>
-        </div>
-        <div class="legend-item" data-category="PLATFORM">
-          <span class="legend-color" style="background: var(--color-slate);"></span>
-          <span class="legend-label">PLATFORM</span>
-        </div>
-        <div class="legend-item" data-category="FIELDWORK">
-          <span class="legend-color" style="background: var(--color-mist);"></span>
-          <span class="legend-label">FIELDWORK</span>
-        </div>
-        <div class="legend-item" data-category="STUDY">
-          <span class="legend-color" style="background: #8B7355;"></span>
-          <span class="legend-label">STUDY</span>
-        </div>
-        <div class="legend-item" data-category="TOOL">
-          <span class="legend-color" style="background: #6B8E6B;"></span>
-          <span class="legend-label">TOOL</span>
-        </div>
-      </div>
-
-      <!-- Legend Filter Results Panel -->
-      <div class="legend-filter-panel" id="legendFilterPanel">
-        <div class="legend-filter-header">
-          <span class="legend-filter-category" id="legendFilterCategory"></span>
-          <span class="legend-filter-count" id="legendFilterCount"></span>
-        </div>
-        <div class="legend-filter-list" id="legendFilterList"></div>
-      </div>
-
-      <!-- Vertical marginalia -->
-      <div class="archive-marginalia" aria-hidden="true">
-        <span>FOUND_LITHOLOGY_V2.0</span>
-      </div>
-    </section>
-
-    <!-- ========================================
-         EXPERIENCE SECTION
-         ======================================== -->
-    <section class="section section-experience" id="sectionExperience" aria-label="Experience">
-      <div class="experience-container">
-        <div class="experience-header">
-          <span class="experience-section-label">SECTION_03</span>
-          <h2 class="experience-title">Field Report</h2>
-          <p class="experience-subtitle">A chronological record of institutional affiliations and research deployments.</p>
-        </div>
-
-        <div class="timeline">
-          <!-- Entry 1 -->
-          <div class="timeline-entry" data-entry-id="exp-1">
-            <div class="timeline-marker"></div>
-            <div class="timeline-line"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">2024 — PRESENT</span>
-              <h3 class="timeline-role">Research Fellow</h3>
-              <span class="timeline-org">Institute of Visual Sciences, Shanghai</span>
-              <p class="timeline-desc">
-                Leading cross-disciplinary research initiatives at the intersection of
-                computational design and empirical analysis. Current investigations focus
-                on the synthesis of large-scale urban datasets into coherent visual
-                narratives. Supervising a team of three graduate researchers.
-              </p>
-              <div class="timeline-tags">
-                <span class="tag">LEADERSHIP</span>
-                <span class="tag">RESEARCH</span>
-                <span class="tag">VISUALIZATION</span>
-              </div>
+          
+          <!-- Typewriter Overlay -->
+          <div class="typewriter-overlay" id="typewriterOverlay">
+            <div class="typewriter-text" id="typewriterText">
+              <div id="typewriterContent"></div><span class="typewriter-cursor" id="typewriterCursor"></span>
             </div>
           </div>
-
-          <!-- Entry 2 -->
-          <div class="timeline-entry" data-entry-id="exp-2">
-            <div class="timeline-marker"></div>
-            <div class="timeline-line"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">2023 — 2024</span>
-              <h3 class="timeline-role">Design Researcher</h3>
-              <span class="timeline-org">Bureau of Material Culture, Hangzhou</span>
-              <p class="timeline-desc">
-                Conducted field documentation and urban texture mapping across
-                six metropolitan areas. Developed computational analysis tools
-                for processing architectural survey data. Published findings
-                in the Journal of Applied Aesthetics.
-              </p>
-              <div class="timeline-tags">
-                <span class="tag">FIELDWORK</span>
-                <span class="tag">ANALYSIS</span>
-              </div>
-            </div>
+          
+          <!-- Center: Spacer for rock image -->
+          <div class="flex flex-col items-center justify-center rock-hover-trigger" id="rockTrigger">
+            <span class="font-mono text-xs tracking-widest text-sed-mist mt-96">FIG. 01 — Thin-section micrograph, 40x magnification</span>
           </div>
-
-          <!-- Entry 3 -->
-          <div class="timeline-entry" data-entry-id="exp-3">
-            <div class="timeline-marker"></div>
-            <div class="timeline-line"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">2022 — 2023</span>
-              <h3 class="timeline-role">Junior Analyst</h3>
-              <span class="timeline-org">Data Stratigraphy Lab, Shanghai</span>
-              <p class="timeline-desc">
-                Performed computational analysis on heterogeneous datasets.
-                Contributed to the development of material study frameworks
-                for digital artifact classification. Assisted in the design
-                and implementation of data visualization prototypes.
-              </p>
-              <div class="timeline-tags">
-                <span class="tag">DATA</span>
-                <span class="tag">COMPUTATION</span>
-              </div>
+          
+          <!-- Right: Metadata -->
+          <div class="text-left">
+            <div class="mb-4 pb-2 border-b border-sed-mist">
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-1">SPECIMEN_ID</span>
+              <span class="font-mono text-sm">SED-2026-001</span>
             </div>
-          </div>
-
-          <!-- Entry 4 -->
-          <div class="timeline-entry" data-entry-id="exp-4">
-            <div class="timeline-marker"></div>
-            <div class="timeline-line"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">2021 — 2022</span>
-              <h3 class="timeline-role">Research Assistant</h3>
-              <span class="timeline-org">Department of Visual Communication, Tongji University</span>
-              <p class="timeline-desc">
-                Supported foundational research in design methodology and
-                visual perception. Assisted in experimental data collection,
-                literature review, and preliminary analysis for multiple
-                ongoing research projects.
-              </p>
-              <div class="timeline-tags">
-                <span class="tag">RESEARCH</span>
-                <span class="tag">METHODOLOGY</span>
-              </div>
+            <div class="mb-4 pb-2 border-b border-sed-mist">
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-1">STATUS</span>
+              <span class="font-mono text-sm text-sed-accent">To Be Activated — POSTGRADUATE</span>
             </div>
-          </div>
-
-          <!-- Entry 5 -->
-          <div class="timeline-entry" data-entry-id="exp-5">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <span class="timeline-date">2020 — 2021</span>
-              <h3 class="timeline-role">Intern — Visual Documentation</h3>
-              <span class="timeline-org">Studio for Empirical Aesthetics, Shanghai</span>
-              <p class="timeline-desc">
-                Participated in the documentation and archiving of visual
-                research materials. Gained foundational exposure to
-                systematic observation methods and specimen cataloguing
-                protocols.
-              </p>
-              <div class="timeline-tags">
-                <span class="tag">DOCUMENTATION</span>
-                <span class="tag">ARCHIVING</span>
-              </div>
+            <div class="mb-4 pb-2 border-b border-sed-mist">
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-1">COORDINATES</span>
+              <span class="font-mono text-sm">120°46'21.99"N, 31°18'16.65"E; 32°6'20"N 118°54'15"E</span>
+            </div>
+            <div class="mb-4 pb-2 border-b border-sed-mist">
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-1">CLASSIFICATION</span>
+              <span class="font-mono text-sm">CLASTIC SEDIMENTARY</span>
+            </div>
+            <div>
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-1">LAST_UPDATED</span>
+              <span class="font-mono text-sm">2026.06.03</span>
             </div>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- ========================================
-         BLOG SECTION
-         ======================================== -->
-    <section class="section section-blog" id="sectionBlog" aria-label="Blog">
-      <div class="blog-container">
-        <div class="blog-header">
-          <span class="blog-section-label">SECTION_04</span>
-          <h2 class="blog-title">Research Notes</h2>
-          <p class="blog-subtitle">Selected writings on design, data, and the stratification of knowledge.</p>
+    
+    <!-- Portfolio Section -->
+    <section class="section section-portfolio relative" id="portfolio">
+      <!-- Background rock image overlay - fixed position for scroll reveal -->
+      <div class="fixed inset-0 z-0" id="portfolioBgContainer">
+        <img src="main.png" alt="" class="w-full h-full object-cover" id="portfolioBgImage" style="image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges;">
+      </div>
+      
+      <div class="relative z-10 min-h-screen pt-20 pb-8">
+        <!-- Header -->
+        <div class="text-center mb-8">
+          <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">SECTION_02</span>
+          <h2 class="font-serif text-4xl font-normal mb-2">岩层化石 / PORTFOLIO</h2>
+          <p class="font-mono text-xs tracking-widest text-sed-slate uppercase mb-2">STRATIGRAPHIC EVIDENCE & ARTIFACTS</p>
+          <p class="text-base text-sed-text max-w-xl mx-auto">个人成长史的物质化留存</p>
         </div>
-
-        <div class="blog-list">
-          <!-- Article 1 -->
-          <article class="blog-entry" data-entry-id="blog-1">
-            <div class="blog-entry-meta">
-              <span class="blog-date">2024.11.28</span>
-              <span class="blog-category">ESSAY</span>
+        
+        <!-- Era Navigation - Full Width with Projects -->
+        <div class="w-full px-8 mb-8">
+          <!-- 新生代 -->
+          <div class="era-block py-6 px-8 cursor-pointer reveal-on-scroll" data-era="cenozoic">
+            <div class="flex items-center gap-8">
+              <span class="font-serif text-3xl">新生代</span>
+              <span class="font-mono text-xs tracking-widest text-sed-mist uppercase">CENOZOIC</span>
+              <span class="font-mono text-xs text-sed-slate ml-auto">2025 — PRESENT</span>
             </div>
-            <h3 class="blog-entry-title">On the Convergence of Art and Data</h3>
-            <p class="blog-entry-excerpt">
-              The boundary between aesthetic judgment and empirical observation
-              has never been particularly well-defined. What we call "data
-              visualization" is, in many respects, an act of translation —
-              the conversion of numerical relationships into spatial and
-              chromatic ones. This essay examines the epistemological
-              implications of that translation, arguing that the most
-              effective visualizations are those that acknowledge their
-              own artificiality rather than pretending to transparent
-              representation.
-            </p>
-            <a href="#" class="blog-read-more">READ FULL TEXT &rarr;</a>
-          </article>
-
-          <!-- Article 2 -->
-          <article class="blog-entry" data-entry-id="blog-2">
-            <div class="blog-entry-meta">
-              <span class="blog-date">2024.09.14</span>
-              <span class="blog-category">FIELD NOTES</span>
+            <div class="era-content mt-4 pt-4 border-t border-sed-mist">
+              <p class="text-sm text-sed-text/80">
+                跨出文科的舒适区去接触<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="ai-design">AI设计</span>，用代码来丰富表达的可能性。尝试不同接触世界的方式，在<span class="project-keyword">国际NGO VIVA</span>，在<span class="project-keyword">出版文化公司 读客</span>……在为自己选择的真实世界中磨练自己的敏锐度与推进力。
+              </p>
             </div>
-            <h3 class="blog-entry-title">Field Notes: Observing Urban Strata</h3>
-            <p class="blog-entry-excerpt">
-              Over the course of six weeks, I walked every major commercial
-              corridor in three districts of Shanghai, photographing and
-              cataloguing the visible layers of architectural history.
-              What emerged was not a simple narrative of old giving way to
-              new, but a complex palimpsest in which successive generations
-              of construction, renovation, and demolition had created a
-              stratified record — readable, if you knew how to look.
-            </p>
-            <a href="#" class="blog-read-more">READ FULL TEXT &rarr;</a>
-          </article>
-
-          <!-- Article 3 -->
-          <article class="blog-entry" data-entry-id="blog-3">
-            <div class="blog-entry-meta">
-              <span class="blog-date">2024.06.03</span>
-              <span class="blog-category">REFLECTION</span>
+          </div>
+          
+          <!-- 中生代 -->
+          <div class="era-block py-6 px-8 cursor-pointer reveal-on-scroll" data-era="mesozoic">
+            <div class="flex items-center gap-8">
+              <span class="font-serif text-3xl">中生代</span>
+              <span class="font-mono text-xs tracking-widest text-sed-mist uppercase">MESOZOIC</span>
+              <span class="font-mono text-xs text-sed-slate ml-auto">2023 — 2024</span>
             </div>
-            <h3 class="blog-entry-title">The Aesthetics of Empiricism</h3>
-            <p class="blog-entry-excerpt">
-              There is a particular beauty in the systematic — in the
-              careful arrangement of specimens, the precise calibration
-              of instruments, the patient accumulation of observations.
-              This reflection considers whether the aesthetic dimension
-              of scientific practice is merely incidental or whether it
-              plays a constitutive role in the production of knowledge.
-              Drawing on examples from geological survey, astronomical
-              observation, and data visualization, I argue for the latter.
-            </p>
-            <a href="#" class="blog-read-more">READ FULL TEXT &rarr;</a>
-          </article>
-
-          <!-- Article 4 -->
-          <article class="blog-entry" data-entry-id="blog-4">
-            <div class="blog-entry-meta">
-              <span class="blog-date">2024.02.19</span>
-              <span class="blog-category">TECHNICAL</span>
+            <div class="era-content mt-4 pt-4 border-t border-sed-mist">
+              <p class="text-sm text-sed-text/80">
+                行动的半径走出校园与课本，进入更真实的土地。跟随调研深入到<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="yunnan-laodabao" id="lbd-hover-link">云南老达保项目</span>的少数民族村寨，倾听村民吟唱，完成一户户入户访谈。此后，主导<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="nature-reading" id="nr-hover-link">自然阅读项目立项</span>，引导儿童通过阅读亲近自然，并以此为契机成功与<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="chaimiduo-coop" id="cm-hover-link">柴米多合作</span>，将文本思考转化为一场具体的空间品牌活动。
+              </p>
             </div>
-            <h3 class="blog-entry-title">Computational Methods in Material Analysis</h3>
-            <p class="blog-entry-excerpt">
-              A technical overview of the computational pipeline developed
-              for the Material Study series. Covers image segmentation,
-              texture feature extraction, and the classification algorithm
-              used to categorize surface patterns according to geological
-              analogues. Includes discussion of limitations and potential
-              refinements for future iterations.
-            </p>
-            <a href="#" class="blog-read-more">READ FULL TEXT &rarr;</a>
-          </article>
+          </div>
+          
+          <!-- 古生代 -->
+          <div class="era-block py-6 px-8 cursor-pointer reveal-on-scroll" data-era="paleozoic">
+            <div class="flex items-center gap-8">
+              <span class="font-serif text-3xl">古生代</span>
+              <span class="font-mono text-xs tracking-widest text-sed-mist uppercase">PALEOZOIC</span>
+              <span class="font-mono text-xs text-sed-slate ml-auto">2022 — 2023</span>
+            </div>
+            <div class="era-content mt-4 pt-4 border-t border-sed-mist">
+              <p class="text-sm text-sed-text/80">
+                通过务实的付出来帮助更多的人。加入<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="psych-weather" id="portfolio-pw-link">校心理气象站</span>，并在此期间与团队共同策划了系列校园活动；其中，<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="time-music-concert" id="portfolio-tm-link">时光音乐会</span>成为第一个从零到一、自主原创并主导负责的项目。以此为触角，随后开始独立<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="wechat-ops" id="portfolio-wo-link">运营公众号</span>，邀请曾经的同学共同参与，分享彼此真实的感触、记忆与思考，成为一种原初的群体情感共创。
+              </p>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+      
+      <!-- Legend - Outside background image -->
+      <div class="relative z-20 py-16 flex flex-col items-center border-t border-sed-mist">
+        <div class="bg-sed-bg border border-sed-mist" id="legendBar">
+          <div class="flex items-center gap-4 px-6 py-3">
+            <div class="legend-item flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-sed-slate/10 transition-colors" data-category="RESEARCH">
+              <span class="w-3 h-3 bg-sed-accent"></span>
+              <span class="font-mono text-xs tracking-widest uppercase">RESEARCH</span>
+            </div>
+            <div class="legend-item flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-sed-slate/10 transition-colors" data-category="AI">
+              <span class="w-3 h-3 bg-[#6B8E6B]"></span>
+              <span class="font-mono text-xs tracking-widest uppercase">AI</span>
+            </div>
+            <div class="legend-item flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-sed-slate/10 transition-colors" data-category="PRODUCT">
+              <span class="w-3 h-3 bg-sed-slate"></span>
+              <span class="font-mono text-xs tracking-widest uppercase">PRODUCT</span>
+            </div>
+            <div class="legend-item flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-sed-slate/10 transition-colors" data-category="CONTENT">
+              <span class="w-3 h-3 bg-[#8B7355]"></span>
+              <span class="font-mono text-xs tracking-widest uppercase">CONTENT</span>
+            </div>
+            <div class="legend-item flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-sed-slate/10 transition-colors" data-category="EVENT">
+              <span class="w-3 h-3 bg-sed-mist"></span>
+              <span class="font-mono text-xs tracking-widest uppercase">EVENT</span>
+            </div>
+          </div>
+          
+          <!-- Tag Projects Panel - Embedded inside legend bar -->
+          <div id="tagProjectsPanel" class="hidden bg-sed-bg/80 backdrop-blur-sm border-t border-sed-mist/30" style="transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1); max-height: 0; opacity: 0; overflow: hidden;">
+            <div class="px-6 py-4 border-b border-sed-mist/30 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="font-mono text-sm tracking-widest" id="tagPanelTitle">RESEARCH</span>
+                <span class="font-mono text-xs text-sed-mist" id="tagPanelCount">2</span>
+              </div>
+              <button id="closeTagPanel" class="font-mono text-xl text-sed-text/60 hover:text-sed-accent transition-all duration-300">×</button>
+            </div>
+            <div class="p-6">
+              <div id="tagPanelProjects" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Projects injected via JS -->
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+      
     </section>
-
-  </main>
-
-  <!-- ============================================
-       PROJECT DETAIL MODAL
-       ============================================ -->
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal-container" id="modalContainer">
-      <button class="modal-close" id="modalClose" aria-label="Close modal">&times;</button>
-      <div class="modal-header">
-        <span class="modal-specimen-id" id="modalSpecimenId"></span>
-        <h2 class="modal-title" id="modalTitle"></h2>
-      </div>
-      <div class="modal-body">
-        <div class="modal-meta" id="modalMeta"></div>
-        <p class="modal-description" id="modalDescription"></p>
-        <div class="modal-tags" id="modalTags"></div>
+    
+    <!-- Section Divider - Microscope View -->
+    <div class="section-divider h-screen flex items-center justify-center relative -mt-32">
+      <div class="microscope-circle w-12 h-12 rounded-full border border-sed-mist flex items-center justify-center cursor-pointer transition-all duration-700 ease-out hover:border-sed-slate/70">
+        <div class="microscope-inner w-6 h-6 rounded-full border border-sed-mist/50 transition-all duration-700 ease-out delay-100"></div>
       </div>
     </div>
+    
+    <!-- Experience Section - Split Layout -->
+    <section class="section bg-sed-bg relative z-10" id="experience">
+      <div class="flex min-h-screen">
+        <!-- Left Side - Fixed -->
+        <div class="w-1/3 sticky top-0 h-screen flex flex-col justify-center px-12 relative">
+          <div class="absolute left-0 top-1/2 -translate-y-1/2 w-px h-32 bg-sed-mist"></div>
+          <span class="font-mono text-xs tracking-widest text-sed-mist block mb-4">SECTION_03</span>
+          <h2 class="font-serif text-5xl font-light mb-2">经历层序</h2>
+          <p class="font-mono text-sm tracking-widest text-sed-slate uppercase mb-6">EXPERIENCE</p>
+          <p class="font-mono text-xs tracking-widest text-sed-slate mb-6">STRATIGRAPHIC EXTRACTION OF GROWTH</p>
+          <p class="text-base text-sed-mist mb-8">个人成长的层序剥离</p>
+          <div class="w-16 h-px bg-sed-accent"></div>
+        </div>
+        
+        <!-- Right Side - Scrollable -->
+        <div class="w-2/3 px-12 py-16">
+          <!-- STRATUM 01: Education -->
+          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="education">
+            <div class="py-8 border-t border-sed-mist">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-serif text-2xl">南京师范大学</h3>
+                <span class="font-mono text-xs tracking-widest text-sed-accent">2022.09 — 2026.06</span>
+              </div>
+              <span class="font-mono text-sm text-sed-slate block mb-1">汉语言文学（本科） // BA in Chinese Language and Literature</span>
+              <span class="font-mono text-xs text-sed-mist block mb-3">211 · 优秀毕业生</span>
+              <p class="text-base leading-relaxed text-sed-text/80">
+                专业排名 1/61（GPA: 4.21 / 5.00，综合测评排名第1）
+              </p>
+              <div class="exp-content mt-4 overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0;">
+                <div class="space-y-3 text-base leading-relaxed text-sed-text/70 mb-4">
+                  <p><strong class="text-sed-text">学术荣誉：</strong>上海文学发展基金会青年评论跟踪人才、蓝桥杯计设AI赛道国家级二等奖（一主）</p>
+                  <p><strong class="text-sed-text">语言能力：</strong>IELTS 7 / CET-6 597</p>
+                  <p><strong class="text-sed-text">研究兴趣：</strong>接受美学、新现象学、身体-空间批评、儿童文学</p>
+                  <p><strong class="text-sed-text">作品集：</strong><span class="text-sed-accent cursor-pointer hover:underline" id="portfolio-viewer-link">Lines of Fold, Lines of Flight —— 儿童文学方向作品集</span></p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">EDUCATION</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">RANK 1/61</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">CHINESE LITERATURE</span>
+                </div>
+              </div>
+              <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
+            </div>
+          </div>
+          
+          <!-- STRATUM 02: Work & Projects -->
+          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="duke">
+            <div class="py-8 border-t border-sed-mist">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-serif text-2xl">读客文化（三个圈经典文库）</h3>
+                <span class="font-mono text-xs tracking-widest text-sed-accent">2026.03 — 2026.06</span>
+              </div>
+              <span class="font-mono text-sm text-sed-slate block mb-3">全流程编辑实习生</span>
+              <p class="text-base leading-relaxed text-sed-text/80">
+                开展公版书产品市场调研与竞品分析，参与SKU设计、营销策划及内容传播；运用AI工具优化资料整理与编辑流程。
+              </p>
+              <div class="exp-content mt-4 overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0;">
+                <div class="space-y-3 text-base leading-relaxed text-sed-text/70 mb-4">
+                  <p><strong class="text-sed-text">营销运营：</strong>聚焦文化出版与数字内容消费市场，运营3个不同定位的垂直账号。一周实现1账号从0-1的冷启动，产出自然流万读爆款；深度开发2个垂类账号，通过对目标受众痛点与专业需求内容的精准建构，持续产出多篇千赞级、高互动内容。</p>
+                  <p><strong class="text-sed-text">差异化产品全流程研发：</strong>深入开展公版书细分赛道的定性市场分析与产品研发。通过对读者评价、核心话题及消费心理的扎实文本归纳，洞察消费者母体；结合客户、销售需求制定差异化产品（SKU）研发方向与成本。独立负责项目3项，其中包销万册项目2项。</p>
+                  <p><strong class="text-sed-text">商业方法论实战：</strong>深度参与公司商业传播方法论的实战转化，应用"超级词根、核心设定、购买理由"等标准化分析模型进行产品定位。运用行业开卷数据等开展定量市场调研，绘制价格区间、选品种类分布与营销模式对比图表，实现完整商业研究闭环。</p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">PUBLISHING</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">MARKETING</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">PRODUCT DESIGN</span>
+                </div>
+              </div>
+              <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
+            </div>
+          </div>
+          
+          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="viva">
+            <div class="py-8 border-t border-sed-mist">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-serif text-2xl">Viva La Vida（国际NGO）</h3>
+                <span class="font-mono text-xs tracking-widest text-sed-accent">2025.09 — 2026.03</span>
+              </div>
+              <span class="font-mono text-sm text-sed-slate block mb-3">国际合作部运营实习生</span>
+              <p class="text-base leading-relaxed text-sed-text/80">
+                参与生命教育与艺术疗愈项目运营，对接艺术家及合作机构；通过活动反馈分析与社群观察，优化项目设计并研究文化公益组织运营机制。
+              </p>
+              <div class="exp-content mt-4 overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0;">
+                <div class="space-y-3 text-base leading-relaxed text-sed-text/70 mb-4">
+                  <p><strong class="text-sed-text">活动策划与数据监控：</strong>负责国际跨文化艺术项目的落地执行与全球青年社群运营。参与并落地生活方式、女性向品牌及组织共创活动 5+，设计互动机制与参与激励逻辑，提升用户参与度与内容完成率。独立完成活动核心文案撰写及基础页面物料构思。在内容发布与活动执行后，整理基础数据指标（阅读量、互动率、参与转化率），为后续内容与用户策略调整提供参考。</p>
+                  <p><strong class="text-sed-text">用户/创作者沟通与需求反馈：</strong>高频对接国内外社交平台创作者、合作机构与用户群体，在内容共创与活动执行过程中收集多方反馈；通过整理沟通记录，归纳常见需求与痛点，为流程与内容优化提供参考。协助建立标准化筛选、沟通、交付与审核SOP。</p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">NGO</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">COMMUNITY</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">OPERATIONS</span>
+                </div>
+              </div>
+              <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
+            </div>
+          </div>
+          
+          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="cfps">
+            <div class="py-8 border-t border-sed-mist">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-serif text-2xl">中国社会科学调查中心（CFPS）</h3>
+                <span class="font-mono text-xs tracking-widest text-sed-accent">2024.07 — 2024.09</span>
+              </div>
+              <span class="font-mono text-sm text-sed-slate block mb-3">调研助理</span>
+              <p class="text-base leading-relaxed text-sed-text/80">
+                累计完成240+小时入户访谈与问卷调查，参与数据清洗与质量核验；结合定性访谈与定量分析，支持社会调查研究开展。
+              </p>
+              <div class="exp-content mt-4 overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0;">
+                <div class="space-y-3 text-base leading-relaxed text-sed-text/70 mb-4">
+                  <p><strong class="text-sed-text">一线调研执行：</strong>通过三轮选拔，成为CFPS上海地区项目一线核心成员。累计参与实地入户访问240+h，全面负责调查问卷的发放与回收、样本户信息核实、现场异常处理；针对拒访、回答偏差等问题动态调整沟通策略，提高样本有效性。</p>
+                  <p><strong class="text-sed-text">定量数据整理与分析：</strong>参与调查数据清洗、逻辑核验与异常值筛查工作，对样本完整性、回答一致性及异常情况进行持续跟踪，保障数据质量。</p>
+                  <p><strong class="text-sed-text">社会议题研究：</strong>结合访谈记录与调查数据，观察城乡家庭结构、教育观念及青年发展议题，提升从个体叙事中识别共性问题与社会趋势的研究能力。</p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">FIELD RESEARCH</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">DATA ANALYSIS</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">SOCIAL SCIENCE</span>
+                </div>
+              </div>
+              <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
+            </div>
+          </div>
+          
+          <div class="exp-item cursor-pointer reveal-on-scroll" data-exp="mental-health">
+            <div class="py-8 border-t border-sed-mist">
+              <div class="flex items-baseline justify-between mb-2">
+                <h3 class="font-serif text-2xl">南京师范大学心理健康教育中心</h3>
+                <span class="font-mono text-xs tracking-widest text-sed-accent">2022.09 — 2025.09</span>
+              </div>
+              <span class="font-mono text-sm text-sed-slate block mb-3">学生助理</span>
+              <p class="text-base leading-relaxed text-sed-text/80">
+                协助开展心理健康教育工作；参与来访学生初步接待与心理档案电子化管理；协助策划实施心理科普活动（含讲座、团体辅导）；辅助心理测评的组织实施与数据统计分析；学习心理咨询基本理论与实务技能。
+              </p>
+              <div class="exp-content mt-4 overflow-hidden transition-all duration-500" style="max-height: 0; opacity: 0;">
+                <div class="space-y-3 text-base leading-relaxed text-sed-text/70 mb-4">
+                  <p>协助老师开展校心理教育的日常工作，负责525心理博览会等校级大型活动筹备开展、常规活动与创新活动的审核跟进。</p>
+                  <p>活动对象以在校大学生为主体。独立负责5次创新活动，单次参与人次超800人，并将其打造为品牌活动，活动单篇推送超4000次浏览；参与组织大小活动10余次，单次参与人数最高达2000人；培养了突出的组织能力与协调能力；在职期间申报校心站成为江苏高校心理协会副理事长单位。</p>
+                </div>
+                <div class="flex gap-2 flex-wrap">
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">MENTAL HEALTH</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">EVENT PLANNING</span>
+                  <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">LEADERSHIP</span>
+                </div>
+                <p class="mt-5 text-sm text-[#4A6B7C] font-light leading-relaxed cursor-pointer project-keyword" data-project="psych-weather" id="pw-hover-link">校心理气象站 —— 在此期间策划组织的系列校园活动详见独立档案</p>
+                <p class="mt-3 text-sm text-[#4A6B7C] font-light leading-relaxed cursor-pointer project-keyword" data-project="time-music-concert" id="tm-hover-link">
+                  时光音乐会 —— 我在心站期间独立原创并主导负责的校园品牌活动
+                </p>
+              </div>
+              <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Section Divider - Microscope View -->
+    <div class="section-divider h-screen flex items-center justify-center relative -mt-32">
+      <div class="microscope-circle w-12 h-12 rounded-full border border-sed-mist flex items-center justify-center cursor-pointer transition-all duration-700 ease-out hover:border-sed-slate/70">
+        <div class="microscope-inner w-6 h-6 rounded-full border border-sed-mist/50 transition-all duration-700 ease-out delay-100"></div>
+      </div>
+    </div>
+    
+    <!-- Blog Section -->
+    <section class="section relative z-10 overflow-hidden -mt-[40vh]" id="blog">
+      <!-- Background image layer (always visible underneath) -->
+      <div id="gardenBg" class="absolute inset-0 z-0" style="background-image:url('images/garden-bg.png');background-size:cover;background-position:center;background-attachment:fixed;"></div>
+      <!-- Single spotlight overlay (page-bg color, hole punched at cursor) -->
+      <div id="gardenOverlay" class="absolute inset-0 z-[1] pointer-events-none" style="background:rgba(224,221,220,1);"></div>
+      <div class="relative z-10 max-w-2xl mx-auto px-8 pt-[40vh] pb-24">
+        <div class="mb-20">
+          <span class="font-mono text-xs tracking-widest block mb-2" style="color:#7B90A3">SECTION_04</span>
+          <h2 class="font-serif text-5xl font-light mb-2">灵感种子</h2>
+          <p class="font-mono text-sm tracking-widest uppercase mb-6" style="color:#5A6F7F">GARDEN</p>
+          <div class="w-16 h-px bg-sed-accent mb-6"></div>
+          <p class="font-mono text-xs tracking-widest mb-2" style="color:#5A6F7F">SEEDS, SHARDS & SEDIMENTS</p>
+          <p class="text-base mb-6" style="color:#8A8685">思想种子的生长与沉淀</p>
+          <button id="randomArticleBtn" class="group flex items-center gap-2 font-mono text-xs tracking-widest hover:text-sed-accent transition-colors cursor-pointer" style="color:#6A7F8F">
+            <span class="w-2 h-2 rounded-full bg-sed-accent group-hover:scale-125 transition-transform"></span>
+            <span>RANDOM PICK</span>
+            <span class="text-sed-mist">— 随机推荐一篇</span>
+          </button>
+        </div>
+        
+        <!-- Search & Filter Bar -->
+        <div class="mb-12 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+          <div class="relative flex-1 w-full">
+            <input id="gardenSearch" type="text" placeholder="SEARCH / 检索..." class="w-full font-mono text-xs tracking-wider bg-transparent px-4 py-2.5 transition-colors" style="border:1px solid #6A6A6A;color:#4A4A4A;outline:none;" onfocus="this.style.borderColor='#AF474E'" onblur="this.style.borderColor='#6A6A6A'">
+          </div>
+          <div class="flex gap-2">
+            <button class="garden-filter active font-mono text-xs tracking-widest px-3 py-2 transition-colors cursor-pointer" style="border:1px solid #5A6F7F;color:#5A6F7F" data-filter="ALL">ALL</button>
+            <button class="garden-filter font-mono text-xs tracking-widest px-3 py-2 transition-colors cursor-pointer" style="border:1px solid #8A8685;color:#8A8685" data-filter="PAPER" onmouseenter="if(!this.classList.contains('active')){this.style.borderColor='#C25B56';this.style.color='#C25B56'}" onmouseleave="if(!this.classList.contains('active')){this.style.borderColor='#8A8685';this.style.color='#8A8685'}">PAPER</button>
+            <button class="garden-filter font-mono text-xs tracking-widest px-3 py-2 transition-colors cursor-pointer" style="border:1px solid #8A8685;color:#8A8685" data-filter="FRAGMENT" onmouseenter="if(!this.classList.contains('active')){this.style.borderColor='#8B7355';this.style.color='#8B7355'}" onmouseleave="if(!this.classList.contains('active')){this.style.borderColor='#8A8685';this.style.color='#8A8685'}">FRAGMENT</button>
+            <button class="garden-filter font-mono text-xs tracking-widest px-3 py-2 transition-colors cursor-pointer" style="border:1px solid #8A8685;color:#8A8685" data-filter="FILM" onmouseenter="if(!this.classList.contains('active')){this.style.borderColor='#4A6B7C';this.style.color='#4A6B7C'}" onmouseleave="if(!this.classList.contains('active')){this.style.borderColor='#8A8685';this.style.color='#8A8685'}">FILM</button>
+          </div>
+        </div>
+        
+        <div id="blogList" class="flex flex-col">
+          <!-- Blog articles rendered via JS (Speed Index) -->
+        </div>
+        
+        <!-- Research Document Modal -->
+        <div id="docModal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center bg-sed-text/40 modal-backdrop">
+          <div class="modal-content bg-white w-full max-w-2xl max-h-[80vh] overflow-y-auto mx-4 shadow-xl">
+            <div class="sticky top-0 bg-white px-12 py-6 flex items-center justify-between">
+              <span class="font-mono text-xs tracking-widest text-sed-mist">BLOG</span>
+              <button id="closeModal" class="font-mono text-2xl text-sed-text/60 hover:text-sed-accent transition-all duration-300">×</button>
+            </div>
+            <div class="px-12 pb-12">
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-3" id="modalDocId">DOC-2024-001</span>
+              <h3 class="font-serif text-4xl mb-8 text-sed-text" id="modalTitle">Document Title</h3>
+              <div class="grid grid-cols-3 gap-8 mb-8">
+                <div>
+                  <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">DATE</span>
+                  <span class="font-mono text-sm text-sed-text" id="modalDate">2024.11.28</span>
+                </div>
+                <div>
+                  <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">CATEGORY</span>
+                  <span class="font-mono text-sm border px-2 py-0.5 inline-block" id="modalType">ESSAY</span>
+                </div>
+                <div>
+                  <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">CONTEXT</span>
+                  <span class="font-mono text-sm text-sed-text" id="modalReadTime">8 min read</span>
+                </div>
+              </div>
+              <div class="w-full h-px bg-sed-mist/50 mb-8"></div>
+              <div class="prose prose-slate max-w-none leading-relaxed" id="modalContent">
+                <!-- Content injected via JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Project Detail Modal -->
+    <!-- Project Side Panel -->
+    <div id="projectModal" class="side-panel-overlay fixed inset-0 z-50 hidden bg-sed-text/40">
+      <div class="side-panel fixed right-0 top-0 h-full w-full md:w-1/2 lg:max-w-2xl shadow-2xl transform translate-x-full transition-transform duration-500 ease-out flex flex-col">
+        <!-- Header -->
+        <div class="flex-shrink-0 px-10 py-6 md:px-16 md:py-7 flex items-center justify-between border-b border-sed-text/10">
+          <span class="font-mono text-xs tracking-widest text-sed-text/70">PROJECT</span>
+          <button id="closeProjectModal" class="font-mono text-2xl text-sed-text/80 hover:text-sed-accent transition-all duration-300">×</button>
+        </div>
+        <!-- Scrollable Content -->
+        <div class="flex-1 overflow-y-auto px-10 py-10 md:px-16 md:py-14" id="projectModalScroll">
+          <span class="font-mono text-xs tracking-widest text-sed-text/70 block mb-3" id="projectModalId">SED-2024-001</span>
+          <h3 class="font-serif text-3xl md:text-4xl mb-8 text-sed-text" id="projectModalTitle">Project Title</h3>
+
+          <!-- Metadata row -->
+          <div class="grid grid-cols-3 gap-4 md:gap-8 mb-8">
+            <div>
+              <span class="font-mono text-xs tracking-widest text-sed-text/70 block mb-2">DATE</span>
+              <span class="font-mono text-sm text-sed-text" id="projectModalDate">2024.01 — PRESENT</span>
+            </div>
+            <div>
+              <span class="font-mono text-xs tracking-widest text-sed-text/70 block mb-2">CATEGORY</span>
+              <span class="font-mono text-sm text-sed-text" id="projectModalCategory">RESEARCH</span>
+            </div>
+            <div>
+              <span class="font-mono text-xs tracking-widest text-sed-text/70 block mb-2">ERA</span>
+              <span class="font-mono text-sm text-sed-text" id="projectModalEra">新生代 CENOZOIC</span>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="w-full h-px bg-sed-text/15 mb-8"></div>
+
+          <!-- Content -->
+          <div class="prose prose-slate max-w-none mb-8 leading-relaxed" id="projectModalContent">
+            <!-- Content injected via JS -->
+          </div>
+
+          <!-- Tags -->
+          <div class="flex gap-3 flex-wrap" id="projectModalTags">
+            <!-- Tags injected via JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Connect Modal -->
+    <div id="connectModal" class="modal-overlay fixed inset-0 z-50 hidden items-center justify-center bg-sed-text/40 modal-backdrop">
+      <div class="modal-content bg-sed-text w-full max-w-sm max-h-[80vh] overflow-y-auto mx-4 shadow-xl">
+        <div class="sticky top-0 bg-sed-text px-8 py-5 flex items-center justify-between">
+          <span class="font-mono text-xs tracking-widest text-sed-mist">CONTACT</span>
+          <button id="closeConnectModal" class="font-mono text-2xl text-sed-mist/60 hover:text-sed-accent transition-all duration-300">×</button>
+        </div>
+        <div class="px-8 pb-10">
+          <div class="space-y-5">
+            <div>
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">GITHUB</span>
+              <a href="https://github.com/CountAway" target="_blank" rel="noopener noreferrer" class="inline-block font-mono text-sm tracking-wider text-sed-mist border border-sed-mist/40 px-3 py-1 hover:border-sed-accent hover:text-sed-accent transition-colors">Gayo</a>
+            </div>
+            <div>
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">BONJOUR</span>
+              <a href="https://bonjour.bio/7kyggc" target="_blank" rel="noopener noreferrer" class="inline-block font-mono text-sm tracking-wider text-sed-mist border border-sed-mist/40 px-3 py-1 hover:border-sed-accent hover:text-sed-accent transition-colors">Gayo</a>
+            </div>
+            <div>
+              <span class="font-mono text-xs tracking-widest text-sed-mist block mb-2">EMAIL</span>
+              <button id="copyEmailBtn" class="font-mono text-sm text-sed-mist hover:text-sed-accent transition-colors cursor-pointer">Jiyao_Song@outlook.com</button>
+              <span id="copyEmailHint" class="font-mono text-xs text-sed-accent ml-2 opacity-0 transition-opacity duration-300">Copied!</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    
+  </main>
+  
+  <script src="articles.js"></script>
+  
+  <!-- Scroll-driven Animation Script -->
+  <script>
+    // Linear interpolation function
+    function lerp(start, end, t) {
+      return start * (1 - t) + end * t;
+    }
+    
+    // Clamp value between 0 and 1
+    function clamp01(value) {
+      return Math.max(0, Math.min(1, value));
+    }
+    
+    // Main scroll handler
+    function handleScroll() {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      
+      // Rock image elements
+      const rockImage = document.getElementById('rockImage');
+      const rockContainer = document.getElementById('rockContainer');
+      const portfolioSection = document.getElementById('portfolio');
+      const portfolioBgImage = document.getElementById('portfolioBgImage');
+      
+      // Calculate scroll progress through the first viewport (About section)
+      // 0 = top of page, 1 = scrolled one full viewport
+      const scrollProgress = clamp01(scrollY / windowHeight);
+      
+      // Rock image transformations
+      // Scale: 1 -> 4.0 (fills screen completely)
+      const scale = lerp(1, 4.0, scrollProgress);
+      
+      // Clip-path: circle(50%) -> circle(150%) (remove circular mask)
+      const clipRadius = lerp(50, 150, scrollProgress);
+      
+      // Fixed rock image: visible during 0-0.85, instantly hidden at 0.85+
+      const fixedRockOpacity = scrollProgress < 0.85 ? 1 : 0;
+      
+      // Apply transforms to fixed rock image
+      rockImage.style.transform = `scale(${scale})`;
+      rockImage.style.clipPath = `circle(${clipRadius}% at 50% 50%)`;
+      rockImage.style.opacity = fixedRockOpacity;
+      
+      // Portfolio section: content fades in
+      // Portfolio starts entering at 0.85 when rock disappears
+      const portfolioProgress = clamp01((scrollProgress - 0.85) / 0.15);
+      const portfolioOpacity = portfolioProgress;
+      portfolioSection.style.opacity = portfolioOpacity;
+      
+      // Portfolio background container: appears instantly at 85%, no animation
+      const portfolioBgContainer = document.getElementById('portfolioBgContainer');
+      if (portfolioBgContainer) {
+        // Instantly show/hide based on 85% threshold (no fade, no animation)
+        portfolioBgContainer.style.opacity = scrollProgress >= 0.85 ? 1 : 0;
+      }
+    }
+    
+    // Throttled scroll listener for performance
+    let ticking = false;
+    window.addEventListener('scroll', function() {
+      if (!ticking) {
+        window.requestAnimationFrame(function() {
+          handleScroll();
+          checkTagModalVisibility();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+    
+    // Initial call
+    handleScroll();
+    
+    // ==========================================
+    // TYPEWRITER EFFECT - About Section
+    // ==========================================
+    const rockTrigger = document.getElementById('rockTrigger');
+    const typewriterOverlay = document.getElementById('typewriterOverlay');
+    const typewriterText = document.getElementById('typewriterText');
+    const typewriterContent = document.getElementById('typewriterContent');
+    const typewriterCursor = document.getElementById('typewriterCursor');
+    
+    const typewriterParagraphs = [
+      '沉积岩是我很早以前就想好的一个题目，一个时间的、往来无穷的题目。',
+      '人生永远是一场关于时间的旅行，这样说很俗气，但我认为的确如此。一段段时间被文字封存成所谓曾经的模样，然后抬升，皱褶，崩裂，风蚀……成为一片小小的丘陵。',
+      '在每一层中，或许会有化石，会有地泉，会有矿脉，或者仅仅是有岩石的纹理，但这一切不关岩石的事情，它只是生长。',
+      '我们如何看见，又如何被看见？我将这份追问延续到更广阔的领域。文学创作、批评写作、学术研究、实习实践……它们不再是彼此割裂的标签，而是同一片岩层中不同的矿物脉络，是一道又一道的逃逸线。',
+      '我以专业的态度对待每一个项目，也以个人的温度对待每一次表达。'
+    ];
+    
+    let typewriterTyping = false;
+    let typewriterTimeout = null;
+    let typewriterParaIndex = 0;
+    let typewriterCharIndex = 0;
+    
+    function startTypewriter() {
+      if (typewriterTyping) return;
+      typewriterTyping = true;
+      typewriterParaIndex = 0;
+      typewriterCharIndex = 0;
+      typewriterContent.innerHTML = '';
+      
+      typewriterOverlay.classList.add('active');
+      typewriterText.classList.add('active');
+      
+      typeNextChar();
+    }
+    
+    function typeNextChar() {
+      if (typewriterParaIndex < typewriterParagraphs.length) {
+        const currentPara = typewriterParagraphs[typewriterParaIndex];
+        
+        if (typewriterCharIndex === 0) {
+          // Create new paragraph element
+          const para = document.createElement('p');
+          para.className = 'typewriter-paragraph';
+          typewriterContent.appendChild(para);
+        }
+        
+        const currentParaEl = typewriterContent.lastElementChild;
+        
+        if (typewriterCharIndex < currentPara.length) {
+          currentParaEl.textContent += currentPara.charAt(typewriterCharIndex);
+          typewriterCharIndex++;
+          
+          // Random typing speed for natural feel
+          const delay = 35 + Math.random() * 45;
+          typewriterTimeout = setTimeout(typeNextChar, delay);
+        } else {
+          // Move to next paragraph
+          typewriterParaIndex++;
+          typewriterCharIndex = 0;
+          
+          // Pause between paragraphs
+          const delay = 400 + Math.random() * 200;
+          typewriterTimeout = setTimeout(typeNextChar, delay);
+        }
+      } else {
+        // Keep cursor blinking for a while then hide
+        setTimeout(() => {
+          typewriterCursor.style.display = 'none';
+        }, 2000);
+      }
+    }
+    
+    function stopTypewriter() {
+      typewriterTyping = false;
+      if (typewriterTimeout) {
+        clearTimeout(typewriterTimeout);
+        typewriterTimeout = null;
+      }
+      typewriterOverlay.classList.remove('active');
+      typewriterText.classList.remove('active');
+      typewriterCursor.style.display = 'inline-block';
+    }
+    
+    if (rockTrigger) {
+      rockTrigger.addEventListener('mouseenter', startTypewriter);
+      rockTrigger.addEventListener('mouseleave', stopTypewriter);
+    }
+    
+    // Close tag panel when scrolling out of Portfolio section
+    function checkTagModalVisibility() {
+      const portfolioSection = document.getElementById('portfolio');
+      
+      if (!portfolioSection || !tagProjectsPanel || tagProjectsPanel.classList.contains('hidden')) {
+        return;
+      }
+      
+      const portfolioRect = portfolioSection.getBoundingClientRect();
+      const isInPortfolio = portfolioRect.top < window.innerHeight && portfolioRect.bottom > 0;
+      
+      if (!isInPortfolio) {
+        closeTagPanel();
+        legendItems.forEach(i => i.classList.remove('active'));
+      }
+    }
+    
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+    
+    // ==========================================
+    // INTERSECTION OBSERVER - Scroll Reveal Animation
+    // ==========================================
+    const revealElements = document.querySelectorAll('.reveal-on-scroll');
+    
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    
+    revealElements.forEach(el => revealObserver.observe(el));
+    
+    // ==========================================
+    // ERA BLOCK INTERACTION - Click to Expand
+    // ==========================================
+    const eraBlocks = document.querySelectorAll('.era-block');
+    
+    eraBlocks.forEach(block => {
+      block.addEventListener('click', function() {
+        const isActive = this.classList.contains('active');
+        
+        // Close all other blocks
+        eraBlocks.forEach(b => {
+          b.classList.remove('active');
+          const content = b.querySelector('.era-content');
+          if (content) {
+            content.style.maxHeight = '0';
+            content.style.opacity = '0';
+          }
+        });
+        
+        // Toggle current block
+        if (!isActive) {
+          this.classList.add('active');
+          const content = this.querySelector('.era-content');
+          if (content) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.style.opacity = '1';
+          }
+        }
+      });
+    });
+    
+    // ==========================================
+    // PROJECT KEYWORDS & TAGS - Portfolio
+    // ==========================================
+    
+    // Project data
+    // Portfolio data loaded from JSON
+    let projectData = {};
+    let tagProjects = {};
+    const jumpIdMap = {
+      'paleozoic_02': 'time-music-concert',
+      'mesozoic_01': 'yunnan-laodabao'
+    };
+
+    // Load portfolio data
+    fetch('./portfolio.json')
+      .then(r => r.json())
+      .then(data => {
+        projectData = data.projects || {};
+        tagProjects = data.tagProjects || {};
+      })
+      .catch(err => console.error('Failed to load portfolio:', err));
+    
+    // Project modal elements
+    const projectModal = document.getElementById('projectModal');
+    const closeProjectModalBtn = document.getElementById('closeProjectModal');
+    const projectModalId = document.getElementById('projectModalId');
+    const projectModalTitle = document.getElementById('projectModalTitle');
+    const projectModalDate = document.getElementById('projectModalDate');
+    const projectModalCategory = document.getElementById('projectModalCategory');
+    const projectModalEra = document.getElementById('projectModalEra');
+    const projectModalTags = document.getElementById('projectModalTags');
+    const projectModalContent = document.getElementById('projectModalContent');
+    
+    // Tag panel elements (embedded in page)
+    const tagProjectsPanel = document.getElementById('tagProjectsPanel');
+    const tagPanelTitle = document.getElementById('tagPanelTitle');
+    const tagPanelCount = document.getElementById('tagPanelCount');
+    const tagPanelProjects = document.getElementById('tagPanelProjects');
+    const closeTagPanelBtn = document.getElementById('closeTagPanel');
+    
+    function renderArtifacts(content, artifacts) {
+      if (!artifacts || artifacts.length === 0) return content;
+      let rendered = content;
+      artifacts.forEach(artifact => {
+        const placeholder = `[INSERT_ARTIFACT: ${artifact.id}]`;
+        let artifactHtml = '';
+        if (artifact.type === 'image') {
+          artifactHtml = `
+            <figure class="artifact-figure">
+              <img src="${artifact.src}" alt="${artifact.caption || ''}" class="w-full">
+              <figcaption class="font-mono text-xs tracking-widest text-sed-mist mt-2">${artifact.caption || ''}</figcaption>
+            </figure>
+          `;
+        } else if (artifact.type === 'table') {
+          const tableData = artifact.data || {};
+          const headers = tableData.headers || [];
+          const rows = tableData.rows || [];
+          let tableHtml = '<table class="w-full border-collapse">';
+          if (headers.length) {
+            tableHtml += '<thead><tr>' + headers.map(h => `<th class="border border-sed-text px-3 py-2 font-mono text-xs">${h}</th>`).join('') + '</tr></thead>';
+          }
+          tableHtml += '<tbody>' + rows.map(row => '<tr>' + row.map(cell => `<td class="border border-sed-text px-3 py-2 font-mono text-xs">${cell}</td>`).join('') + '</tr>').join('') + '</tbody>';
+          tableHtml += '</table>';
+          artifactHtml = `
+            <figure class="artifact-figure">
+              ${tableHtml}
+              <figcaption class="font-mono text-xs tracking-widest text-sed-mist mt-2">${artifact.caption || ''}</figcaption>
+            </figure>
+          `;
+        }
+        rendered = rendered.replace(placeholder, artifactHtml);
+      });
+      return rendered;
+    }
+
+    function bindGeoLinks(container) {
+      container.querySelectorAll('.geo-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const jumpId = this.dataset.jump;
+          const targetKey = jumpIdMap[jumpId] || jumpId;
+          // Switch content directly without closing the panel
+          openProjectModal(targetKey);
+        });
+      });
+    }
+
+    function openProjectModal(projectKey) {
+      const data = projectData[projectKey];
+      if (!data) return;
+      
+      projectModalId.textContent = data.id;
+      projectModalTitle.textContent = data.title;
+      projectModalDate.textContent = data.date;
+      projectModalCategory.textContent = data.category;
+      projectModalEra.textContent = data.era;
+      
+      // Render content with artifact substitution
+      const renderedContent = renderArtifacts(data.content || '', data.artifacts || []);
+      projectModalContent.innerHTML = renderedContent;
+      
+      // Bind geo-link jump events
+      bindGeoLinks(projectModalContent);
+      
+      // Generate tags
+      projectModalTags.innerHTML = (data.tags || []).map(tag => 
+        `<span class="font-mono text-xs tracking-widest border px-3 py-1.5 ${getTagColorClass(tag)}">${tag}</span>`
+      ).join('');
+      
+      projectModal.classList.remove('hidden');
+
+      // Trigger slide-in animation
+      requestAnimationFrame(() => {
+        projectModal.classList.add('active');
+        // Reset scroll position to top after panel is visible
+        const scrollContainer = document.getElementById('projectModalScroll');
+        if (scrollContainer) scrollContainer.scrollTop = 0;
+      });
+      
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeProjectModal() {
+      projectModal.classList.remove('active');
+      
+      // Remove guide line indicator
+      document.querySelectorAll('.project-keyword.panel-active').forEach(k => k.classList.remove('panel-active'));
+      
+      // Wait for slide-out animation to complete
+      setTimeout(() => {
+        projectModal.classList.add('hidden');
+        document.body.style.overflow = '';
+      }, 500);
+    }
+    
+    function openTagPanel(tag) {
+      const projects = tagProjects[tag] || [];
+      const color = tagColors[tag];
+      
+      // Set title with tag color
+      tagPanelTitle.textContent = tag;
+      tagPanelTitle.className = `font-mono text-sm tracking-widest ${color.text}`;
+      tagPanelCount.textContent = `${projects.length}`;
+      
+      // Generate project list - card style
+      tagPanelProjects.innerHTML = projects.map(key => {
+        const proj = projectData[key];
+        return `
+          <div class="project-panel-item cursor-pointer bg-sed-bg/50 hover:bg-sed-slate/10 transition-all duration-200 p-4 border border-sed-mist/30" data-project="${key}">
+            <div class="flex items-center justify-between mb-2">
+              <span class="font-mono text-xs text-sed-mist">${proj.id}</span>
+              <span class="font-mono text-xs tracking-widest ${color.text}">${proj.era.split(' ')[1]}</span>
+            </div>
+            <h4 class="font-serif text-lg text-sed-text">${proj.title}</h4>
+            <p class="font-mono text-xs text-sed-slate mt-1">${proj.date}</p>
+          </div>
+        `;
+      }).join('');
+      
+      // Add click handlers to project list items
+      tagPanelProjects.querySelectorAll('.project-panel-item').forEach(item => {
+        item.addEventListener('click', function() {
+          const projectKey = this.dataset.project;
+          closeTagPanel();
+          setTimeout(() => openProjectModal(projectKey), 200);
+        });
+      });
+      
+      // Show panel with slow animation
+      tagProjectsPanel.classList.remove('hidden');
+      // Force reflow
+      void tagProjectsPanel.offsetHeight;
+      
+      requestAnimationFrame(() => {
+        tagProjectsPanel.style.maxHeight = '600px';
+        tagProjectsPanel.style.opacity = '1';
+      });
+    }
+    
+    function closeTagPanel() {
+      tagProjectsPanel.style.maxHeight = '0';
+      tagProjectsPanel.style.opacity = '0';
+      
+      setTimeout(() => {
+        tagProjectsPanel.classList.add('hidden');
+      }, 600);
+    }
+    
+    function getTagColorClass(tag) {
+      const colors = {
+        'RESEARCH': 'border-sed-accent text-sed-accent',
+        'AI': 'border-[#6B8E6B] text-[#6B8E6B]',
+        'PRODUCT': 'border-sed-slate text-sed-slate',
+        'CONTENT': 'border-[#8B7355] text-[#8B7355]',
+        'EVENT': 'border-sed-mist text-sed-mist'
+      };
+      return colors[tag] || 'border-sed-mist text-sed-mist';
+    }
+    
+    // Project keyword click handlers
+    document.querySelectorAll('.project-keyword').forEach(keyword => {
+      keyword.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const projectKey = this.dataset.project;
+        if (!projectKey) return;
+        
+        // Add guide line indicator
+        document.querySelectorAll('.project-keyword').forEach(k => k.classList.remove('panel-active'));
+        this.classList.add('panel-active');
+        
+        openProjectModal(projectKey);
+      });
+    });
+    
+    // Project tag click handlers
+    document.querySelectorAll('.project-tag').forEach(tag => {
+      tag.addEventListener('click', function(e) {
+        e.stopPropagation();
+        const tagName = this.dataset.tag;
+        openTagModal(tagName);
+      });
+    });
+    
+    // Close modal handlers
+    if (closeProjectModalBtn) {
+      closeProjectModalBtn.addEventListener('click', closeProjectModal);
+    }
+    
+    if (closeTagPanelBtn) {
+      closeTagPanelBtn.addEventListener('click', function() {
+        closeTagPanel();
+        legendItems.forEach(i => i.classList.remove('active'));
+      });
+    }
+    
+    // Click outside to close tag panel
+    document.addEventListener('click', function(e) {
+      if (!tagProjectsPanel.classList.contains('hidden')) {
+        const isClickInsidePanel = tagProjectsPanel.contains(e.target);
+        const isClickOnLegend = e.target.closest('.legend-item');
+        const isClickOnLegendBar = e.target.closest('#legendBar');
+        
+        if (!isClickInsidePanel && !isClickOnLegend && !isClickOnLegendBar) {
+          closeTagPanel();
+          legendItems.forEach(i => i.classList.remove('active'));
+        }
+      }
+    });
+    
+    if (projectModal) {
+      // Prevent clicks inside the side panel from closing it
+      const sidePanelEl = projectModal.querySelector('.side-panel');
+      if (sidePanelEl) {
+        sidePanelEl.addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
+      }
+
+      projectModal.addEventListener('click', function(e) {
+        // Only close if clicking on the overlay itself, not inside the side panel
+        if (e.target === projectModal) closeProjectModal();
+      });
+    }
+    
+    // Escape key to close modals
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        if (!projectModal.classList.contains('hidden')) closeProjectModal();
+        if (!tagProjectsPanel.classList.contains('hidden')) {
+          closeTagPanel();
+          legendItems.forEach(i => i.classList.remove('active'));
+        }
+      }
+    });
+    
+    // ==========================================
+    // BLOG ARTICLE - Document Modal
+    // ==========================================
+    const docModal = document.getElementById('docModal');
+    const closeModalBtn = document.getElementById('closeModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDocId = document.getElementById('modalDocId');
+    const modalDate = document.getElementById('modalDate');
+    const modalType = document.getElementById('modalType');
+    const modalReadTime = document.getElementById('modalReadTime');
+    const modalContent = document.getElementById('modalContent');
+    
+    
+    // Render blog list dynamically (Speed Index style)
+    function extractExcerpt(content, maxLen = 120) {
+      const temp = document.createElement('div');
+      temp.innerHTML = content;
+      const text = temp.textContent || temp.innerText || '';
+      const clean = text.replace(/\s+/g, ' ').trim();
+      if (clean.length <= maxLen) return clean;
+      return clean.substring(0, maxLen) + '...';
+    }
+    
+    function renderBlogList(filter = 'ALL', search = '') {
+      const blogList = document.getElementById('blogList');
+      if (!blogList) return;
+      
+      const filtered = Object.entries(docData).filter(([key, data]) => {
+        const matchType = filter === 'ALL' || data.type === filter;
+        const matchSearch = !search || data.title.toLowerCase().includes(search.toLowerCase()) || data.readTime.toLowerCase().includes(search.toLowerCase()) || data.id.toLowerCase().includes(search.toLowerCase());
+        return matchType && matchSearch;
+      });
+      
+      blogList.innerHTML = filtered.map(([key, data], index) => {
+        const excerpt = extractExcerpt(data.content);
+        return `
+          <article class="garden-card reveal-on-scroll" data-article="${key}" data-type="${data.type}" style="transition-delay: ${index * 40}ms">
+            <div class="speed-row">
+              <span class="font-mono text-xs" style="min-width:5rem;flex-shrink:0;color:#8A8685">${data.id}</span>
+              <span class="speed-type-dot" data-type="${data.type}"></span>
+              <span class="font-serif text-base speed-title" style="flex:1;transition:color 0.25s ease;line-height:1.4">${data.title}</span>
+              <span class="font-mono text-xs" style="flex-shrink:0;text-align:right;min-width:4rem;color:#8A8685">${data.readTime}</span>
+              <span class="speed-arrow font-mono text-xs" style="transition:all 0.25s ease;flex-shrink:0;color:#8A8685">→</span>
+            </div>
+            <div class="speed-detail">
+              <div class="speed-detail-inner">
+                <p class="font-serif text-sm leading-relaxed" style="color:#8A8685">${excerpt}</p>
+                <span class="speed-read-full font-mono text-xs tracking-widest" style="color:#6A7F8F">READ FULL →</span>
+              </div>
+            </div>
+          </article>
+        `}).join('');
+      
+      // Re-attach click handlers (Speed Index two-level interaction)
+      blogList.querySelectorAll('.garden-card').forEach(article => {
+        article.addEventListener('click', function(e) {
+          e.preventDefault();
+          const articleKey = this.dataset.article;
+          
+          if (this.classList.contains('expanded')) {
+            // Already expanded → open full document modal
+            openModal(articleKey);
+          } else {
+            // Collapse others, expand this one
+            blogList.querySelectorAll('.garden-card.expanded').forEach(card => {
+              card.classList.remove('expanded');
+            });
+            this.classList.add('expanded');
+          }
+        });
+        
+        // "READ FULL" link inside detail
+        const readFull = article.querySelector('.speed-read-full');
+        if (readFull) {
+          readFull.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const articleKey = article.dataset.article;
+            openModal(articleKey);
+          });
+        }
+      });
+      
+      // Re-observe for scroll reveal
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.05 });
+      
+      blogList.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    }
+    
+    // Click on blank area of blog section to collapse all expanded panels
+    const blogSection = document.getElementById('blog');
+    if (blogSection) {
+      blogSection.addEventListener('click', function(e) {
+        if (!e.target.closest('.garden-card') && !e.target.closest('.garden-filter') && !e.target.closest('#gardenSearch') && !e.target.closest('#randomArticleBtn')) {
+          blogList.querySelectorAll('.garden-card.expanded').forEach(card => {
+            card.classList.remove('expanded');
+          });
+        }
+      });
+    }
+    
+    // Garden background cursor spotlight reveal (single overlay layer)
+    (function() {
+      const gardenOverlay = document.getElementById('gardenOverlay');
+      const blogSection = document.getElementById('blog');
+      if (!gardenOverlay || !blogSection) return;
+
+      const spotlightRadius = 67;
+      const bg = '224,221,220'; // #E0DDDC — matches page background
+      let rafId = null;
+
+      // Smooth transition so the spotlight lingers along the cursor path
+      gardenOverlay.style.transition = 'background 0.6s ease-out';
+
+      blogSection.addEventListener('mousemove', function(e) {
+        const rect = blogSection.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        // Cancel any pending fade-out; keep spotlight following cursor
+        if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        gardenOverlay.style.transition = 'none';
+        // Punch a clean circular hole at cursor; rest stays solid page-bg
+        gardenOverlay.style.background = 'radial-gradient(circle ' + spotlightRadius + 'px at ' + x + 'px ' + y + 'px, rgba(' + bg + ',0) 0%, rgba(' + bg + ',0) 70%, rgba(' + bg + ',1) 100%)';
+      });
+
+      blogSection.addEventListener('mouseleave', function() {
+        // Restore solid overlay with a delay so the path fades out gradually
+        gardenOverlay.style.transition = 'background 0.6s ease-out';
+        rafId = requestAnimationFrame(function() {
+          gardenOverlay.style.background = 'rgba(' + bg + ',1)';
+        });
+      });
+    })();
+    
+    // Garden search & filter
+    let currentFilter = 'ALL';
+    let currentSearch = '';
+    
+    document.querySelectorAll('.garden-filter').forEach(btn => {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.garden-filter').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+        currentFilter = this.dataset.filter;
+        renderBlogList(currentFilter, currentSearch);
+      });
+    });
+    
+    const gardenSearchInput = document.getElementById('gardenSearch');
+    if (gardenSearchInput) {
+      let searchTimeout;
+      gardenSearchInput.addEventListener('input', function() {
+        clearTimeout(searchTimeout);
+        searchTimeout = setTimeout(() => {
+          currentSearch = this.value;
+          renderBlogList(currentFilter, currentSearch);
+        }, 200);
+      });
+    }
+    
+    // Random article button
+    const randomBtn = document.getElementById('randomArticleBtn');
+    if (randomBtn) {
+      randomBtn.addEventListener('click', function() {
+        const keys = Object.keys(docData);
+        const randomKey = keys[Math.floor(Math.random() * keys.length)];
+        openModal(randomKey);
+      });
+    }
+    
+    // Render blog list on page load
+    renderBlogList();
+    
+    function openModal(articleKey) {
+      const data = docData[articleKey];
+      if (!data) return;
+      
+      const categoryColors = {
+        'PAPER': 'text-sed-accent border-sed-accent',
+        'ESSAY': 'text-sed-slate border-sed-slate',
+        'FRAGMENT': 'text-[#8B7355] border-[#8B7355]',
+        'FILM': 'text-[#4A6B7C] border-[#4A6B7C]'
+      };
+
+      modalDocId.textContent = data.id;
+      modalTitle.textContent = data.title;
+      modalDate.textContent = data.date;
+      modalType.textContent = data.type;
+      modalType.className = `font-mono text-sm border px-2 py-0.5 inline-block ${categoryColors[data.type] || 'text-sed-text border-sed-mist'}`;
+      modalReadTime.textContent = data.readTime;
+      modalContent.innerHTML = data.content;
+      
+      docModal.classList.remove('hidden');
+      docModal.classList.add('flex');
+      
+      // Trigger animation and reset scroll to top after modal is visible
+      requestAnimationFrame(() => {
+        docModal.classList.add('active');
+        const modalContentEl = docModal.querySelector('.modal-content');
+        if (modalContentEl) modalContentEl.scrollTop = 0;
+      });
+      
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeModal() {
+      docModal.classList.remove('active');
+      
+      // Pause all video elements inside the modal
+      const videos = modalContent.querySelectorAll('video');
+      videos.forEach(v => v.pause());
+      
+      // Wait for animation to complete
+      setTimeout(() => {
+        docModal.classList.add('hidden');
+        docModal.classList.remove('flex');
+        document.body.style.overflow = '';
+        // Reset scroll so next open starts from top
+        const modalContentEl = docModal.querySelector('.modal-content');
+        if (modalContentEl) modalContentEl.scrollTop = 0;
+      }, 300);
+    }
+    
+    // Blog article click handlers
+    const blogArticles = document.querySelectorAll('.blog-article');
+    blogArticles.forEach(article => {
+      const readMoreBtn = article.querySelector('.read-more-btn');
+      
+      if (readMoreBtn) {
+        readMoreBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          const articleKey = article.dataset.article;
+          openModal(articleKey);
+        });
+      }
+      
+      // Also allow clicking the whole article
+      article.addEventListener('click', function(e) {
+        if (e.target === article || e.target.closest('h3') || e.target.closest('p')) {
+          const articleKey = article.dataset.article;
+          openModal(articleKey);
+        }
+      });
+    });
+    
+    // Close modal handlers
+    if (closeModalBtn) {
+      closeModalBtn.addEventListener('click', closeModal);
+    }
+    
+    if (docModal) {
+      docModal.addEventListener('click', function(e) {
+        if (e.target === docModal) {
+          closeModal();
+        }
+      });
+    }
+    
+    // Escape key to close modal
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && !docModal.classList.contains('hidden')) {
+        closeModal();
+      }
+    });
+
+    // Connect modal
+    const connectModal = document.getElementById('connectModal');
+    const closeConnectModalBtn = document.getElementById('closeConnectModal');
+
+    function openConnectModal() {
+      if (!connectModal) return;
+      connectModal.classList.remove('hidden');
+      connectModal.classList.add('flex');
+      requestAnimationFrame(() => {
+        connectModal.classList.add('active');
+      });
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeConnectModalFn() {
+      if (!connectModal) return;
+      connectModal.classList.remove('active');
+      setTimeout(() => {
+        connectModal.classList.add('hidden');
+        connectModal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }, 300);
+    }
+
+    // Connect button
+    document.querySelector('.nav-connect-btn').addEventListener('click', function (e) {
+      e.preventDefault();
+      openConnectModal();
+    });
+
+    // Close connect modal
+    if (closeConnectModalBtn) {
+      closeConnectModalBtn.addEventListener('click', closeConnectModalFn);
+    }
+
+    // Close on overlay click
+    if (connectModal) {
+      connectModal.addEventListener('click', function (e) {
+        if (e.target === connectModal) {
+          closeConnectModalFn();
+        }
+      });
+    }
+
+    // Copy email
+    const copyEmailBtn = document.getElementById('copyEmailBtn');
+    const copyEmailHint = document.getElementById('copyEmailHint');
+    if (copyEmailBtn) {
+      copyEmailBtn.addEventListener('click', function () {
+        navigator.clipboard.writeText('Jiyao_Song@outlook.com').then(() => {
+          if (copyEmailHint) {
+            copyEmailHint.classList.remove('opacity-0');
+            setTimeout(() => {
+              copyEmailHint.classList.add('opacity-0');
+            }, 1500);
+          }
+        });
+      });
+    }
+
+    // ==========================================
+    // EXPERIENCE ITEM EXPAND - Click to toggle
+    // ==========================================
+    const expItems = document.querySelectorAll('.exp-item');
+    
+    expItems.forEach(item => {
+      const toggle = item.querySelector('.exp-toggle');
+      const content = item.querySelector('.exp-content');
+      
+      item.addEventListener('click', function(e) {
+        // Don't toggle if clicking on links
+        if (e.target.tagName === 'A') return;
+        
+        const isExpanded = item.classList.contains('expanded');
+        
+        // Close all other items
+        expItems.forEach(otherItem => {
+          if (otherItem !== item) {
+            otherItem.classList.remove('expanded');
+            const otherContent = otherItem.querySelector('.exp-content');
+            const otherToggle = otherItem.querySelector('.exp-toggle');
+            if (otherContent) {
+              otherContent.style.maxHeight = '0';
+              otherContent.style.opacity = '0';
+            }
+            if (otherToggle) {
+              otherToggle.textContent = '+ EXPAND';
+            }
+          }
+        });
+        
+        // Toggle current item
+        if (!isExpanded) {
+          item.classList.add('expanded');
+          if (content) {
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.style.opacity = '1';
+          }
+          if (toggle) {
+            toggle.textContent = '− COLLAPSE';
+          }
+        } else {
+          item.classList.remove('expanded');
+          if (content) {
+            content.style.maxHeight = '0';
+            content.style.opacity = '0';
+          }
+          if (toggle) {
+            toggle.textContent = '+ EXPAND';
+          }
+        }
+      });
+    });
+    
+    // ==========================================
+    // LEGEND FILTER - Portfolio - Open modal
+    // ==========================================
+    const legendItems = document.querySelectorAll('.legend-item');
+    
+    // Tag color mapping (matching legend colors)
+    const tagColors = {
+      'RESEARCH': { bg: 'bg-sed-accent', text: 'text-sed-accent', border: 'border-sed-accent' },
+      'AI': { bg: 'bg-[#6B8E6B]', text: 'text-[#6B8E6B]', border: 'border-[#6B8E6B]' },
+      'PRODUCT': { bg: 'bg-sed-slate', text: 'text-sed-slate', border: 'border-sed-slate' },
+      'CONTENT': { bg: 'bg-[#8B7355]', text: 'text-[#8B7355]', border: 'border-[#8B7355]' },
+      'EVENT': { bg: 'bg-sed-mist', text: 'text-sed-mist', border: 'border-sed-mist' }
+    };
+    
+    legendItems.forEach(item => {
+      item.addEventListener('click', function() {
+        const category = this.dataset.category;
+        
+        // Toggle active state
+        const isActive = this.classList.contains('active');
+        
+        // Remove active from all items
+        legendItems.forEach(i => i.classList.remove('active'));
+        
+        if (!isActive) {
+          this.classList.add('active');
+          openTagPanel(category);
+        } else {
+          closeTagPanel();
+        }
+      });
+    });
+  </script>
+
+  <!-- Hover preview element for 时光音乐会 link -->
+  <div id="tm-hover-preview" class="hidden" style="position:fixed;pointer-events:none;z-index:9999;width:120px;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);transform:translate(12px,12px);">
+    <img src="images/tm_dusk_grass.png" alt="时光音乐会" style="width:100%;height:auto;display:block;">
   </div>
 
-  <script src="script.js"></script>
+  <!-- Hover preview element for 运营公众号 link -->
+  <div id="wo-hover-preview" class="hidden" style="position:fixed;pointer-events:none;z-index:9999;width:120px;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);transform:translate(12px,12px);">
+    <img src="images/wo_about_us.png" alt="运营公众号" style="width:100%;height:auto;display:block;">
+  </div>
+
+  <!-- Hover preview element for 校心理气象站 link -->
+  <div id="pw-hover-preview" class="hidden" style="position:fixed;pointer-events:none;z-index:9999;width:120px;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);transform:translate(12px,12px);">
+    <img src="images/psych_weather_group.jpg" alt="校心理气象站" style="width:100%;height:auto;display:block;">
+  </div>
+
+  <!-- Hover preview element for 云南老达保项目 link -->
+  <div id="lbd-hover-preview" class="hidden" style="position:fixed;pointer-events:none;z-index:9999;width:120px;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);transform:translate(12px,12px);">
+    <img src="images/laodabao_hover.jpg" alt="云南老达保" style="width:100%;height:auto;display:block;">
+  </div>
+
+  <!-- Hover preview element for 自然阅读项目 link -->
+  <div id="nr-hover-preview" class="hidden" style="position:fixed;pointer-events:none;z-index:9999;width:120px;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);transform:translate(12px,12px);">
+    <img src="images/nr_hover.png" alt="翻阅自然" style="width:100%;height:auto;display:block;">
+  </div>
+
+  <!-- Hover preview element for 柴米多合作 link -->
+  <div id="cm-hover-preview" class="hidden" style="position:fixed;pointer-events:none;z-index:9999;width:120px;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);transform:translate(12px,12px);">
+    <img src="images/cm_03.jpg" alt="柴米多合作" style="width:100%;height:auto;display:block;">
+  </div>
+
+  <script>
+    // Hover preview for 时光音乐会 links
+    (function() {
+      const preview = document.getElementById('tm-hover-preview');
+      if (!preview) return;
+
+      function attachHover(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('mouseenter', function(e) {
+          preview.classList.remove('hidden');
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mousemove', function(e) {
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mouseleave', function() {
+          preview.classList.add('hidden');
+        });
+      }
+
+      attachHover('tm-hover-link');
+      attachHover('portfolio-tm-link');
+    })();
+
+    // Hover preview for 运营公众号 links
+    (function() {
+      const preview = document.getElementById('wo-hover-preview');
+      if (!preview) return;
+
+      function attachHover(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('mouseenter', function(e) {
+          preview.classList.remove('hidden');
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mousemove', function(e) {
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mouseleave', function() {
+          preview.classList.add('hidden');
+        });
+      }
+
+      attachHover('portfolio-wo-link');
+    })();
+
+    // Hover preview for 校心理气象站 links
+    (function() {
+      const preview = document.getElementById('pw-hover-preview');
+      if (!preview) return;
+
+      function attachHover(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('mouseenter', function(e) {
+          preview.classList.remove('hidden');
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mousemove', function(e) {
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mouseleave', function() {
+          preview.classList.add('hidden');
+        });
+      }
+
+      attachHover('portfolio-pw-link');
+      attachHover('pw-hover-link');
+    })();
+
+    // Hover preview for 云南老达保项目 links
+    (function() {
+      const preview = document.getElementById('lbd-hover-preview');
+      if (!preview) return;
+
+      function attachHover(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('mouseenter', function(e) {
+          preview.classList.remove('hidden');
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mousemove', function(e) {
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mouseleave', function() {
+          preview.classList.add('hidden');
+        });
+      }
+
+      attachHover('lbd-hover-link');
+    })();
+
+    // Hover preview for 自然阅读项目 links
+    (function() {
+      const preview = document.getElementById('nr-hover-preview');
+      if (!preview) return;
+
+      function attachHover(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('mouseenter', function(e) {
+          preview.classList.remove('hidden');
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mousemove', function(e) {
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mouseleave', function() {
+          preview.classList.add('hidden');
+        });
+      }
+
+      attachHover('nr-hover-link');
+    })();
+
+    // Hover preview for 柴米多合作 links
+    (function() {
+      const preview = document.getElementById('cm-hover-preview');
+      if (!preview) return;
+
+      function attachHover(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('mouseenter', function(e) {
+          preview.classList.remove('hidden');
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mousemove', function(e) {
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mouseleave', function() {
+          preview.classList.add('hidden');
+        });
+      }
+
+      attachHover('cm-hover-link');
+    })();
+  </script>
+
+  <!-- Portfolio Viewer Modal -->
+  <style>
+    #portfolioViewer {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    #portfolioViewer.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #portfolioViewer .pv-header {
+      width: 100%;
+      flex-shrink: 0;
+      padding: 16px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #E0DDDC;
+      pointer-events: auto;
+    }
+    #portfolioViewer .pv-title {
+      font-family: 'Times New Roman', serif;
+      font-size: 16px;
+      letter-spacing: 0.05em;
+    }
+    #portfolioViewer .pv-close {
+      font-size: 28px;
+      color: #E0DDDC;
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.3s;
+    }
+    #portfolioViewer .pv-close:hover {
+      color: #C97B4C;
+    }
+    #portfolioViewer .pv-body {
+      flex: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 16px 40px;
+      -webkit-overflow-scrolling: touch;
+    }
+    #portfolioViewer .pv-body img {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+      display: block;
+      margin-bottom: 8px;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+    #portfolioViewer .pv-body img:first-child {
+      margin-top: 8px;
+    }
+  </style>
+
+  <div id="portfolioViewer">
+    <div class="pv-header">
+      <span class="pv-title">Lines of Fold, Lines of Flight &nbsp;·&nbsp; 儿童文学方向作品集</span>
+      <span class="pv-close" id="pvClose">&times;</span>
+    </div>
+    <div class="pv-body" id="pvBody"></div>
+  </div>
+
+  <script>
+    (function() {
+      const viewer = document.getElementById('portfolioViewer');
+      const pvBody = document.getElementById('pvBody');
+      const pvClose = document.getElementById('pvClose');
+      const link = document.getElementById('portfolio-viewer-link');
+      const totalPages = 19;
+      // 跳过原第19页（倒数第二张）
+      const pageMap = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20];
+      let loaded = false;
+
+      function loadPages() {
+        if (loaded) return;
+        for (let i = 0; i < pageMap.length; i++) {
+          const img = document.createElement('img');
+          const num = String(pageMap[i]).padStart(2, '0');
+          img.src = 'images/portfolio_pages/page_' + num + '.png';
+          img.alt = 'Page ' + (i + 1);
+          img.loading = 'lazy';
+          img.addEventListener('contextmenu', function(e) { e.preventDefault(); });
+          pvBody.appendChild(img);
+        }
+        loaded = true;
+      }
+
+      function openViewer() {
+        loadPages();
+        viewer.classList.add('active');
+        pvBody.scrollTop = 0;
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeViewer() {
+        viewer.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      if (link) {
+        link.addEventListener('click', function(e) {
+          e.stopPropagation();
+          openViewer();
+        });
+      }
+      pvClose.addEventListener('click', function(e) {
+        e.stopPropagation();
+        closeViewer();
+      });
+      viewer.addEventListener('click', function(e) {
+        if (e.target === viewer || e.target === pvBody) {
+          closeViewer();
+        }
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && viewer.classList.contains('active')) {
+          closeViewer();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

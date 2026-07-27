@@ -1,0 +1,305 @@
+{
+  "projects": {
+    "time-music-concert": {
+      "id": "SED-2022-TM",
+      "title": "校园共创项目 \"Time Music Concert\"",
+      "date": "2022.03 — 2022.06",
+      "category": "PROJECT",
+      "era": "古生代 PALEOZOIC",
+      "tags": [
+        "PRODUCT",
+        "EVENT"
+      ],
+      "content": "<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[01 // BASELINE / 我的动机与起点]</h4>\n\n<p class=\"mb-4\">大家普遍承受着隐性的情绪压力，但学校传统的心理活动往往过于严肃和干预化，大家第一反应是习惯性地关上心门。大家心底那些关于成长、遗憾或关系的真实故事，找不到一个低防御、能被温柔接纳的出口。</p>\n\n<p class=\"mb-4\">我想，能不能用\"音乐\"和\"匿名信件\"做一次柔软的尝试？我希望在夜色的草地上搭建一个没有讲台、没有高低的场域。不用去讲大道理，就让同龄人把心事写下来，再由另一些同龄人用歌声回应。这就是我发起\"时光音乐会\"最朴素的初衷：用艺术作为解药，在硬质的校园环境中，为彼此撑开一片可以坦然呼吸和共鸣的温床。</p>\n\n<p class=\"mb-4\">时光音乐会似乎是对我青春心理的最大满足，回到那个与朋友们为了学期特色活动讨论了近三小时的无名夜晚，那时我们都没想到一场小小的音乐会会办越大，会一直办下去。我们当时对于这样一个想法激动万分——在操场、月亮湾或栖霞坡的草地上，我们可以围坐在一起，聆听歌曲，分享歌曲背后的故事。如果同学们有自己的故事想要诉说，我们也会以歌曲回应。一场温暖的、在夜晚熠熠闪光的音乐会，我们就这样一步步把这个想法落地。</p>\n\n[INSERT_ARTIFACT: tm_dusk_grass]\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[02 // FIELDWORK &amp; MECHANICS / 机制与现场]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 情绪筛选与内容润色机制（SOP）</h5>\n\n<p class=\"mb-4\">项目没有采用无序的现场随机点歌，而是建立了一套兼顾安全性与共情力的筛信流程：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>线上征集</strong>：通过官方邮箱接收学生投稿（涵盖个人烦恼、想对特定人说的话、或某首歌背后的个人故事）。</li>\n  <li><strong>交叉复核</strong>：由团队干事进行首轮信件筛选与曲目匹配，再由负责教师进行二次复核与托底，确保内容不触及严重心理危机风险，并在串词中恰当嵌入心理学共情知识。</li>\n  <li><strong>专业演唱</strong>：将筛选出的故事交由主持人现场朗读，并由音乐学院及吉他协会的选拔歌手进行现场演唱回应。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 低防御度的物理场域塑造</h5>\n\n<p class=\"mb-4\">为了最大程度打破舞台与观众的隔阂，现场放弃了高台与硬质隔断：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>去舞台化布局</strong>：使用野餐布、草坪围坐、画架与麻绳装饰，配合低亮度的手持星星灯与氛围灯带，将光影聚焦在倾听者本身，营造出夜色中的包裹感。</li>\n  <li><strong>弹性互动环节</strong>：主环节（读信与预设曲目）结束后，开放自由点歌、现场清唱及群体合唱（如《稻香》《海阔天空》），让现场气氛从静态倾听自然过渡到群体互动。</li>\n</ul>\n\n[INSERT_ARTIFACT: tm_setup]\n\n<pre class=\"font-mono text-xs text-sed-text/70 my-6 bg-sed-mist/10 p-4 overflow-x-auto\">\n[项目运行流线/SITE PROTOCOL]\n\n [线上信件/故事投稿] ──> [双组复核/曲目匹配] ──> [主持人朗读/歌手回应]\n                                                     │\n [现场群体合唱/互动] <── [自由点歌/现场清唱] <── [草坪氛围场域/星星灯]\n</pre>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[03 // DATA &amp; ARTIFACTS / 数据与现场标本]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 运营与传播数据</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>稿件与触达</strong>：首次活动即收到百余份信件投稿；线上宣传推送获得数百次转发与数千次阅读。</li>\n  <li><strong>物资与成本</strong>：项目严格控制在低预算内运作，核心物资包括手指灯（200个）、荧光手环（200个）、手持星星灯（100个）及串灯等，极低成本完成了数百人次的大型线下场域搭建。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 现场真实切片记录</h5>\n\n[INSERT_ARTIFACT: tm_crowd]\n\n<p class=\"mb-4\">时光音乐会变成我与朋友们的心灵锚点之一。我们在大雨延期的时候遇到过参加了第一场，带着朋友来看第二场的女生，她抓着我的手希望我们务必要把第二场办下来；我们遇到过打的从另一个校区赶过来参加的男生，给在场的同学们清唱了一首《我的太阳》；我们遇到过偶然来参与的老师，她在最后祝我们都要幸福快乐；经常有同学说好喜欢这个活动，你们是什么组织，我们会非常高兴地回答我们是校心理气象站，感谢你喜欢我们的活动……我们一起听过各式各样的心声；我们一起合唱过《稻香》《海阔天空》；我们在《开心向前飞》里一起蹦跳着开小火车……我在时光音乐会当过负责人，当过歌曲登记员，当过主持人，当过气氛组，在学长学姐的帮助下一点点办好一个活动，再帮助学弟学妹一步步理解时光音乐会，最后我成为一名观众。</p>\n\n[INSERT_ARTIFACT: tm_group]\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[04 // SEDIMENTATION / 我的沉淀与生长]</h4>\n\n<p class=\"mb-4\">这个项目对我而言，绝不仅仅是一次成功的校园活动落地，更是我个人从一个单纯的\"执行者\"真正蜕变为\"全流程主导者\"的成长样本。</p>\n\n<p class=\"mb-4\">在整个过程中，我一手搭建了跨部门协调机制、完成了物资采购的精细化控本，并摸索出一套应对突发天气与现场情绪走势的标准化 SOP。当看着它从我脑海里的一丝闪念，变成能够跨届延续、成为校心理气象站标志性特色 IP 的品牌活动时，我获得了极大的效能感。</p>\n\n<p class=\"mb-4\">更重要的是，它印证了我一直以来的信念：当\"我\"愿意主动退居幕后、去用心搭建一个安全且有温度的场域时，那些看似孤立的个体叙事就能被认真看见；而当这些故事与音乐碰撞在一起时，所爆发出的群体连接力，远比任何说教都更加震撼和持久。</p>\n\n[INSERT_ARTIFACT: tm_dusk_square]\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[05 // ARCHIVES / 活动推文归档]</h4>\n\n<p class=\"mb-4\">以下为时光音乐会各期活动的公众号预告推送链接：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-1\">\n  <li><a href=\"https://mp.weixin.qq.com/s/2gNQeLXAsDwdIygArRkeHA\" target=\"_blank\" class=\"text-sed-accent hover:underline\">时光音乐会 | 预告及投稿征集（2023 秋 · 时间的歌）</a></li>\n  <li><a href=\"https://mp.weixin.qq.com/s/N1SegRuzppH9r9eT1exkTQ\" target=\"_blank\" class=\"text-sed-accent hover:underline\">时光音乐会 | 预告及投稿征集（2024 秋 · 月华映草地，乐章诉心迹）</a></li>\n</ul>",
+      "artifacts": [
+        {
+          "id": "tm_dusk_grass",
+          "type": "image",
+          "src": "images/tm_dusk_grass.png",
+          "caption": "FIG 1.1 // 晚霞下的草坡——同学们在音乐会开始前聚集在草地上等待日落"
+        },
+        {
+          "id": "tm_setup",
+          "type": "image",
+          "src": "images/tm_setup.png",
+          "caption": "FIG 2.1 // 现场场域搭建：串灯围成的弧形边界、音箱与草坪围坐"
+        },
+        {
+          "id": "tm_crowd",
+          "type": "image",
+          "src": "images/tm_crowd.png",
+          "caption": "FIG 3.1 // 夜色中的听众：手机闪光灯与荧光棒交织成一片流动的光海"
+        },
+        {
+          "id": "tm_group",
+          "type": "image",
+          "src": "images/tm_group.png",
+          "caption": "FIG 3.2 // 活动结束后团队手持发光球灯的合影留念"
+        },
+        {
+          "id": "tm_dusk_square",
+          "type": "image",
+          "src": "images/tm_dusk_square.png",
+          "caption": "FIG 4.1 // 活动散场后的广场——黄昏的光与即将到来的夜晚"
+        }
+      ]
+    },
+    "yunnan-laodabao": {
+      "id": "SED-2023-YD",
+      "title": "云南老达保民族村寨跨文化田野调研",
+      "date": "2023.06 — 2023.08",
+      "category": "FIELDWORK",
+      "era": "中生代 MESOZOIC",
+      "tags": [
+        "RESEARCH"
+      ],
+      "content": "<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[01 // BASELINE / 我的动机与起点]</h4>\n\n<p class=\"mb-4\">踏入云南老达保村落的起点，源于对国家治理宏大叙事与村落微观生态如何交织交融的深度探讨：当一个边境少数民族村落被纳入\"推普助力乡村振兴\"与\"党支部+公司+农户\"的脱贫攻坚框架中，宏观政策在基层如何具象化呈现？而在舞台聚光灯与文旅繁荣背后，这里真实的<strong>语言生态、民族共同体建构与主体性</strong>又发生了怎样的动态演变？</p>\n\n[INSERT_ARTIFACT: lbd_village]\n\n<p class=\"mb-4\">我不希望做拿着预设表单高高在上、将村民简化为\"调查对象\"的冷漠收集者。正如我在田野日记中所反思的：当外来者的取景框把村民的生活变成某种\"表演性脱贫景观\"时，研究者若只保持冷眼旁观，本质上也是一种对真实生命状态的遮蔽与物化。</p>\n\n<p class=\"mb-4\">我想建立的，是一份<strong>将国家治理视角与微观落地深度结合的反思性田野档案</strong>。从追问\"无用素质教育与功利社会的撕扯\"，到深入边境少数民族村落探讨\"推普政策、语言中介与非遗传承\"的边际效应——我希望通过严谨的社科质性方法论与同理心，破除傲慢与偏见的藩篱，在国家政策现代化与微观个体生存图景之间，架起一座真诚且客观的理解桥梁。</p>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[02 // FIELDWORK &amp; MECHANICS / 社科方法论与田野落地能力]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 概念提炼与变量归因（严谨的质性研究架构）</h5>\n\n<p class=\"mb-4\">在研究设计中，将村落复杂的日常互动抽象为严谨的变量模型，并进行归因分析：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>因变量</strong>：汉语熟练度（听、说、读、写综合能力）。</li>\n  <li><strong>自变量及其归因划分</strong>：\n    <ul class=\"list-disc pl-5 mb-2 space-y-2\">\n      <li><strong>制度化变量（学校教育）</strong>：决定了青少年群体系统性、标准化的汉语掌握能力。</li>\n      <li><strong>动机性变量（社会交往与文旅演艺）</strong>：以商业利益与文旅参与为驱力，决定了中青年人群的实用性汉语掌握能力。</li>\n      <li><strong>环境性变量（跨民族通婚与互联网）</strong>：通过通婚家庭环境及\"快手\"等短视频平台的渗透，实现了\"下沉式\"的二语习得。</li>\n    </ul>\n  </li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 田野策略的动态调优与三角验证 (Triangulation)</h5>\n\n<p class=\"mb-4\">面对文化差异与沟通壁垒，研究过程展现了高度的灵活性（Flexibility）与落地应变能力：</p>\n\n<pre class=\"font-mono text-xs text-sed-text/70 my-6 bg-sed-mist/10 p-4 overflow-x-auto\">\n                  【田野调研设计与落地迭代过程】\n                  \n┌──────────────────┐    因\"作息不解/表达壁垒\"    ┌──────────────────┐\n│  初始方案设计    │ ───────────────► │   田野策略调整   │\n│ (定量问卷+俗语收集)│                    │ (质性访谈+双拉祜族个案)│\n└──────────────────┘                    └────────┬─────────┘\n                                                 │\n                                                 │ 抓住契机(礼拜日/表演后)\n                                                 ▼\n┌──────────────────┐                    ┌──────────────────┐\n│  成果提炼与报告  │ ◄───────────────── │  多元样本落地    │\n│ (政策建议+代际矩阵)│   建立滚雪球抽样   │ (干部/村民/游客/学者)  │\n└──────────────────┘                    └────────┴─────────┘\n</pre>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>敏锐的策略转型</strong>：第一天因文化与表达障碍导致预设定量问卷停滞后，果断放弃抽象的\"俗语/谚语\"收集，转向深度的<strong>质性访谈（In-depth Interview）</strong>；重点对比\"双拉祜族家庭\"与\"跨民族通婚家庭\"，保障样本的代表性。</li>\n  <li><strong>契机把握与多元视角的三角验证</strong>：\n    <ul class=\"list-disc pl-5 mb-2 space-y-2\">\n      <li><strong>宗教场景挖掘</strong>：利用礼拜日深入教堂，观察宗教场景下的拉祜语记写与唱诗传承，发现宗教是传统语言保存的重要隐形机制。</li>\n      <li><strong>多元角色拦截</strong>：利用演艺公司表演间隙，拦截芦笙表演者、导游、选调生、公益学生及上音研究生等角色，实现\"村民-政府-游客/学者\"的三方视角互证。</li>\n      <li><strong>滚雪球抽样与网络延伸</strong>：与村书记女儿（娜体）建立深度信任，顺畅延伸至后续线上翻译与深度家庭背景的持续追踪。</li>\n    </ul>\n  </li>\n</ul>\n\n[INSERT_ARTIFACT: m_fig1]\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[03 // DATA &amp; POLICY MAPS / 政策映射与代际数据矩阵]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 国家治理视角与微观落地的多维映射</h5>\n\n<p class=\"mb-4\">报告与日记将老达保的微观语言与经济生态，成功提升到了国家政策与治理现代化的高度进行审视：</p>\n\n<table class=\"w-full border-collapse mb-4\">\n  <thead>\n    <tr class=\"bg-sed-mist/10\">\n      <th class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs text-left\">政策维度</th>\n      <th class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs text-left\">政策依据与宏观背景</th>\n      <th class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs text-left\">调研报告中的微观落地映射</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\"><strong>语言普及与推普助力</strong></td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">《国家通用语言文字法》及国家推普助力乡村振兴计划</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">揭示了推普在边境村落从\"学校普及\"向\"商业自学\"自下而上的演进路径。</td>\n    </tr>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\"><strong>民族团结与共同体</strong></td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">筑牢中华民族共同体意识、民族区域自治制度</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">分析了汉语作为\"中介语\"（Lingua Franca）在拉祜族、傣族、哈尼族等多民族跨族群交往中的纽带作用。</td>\n    </tr>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\"><strong>脱贫攻坚与乡村振兴</strong></td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">\"党支部+公司+农户\"发展模式</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">以\"快乐拉祜演艺公司\"为例，分析文化资源转化为经济资本与政治资本的微观机制。</td>\n    </tr>\n  </tbody>\n</table>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>政策边际效应的深层反思</strong>：\n    <ul class=\"list-disc pl-5 mb-2 space-y-2\">\n      <li><strong>成效认可</strong>：肯定了\"普九\"实施后青少年100%熟练掌握汉语的政策成果。</li>\n      <li><strong>断层诊断</strong>：极其敏锐地指出了政策落实中的结构性断层——如县乡一级缺乏具体的推普差异化细则，以及学校教育推普过程中对少数民族非遗文化（如《牡帕密帕》）传承课程的削弱。</li>\n    </ul>\n  </li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 代际语言生态矩阵分析</h5>\n\n<p class=\"mb-4\">基于质性访谈与观测，梳理受访对象的代际分类与习得路径：</p>\n\n<pre class=\"font-mono text-xs text-sed-text/70 my-6 bg-sed-mist/10 p-4 overflow-x-auto\">\n+-----------------------------------------------------------------------+\n|                       老达保拉祜族汉语掌握代际矩阵                    |\n+---------------------+-------------------+-----------------------------+\n|    代 际 群 体      |   汉语掌握水平    |        主 要 习 得 途 径     |\n+---------------------+-------------------+-----------------------------+\n| 青少年 (7-18岁)     | 熟练掌握 (100%)   | 学校教育 / 互联网 / 跨族交往 |\n| 中年人 (40-65岁)    | 熟练/部分熟练      | 商业自学 / 文旅表演 / 电视短视频 |\n| 老年人 (65岁以上)   | 完全不会/仅简单词汇| 自学 / 宗教仪式 / 极少外部接触 |\n+---------------------+-------------------+-----------------------------+\n</pre>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[04 // ACHIEVEMENTS / 田野成果与影响]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 访谈覆盖与资料沉淀</h5>\n\n<p class=\"mb-4\">在为期数周的田野驻留中，我完成了覆盖村干部、演艺从业者、宗教人士、跨民族通婚家庭成员及外来游客等多元群体的深度访谈，累计访谈对象逾 <strong>30 位</strong>，整理形成访谈资料与田野笔记 <strong>1.2 万余字</strong>。这些一手材料不仅构成了研究的核心数据基底，更成为我理解边境少数民族日常语言实践的珍贵窗口。</p>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 调研报告与学术产出</h5>\n\n<p class=\"mb-4\">基于扎实的田野材料，我撰写了 <strong>4.6 万余字</strong>的系统性调研报告，将微观个案与宏观政策进行深度对话。报告以严谨的质性研究方法论为支撑，从语言生态、民族共同体建构与国家治理三个维度展开分析，形成了具有学术规范性与现实关怀的研究成果。</p>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">3. 社会传播与媒体关注</h5>\n\n<p class=\"mb-4\">项目的社会影响力获得了校级与省级媒体的认可与报道，实现了学术探索与社会传播的良性互动。这不仅是对调研工作质量的肯定，更意味着老达保的语言生态议题得以突破学术圈层，进入更广泛的公共视野：</p>\n\n<div class=\"grid grid-cols-1 md:grid-cols-2 gap-4 my-6\">\n  <div>\n    [INSERT_ARTIFACT: lbd_media_campus]\n  </div>\n  <div>\n    [INSERT_ARTIFACT: lbd_media_provincial]\n  </div>\n</div>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">4. 团队联结与田野温度</h5>\n\n<p class=\"mb-4\">这次调研不仅是一次学术训练，更是一段与团队成员、与村寨村民共同书写的记忆。从挨家挨户的入户访谈，到教堂礼拜日的默默观察，再到与孩子们围坐交流的午后——这些片段共同构成了田野工作的真实质感。</p>\n\n[INSERT_ARTIFACT: lbd_team]\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[05 // SEDIMENTATION / 我的沉淀与生长]</h4>\n\n<p class=\"mb-4\">对于我而言，老达保的田野调查不仅是一次研究训练，更是将\"政策洞察力\"、\"社科方法论\"与\"人文关怀\"融会贯通的生命实践。</p>\n\n<p class=\"mb-4\">它让我完整锤炼了社科质性研究的全流程落地能力——从初始假设受阻时的<strong>动态策略调整</strong>，到建立\"村民-政府-学者\"的<strong>三角验证体系</strong>，再到将零散的口述材料提炼为精准的<strong>变量归因与代际矩阵</strong>。</p>\n\n<p class=\"mb-4\">更深远的沉淀在于，它印证了我对社会科学研究的理解：宏观政策不应是冰冷的行政条文，田野调查也不应是傲慢的\"景观猎奇\"。只有具备深刻的政策意识，才能洞察制度落地中的真实断层；也只有怀着极大的同理心走入现实，破除沟通的藩篱，才能在宏大治理叙事与微观个体命运之间，写出既有学术深度、又有生命温度的实证成果。</p>",
+      "artifacts": [
+        {
+          "id": "lbd_village",
+          "type": "image",
+          "src": "images/laodabao_01.jpg",
+          "caption": "FIG 1.1 // 老达保拉祜族村寨风貌——彩虹下的边境村寨与农耕景象"
+        },
+        {
+          "id": "m_fig1",
+          "type": "image",
+          "src": "images/laodabao_02.jpg",
+          "caption": "FIG 2.1 // 云南澜沧老达保村寨入户社会学访谈切片——与着传统服饰的村民围坐交流"
+        },
+        {
+          "id": "lbd_team",
+          "type": "image",
+          "src": "images/laodabao_04.png",
+          "caption": "FIG 4.3 // 调研团队与村寨儿童的合影——田野工作中建立的真诚联结"
+        },
+        {
+          "id": "lbd_media_provincial",
+          "type": "image",
+          "src": "images/laodabao_03.png",
+          "caption": "FIG 4.2 // 省级媒体报道：大学生网报《\"盈盈石榴籽，怀抱五星红\"：南师学子走进澜沧县老达保》"
+        },
+        {
+          "id": "lbd_media_campus",
+          "type": "image",
+          "src": "images/laodabao_05.png",
+          "caption": "FIG 4.1 // 校级媒体报道：南京师范大学文学院公众号《品寨语乡韵，唱共融颂歌》社会实践纪实"
+        }
+      ]
+    },
+    "wechat-ops": {
+      "id": "SED-2022-WO",
+      "title": "SHSSIPtube 数字自媒体",
+      "date": "2022.06 — 2023.06",
+      "category": "PROJECT",
+      "era": "古生代 PALEOZOIC",
+      "tags": [
+        "CONTENT"
+      ],
+      "content": "<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[01 // BASELINE / 我的动机与起点]</h4>\n\n<p class=\"mb-4\">创办与运营 <strong>SHSSIPtube</strong> 的起点，源于对时代性焦虑的一次集体回应：当功利主义与应试逻辑早早侵蚀了青年人的精神世界，我们是否还能在象牙塔与现实之间，保留一份\"鲜活地活\"的可能？</p>\n\n<p class=\"mb-4\">在这个平台上，我不想去重复那些高高在上的成功学或功利的保研/求职指南。正如我们发刊词与代表作所表达的：我们要留下那些真实的、甚至带着阵痛的生命切片。</p>\n\n<p class=\"mb-4\">从对\"无用素质教育\"的追问，到对自己曾经是\"功利机灵鬼\"的剖析，再到允许自己在大学迷茫期\"有一季枯枝\"的坦然——我想建立的，是一个<strong>去中心化的\"同辈精神档案馆\"</strong>。在算法洪流与精英包袱中，为那些清醒的迷茫者提供一份\"已有前鉴的药方\"，至少让大家知道：你并不孤独，且不必麻木。</p>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[02 // FIELDWORK &amp; MECHANICS / 内容建模与全链路运营]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 基于\"思辨性与鲜活感\"的内容模型</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>打破\"有用性\"批判，重塑公共写作</strong>：继承人文教育中\"想他人之未能想\"的思辨传统，摒弃同质化的鸡汤，鼓励作者拿出现实的矛盾、逻辑的审视与私密的阵痛进行公共表达。</li>\n  <li><strong>\"主体性\"共创与深度协同</strong>：建立\"双向沟通—文本润色—视觉重构\"的全流程协同 SOP。把每一次稿件处理都变成一次同辈间的探讨与启发，确保\"每一篇推文都真正属于作者自己\"。</li>\n  <li><strong>议题降维与共情升维</strong>：将看似严肃的哲学思考（齐奥朗、鲁迅、石黑一雄）与青年当下的真实生存困境（高考后遗症、象牙塔坍塌、大学麻木感）相融合，形成极具粘性的共鸣向内容模型。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 算法环境下的\"技术性善意\"（SEO &amp; 视觉）</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>SEO 与算法分发</strong>：精研平台算法与搜索逻辑，通过精准的标题拟定与关键词布局，在零预算投放的前提下，让这些充满私人温度与人文深度的文章突破原有圈层。</li>\n  <li><strong>视觉美编（视觉叙事）</strong>：使用秀米、Canva 等工具搭建具备\"呼吸感与人文质感\"的排版规范，用有视觉气场的图文设计，为严肃深刻的文字赋予仪式感与阅读舒适度。</li>\n</ul>\n\n\n\n[INSERT_ARTIFACT: wo_about_us]\n\n<pre class=\"font-mono text-xs text-sed-text/70 my-6 bg-sed-mist/10 p-4 overflow-x-auto\">\n[同辈精神档案/MEDIA PROTOCOL]\n\n [青年真实阵痛/思辨性写作] ──> [深度双向编辑/共同排版] ──> [视觉排版/视觉叙事]\n                                                               │\n [拒绝麻木/精神避难所] <── [SEO算法分发/零成本扩散] <── [数字档案馆/经验沉淀]\n</pre>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[03 // DATA &amp; ARTIFACTS / 数据与代表性文本标本]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 运营与传播数据</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>内容沉淀</strong>：主导全链路工作（选题、约稿、脚本、美编与发布），累计产出 <strong>28 篇</strong> 高质量原创内容。</li>\n  <li><strong>零成本传播</strong>：在<strong>零投放成本</strong>的情况下，精准命中垂直受众，实现单篇最高 <strong>2000+</strong> 浏览量，建立了极高信任度的读者社群。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 标志性文本切片（代表作品阵列）</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>定位发刊词《留给谁，以及留下什么》</strong>：确立了\"记录真实可能性、提供同辈经验解药\"的平台基调。</li>\n  <li><strong>《当我说\"我来自苏州中学园区校\"的时候》</strong>：探讨\"选择情怀是否错了\"与\"无用素质教育\"在功利社会中的撕扯，引发关于教育本质与清醒边缘者角色的深度讨论。</li>\n  <li><strong>《我终于不是百分之百的功利机灵鬼了》</strong>：坦白个人从追逐精英/功利指标到被老师与文字唤醒的自我剖析，喊出\"学着鲜活地活\"的青年宣言。</li>\n  <li><strong>《允许一季的枯枝》</strong>：借由苏州与青岛的冬日景色，引入齐奥朗与鲁迅的哲学思考，探讨在大学迷茫与虚无中\"拒绝麻木、允许痛苦\"的精神重建路径。</li>\n</ul>\n\n\n\n[INSERT_ARTIFACT: wo_utility_guy]\n\n[INSERT_ARTIFACT: wo_nanjing_noodle]\n\n<p class=\"mb-4\">这些推文截图中精心设计的头图、排版与引言，共同构成了 SHSSIPtube 的视觉辨识度——我们坚持用有温度的视觉叙事，为每一个真实的个体经验赋予尊严与仪式感。</p>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[04 // SEDIMENTATION / 我的沉淀与生长]</h4>\n\n<p class=\"mb-4\">对于我而言，SHSSIPtube 不仅仅是一个数据指标的记录板，它更是一次将\"人文素养\"转化为\"数字建设力\"的完整实践。</p>\n\n<p class=\"mb-4\">它让我完整训练了自媒体从零到一的全链路主导能力（选题、约稿、深度编辑、美编、SEO 分发），更重要的是，它印证了我对数字传播的理解：</p>\n\n<p class=\"mb-4\">技术与算法不该是冷冰冰的流量筛选器，而应当是人文关怀的放大器。当我们以极大的耐心去倾听每一个具体的个体，并用专业的技术去赋予这些真实经验以传播力时，数字平台就能成为一座温暖的\"精神避难所\"与\"成长档案馆\"。</p>",
+      "artifacts": [
+        {
+          "id": "wo_about_us",
+          "type": "image",
+          "src": "images/wo_about_us.png",
+          "caption": "FIG 1.1 // SHSSIPtube 发刊词《关于我们》——平台诞生的原点与萌发初心"
+        },
+        {
+          "id": "wo_utility_guy",
+          "type": "image",
+          "src": "images/wo_utility_guy.png",
+          "caption": "FIG 3.1 // 代表作品《我终于不是百分之百的功利机灵鬼了》——青年觉醒的真实剖白"
+        },
+        {
+          "id": "wo_nanjing_noodle",
+          "type": "image",
+          "src": "images/wo_nanjing_noodle.png",
+          "caption": "FIG 3.2 // 代表作品《南京无汤面》——大一新生视角下的城市温度与青春切片"
+        }
+      ]
+    },
+    "psych-weather": {
+      "id": "SED-2021-PW",
+      "title": "校心理气象站活动策划与组织",
+      "date": "2021.09 — 2025.06",
+      "category": "PROJECT",
+      "era": "古生代 PALEOZOIC",
+      "tags": [
+        "EVENT"
+      ],
+      "content": "<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[01 // BASELINE / 我的动机与起点]</h4>\n\n<p class=\"mb-4\">大一入学时，我加入了校心理气象站。在这里，我逐渐从一个活动的参与者成长为策划者与组织者。心理气象站不仅是一个校园社团，更是一个以心理健康为核心、用创意活动为载体、连接全校师生的温暖平台。</p>\n\n<p class=\"mb-4\">在站内，我经历了从干事到负责人的角色转变，深度参与了活动策划、文案撰写、现场执行与后期宣传的全流程工作。我试图将\"心理关怀\"从严肃的说教中解放出来，转化为同学们愿意主动靠近、乐于参与的体验式活动——用音乐疗愈情绪，用手作释放压力，用故事建立联结。</p>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[02 // FIELDWORK &amp; MECHANICS / 活动体系与运营机制]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 品牌活动 IP：时光音乐会</h5>\n\n<p class=\"mb-4\">\"时光音乐会\"是校心理气象站最具代表性的品牌活动，与蓝声Blues吉他协会合办。活动以\"音乐+故事\"为核心模式，面向全校征集情感故事与歌曲投稿，在户外草地搭建低防御度的音乐分享场域。我参与了两届音乐会的策划、主持与现场执行工作。详见 <a data-jump=\"time-music-concert\" class=\"geo-link text-sed-accent hover:underline cursor-pointer\">【时光音乐会】</a> 独立档案。</p>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 320 心理健康周系列活动</h5>\n\n<p class=\"mb-4\">每年 3 月 20 日前后举办的年度心理主题周，谐音\"咱爱你\"，旨在倡导大学生关注心理健康。我参与策划的系列活动包括：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>心理影片观影</strong>：通过疗愈影片的观赏与交流，启发同学们观照内心世界。</li>\n  <li><strong>中医体验与问诊</strong>：邀请南京中医药大学同学带来脉诊、药茶、刮痧与耳穴埋籽体验，科普身心健康知识。</li>\n  <li><strong>诗意展览</strong>：拼贴诗摊位、情绪垃圾桶、互动展板，以艺术化方式表达与释放情绪。</li>\n  <li><strong>风筝节</strong>：校院合办，以\"古法传承\"感受非遗文化，用\"放飞风筝\"拥抱自然、放松身心。</li>\n  <li><strong>心理情景剧大赛</strong>：引导同学们关注心理健康议题，探索自我成长与情绪管理。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">3. 5.25 心理健康月系列活动</h5>\n\n<p class=\"mb-4\">\"5·25\"谐音\"我爱我\"，是全年规模最大、周期最长的心理健康主题活动月。我参与策划的系列活动涵盖：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>心理博览会</strong>：以\"五育润心\"为主线，集游戏疗愈、互动打卡、广场咨询、中医体验于一体的大型广场活动。</li>\n  <li><strong>医校共建</strong>：与东南大学附属中大医院心理精神科建立共建基地，开展专业讲座与义诊。</li>\n  <li><strong>心理委员高阶培训</strong>：面向心理工作学生骨干，通过理论讲解、模拟演练提升助人技能。</li>\n  <li><strong>宿舍团体活动</strong>：以宿舍为单位，通过曼陀罗绘画、拼贴诗、粘土 DIY 等艺术疗愈形式抚慰情绪。</li>\n  <li><strong>正念女性成长计划</strong>：八周正念课程，帮助女生找回内在平静与自我接纳。</li>\n  <li><strong>守护天使活动</strong>：以\"匿名善意\"为载体，在默默守护中传递温暖，破除\"心理孤岛\"效应。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">4. 创意内容产出</h5>\n\n<p class=\"mb-4\">除线下活动外，我也参与了线上创意内容的策划与制作，包括由心理中心出品、校心站同学参与表演的手语操视频《相信》，讲述一个关于温暖与自我救赎的故事。</p>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[03 // DATA &amp; ARTIFACTS / 数据与活动标本]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 活动覆盖数据</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>活动周期</strong>：持续四年（2021—2025），覆盖大学全阶段。</li>\n  <li><strong>活动频次</strong>：年均主导或深度参与 3—5 场大型主题活动，涵盖品牌活动、主题周、主题月及创意内容产出。</li>\n  <li><strong>受众触达</strong>：单场广场活动覆盖近千人次；线上推送累计获得数千次阅读与数百次转发。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 公众号文章归档</h5>\n\n<p class=\"mb-4\">以下是在校心理气象站期间策划组织的重要活动的公众号推送链接，按主题分类整理：</p>\n\n<p class=\"mb-2 font-mono text-xs text-sed-mist\">【品牌活动】</p>\n<ul class=\"list-disc pl-5 mb-4 space-y-1\">\n  <li><a href=\"https://mp.weixin.qq.com/s/2gNQeLXAsDwdIygArRkeHA\" target=\"_blank\" class=\"text-sed-accent hover:underline\">时光音乐会 | 预告及投稿征集（2023 秋）</a></li>\n  <li><a href=\"https://mp.weixin.qq.com/s/N1SegRuzppH9r9eT1exkTQ\" target=\"_blank\" class=\"text-sed-accent hover:underline\">时光音乐会 | 预告及投稿征集（2024 秋）</a></li>\n</ul>\n\n<p class=\"mb-2 font-mono text-xs text-sed-mist\">【320 心理健康周】</p>\n<ul class=\"list-disc pl-5 mb-4 space-y-1\">\n  <li><a href=\"https://mp.weixin.qq.com/s/Ml17rI1HuDXOtUjwFqiGOg\" target=\"_blank\" class=\"text-sed-accent hover:underline\">320 心理健康周 | 活动报道（2024）</a></li>\n  <li><a href=\"https://mp.weixin.qq.com/s/MA9iDjBIJ3WVpEqwE2CmKA\" target=\"_blank\" class=\"text-sed-accent hover:underline\">320 心理健康周 | 全系列活动预告（2025）</a></li>\n</ul>\n\n<p class=\"mb-2 font-mono text-xs text-sed-mist\">【5.25 心理健康月】</p>\n<ul class=\"list-disc pl-5 mb-4 space-y-1\">\n  <li><a href=\"https://mp.weixin.qq.com/s/caVRUHb7qKPGz5n3p794bQ\" target=\"_blank\" class=\"text-sed-accent hover:underline\">5.25 心理健康日 | 广场活动（2024）</a></li>\n  <li><a href=\"https://mp.weixin.qq.com/s/pQsJ2w_FgJ4DbKIQXRaA-g\" target=\"_blank\" class=\"text-sed-accent hover:underline\">5.25 心理健康月 | 全系列活动预告（2025）</a></li>\n</ul>\n\n<p class=\"mb-2 font-mono text-xs text-sed-mist\">【创意内容】</p>\n<ul class=\"list-disc pl-5 mb-4 space-y-1\">\n  <li><a href=\"https://mp.weixin.qq.com/s/twnl9p4snzLV5HyDgWS2Ug\" target=\"_blank\" class=\"text-sed-accent hover:underline\">手语操视频《相信》</a></li>\n</ul>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[04 // SEDIMENTATION / 我的沉淀与生长]</h4>\n\n<p class=\"mb-4\">在校心理气象站的四年，是我从\"执行者\"成长为\"体系搭建者\"的关键阶段。我学会了如何在有限的资源与预算内，设计一场既有专业深度、又能被大众接纳的校园活动；也学会了如何在团队中协调不同角色，将创意转化为可落地的 SOP。</p>\n\n<p class=\"mb-4\">更重要的是，这些经历让我对\"心理健康教育\"有了更深的理解：它不是居高临下的干预，而是平等地搭建一个安全、温暖的场域，让每个人都被看见、被接纳。无论是时光音乐会上围坐在草地上的歌声，还是 320 广场上同学们写下的一句句春日期许，抑或是 5.25 活动中陌生人之间的一次游戏互动——这些微小的连接，都在悄悄重塑着校园的心理氛围。</p>\n\n<p class=\"mb-4\">这份经历也让我确信：好的活动组织者，首先应该是一个真诚的倾听者和共情者。当你真正关心参与者的体验时，活动本身就会生长出超越策划预期的生命力。</p>",
+      "artifacts": []
+    },
+    "nature-reading": {
+      "id": "SED-2024-NR",
+      "title": "翻阅自然：儿童文学阅读与自然教育融合实践",
+      "date": "2024.03 — 2025.09",
+      "category": "PROJECT",
+      "era": "中生代 MESOZOIC",
+      "tags": [
+        "RESEARCH",
+        "CONTENT"
+      ],
+      "content": "<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[01 // BASELINE / 项目背景与学术立意]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 时代命题：双重困境下的\"自然缺失症\"与阅读危机</h5>\n\n<p class=\"mb-4\">在加速城镇化与数字媒介普及的当下，儿童生存状态正面临\"直接自然经验缺失\"与\"浅表化影像摄取依赖\"的双重挑战：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>身体与心理维度的\"自然缺失症\"</strong>：理查德·洛夫在《林间最后的小孩》中指出的\"自然缺失症\"，展现了儿童由于缺乏与自然的真实接触而引发的肥胖、少儿多动症、焦虑等心理与生理问题。据相关调查，近半数儿童每周户外活动不足3小时，自然联结处于断裂边缘。</li>\n  <li><strong>认知与审美维度的\"文字阅读失焦\"</strong>：后千禧一代受泛娱乐化、短视频及图像媒介包围，文字阅读的感官延迟与深层阐释能力被弱化。儿童在面对自然母题的文本时，往往因缺乏直接经验而难以形成深刻的情感共鸣。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 学术基底：从\"儿童的发现\"到\"儿童本位\"的理念传承</h5>\n\n<p class=\"mb-4\">本项目的学术根基源于对中外儿童观演变与儿童文学发展史的深刻梳理：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>理论溯源</strong>：自卢梭在《爱弥儿》中开启\"儿童的发现\"，打破传统\"原罪论\"与\"小大人\"观，张扬儿童主体性与自然教育；至二十世纪五四时期周作人等学者在\"人的发现\"大框架下确立\"儿童本位\"，明确了儿童既是独立的人格主体，又具备独特的身心发展阶段。</li>\n  <li><strong>现实延伸</strong>：项目针对历史实践中\"过度的道德规训\"与\"成人功利主义介入\"的双重偏离，提出在当下语境中重塑\"儿童本位\"——将文学的\"召唤结构\"与儿童真实的\"审美期待结构\"对接，使自然文本从单纯的知识载体转化为激活儿童身心经验的媒介。</li>\n</ul>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[02 // FIELDWORK &amp; MECHANICS / 理论阐释与课程设计架构]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 接受美学视域下的儿童阅读机制</h5>\n\n<p class=\"mb-4\">项目引入伊瑟尔（Wolfgang Iser）的\"隐含读者\"与\"召唤结构\"理论，结合皮亚杰（Jean Piaget）的发生认识论（图式、同化、顺应、平衡），构建了三级渐进式阅读模型：</p>\n\n<pre class=\"font-mono text-xs text-sed-text/70 my-6 bg-sed-mist/10 p-4 overflow-x-auto\">\n[一级阅读：感性欣赏] ➔ 文本解读、多感官朗诵、消除基础阅读障碍\n         ↓\n[二级阅读：经验同化] ➔ 填补\"文本空白\"，将直接自然经验与文学符号建构双向联结\n         ↓\n[三级阅读：经验顺应] ➔ 跨学科手脑表达、反思性写作、现实生态责任内化\n</pre>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. \"直接经验—间接经验\"融合演化路径</h5>\n\n<p class=\"mb-4\">针对儿童自然经验匮乏的问题，课程设计严格遵循儿童认知发展规律：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>直接经验获取</strong>：通过实地探究（如\"色彩猎人\"\"声音地图\"），积累具身的感官记忆。</li>\n  <li><strong>间接经验建构</strong>：深入研读文学文本，借助比喻、通感等修辞手段，将具象感受升华为艺术审美。</li>\n  <li><strong>经验内化与外现</strong>：通过诗歌创作与生态手工艺品制作，完成\"感官感知 ➔ 文字重构 ➔ 实物转化\"的完整认知闭环。</li>\n</ul>\n\n[INSERT_ARTIFACT: nr_textbook]\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">3. 三阶段六环节课程范式（以\"春风牵起我的手\"为例）</h5>\n\n<p class=\"mb-4\">针对自然体验类 PBL（Project-Based Learning）课程，项目开发了完整的立体化实施架构：</p>\n\n<table class=\"w-full border-collapse mb-4\">\n  <thead>\n    <tr class=\"bg-sed-mist/10\">\n      <th class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs text-left\">实施阶段</th>\n      <th class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs text-left\">活动名称</th>\n      <th class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs text-left\">学术依据与核心任务</th>\n      <th class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs text-left\">实践场域</th>\n      <th class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs text-left\">核心交付成果</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\" rowspan=\"2\"><strong>阶段一：身心准备</strong></td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">活动1：自然破冰</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\"><strong>具身适应与经验激活</strong>：通过心理放松游戏消除躁动，评估初始经验。</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">农场开阔空地</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">初始经验评估表</td>\n    </tr>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">活动2：麦田朗诵</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\"><strong>感官协同与文学共鸣</strong>：结合多感官朗诵，建立对自然文本的初级审美。</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">麦田中心平台</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">现场肢体朗诵呈现</td>\n    </tr>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\" rowspan=\"2\"><strong>阶段二：自然感受</strong></td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">活动3：农场巡游</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\"><strong>真实驱动与直接探究</strong>：多感官观察生物特征，采集真实样本。</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">农场全域</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">小小调查记录 + 生物样本</td>\n    </tr>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">活动4：文学阅读</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\"><strong>文本解构与经验融合</strong>：对比现实与文本异同，学习诗性表达技巧。</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">室内研讨区</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">文本批注 + 小小文本报告</td>\n    </tr>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\" rowspan=\"2\"><strong>阶段三：手脑表达</strong></td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">活动5：小诗写作</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\"><strong>经验加工与符号转化</strong>：运用\"五感记录表\"，将观察转化为诗歌语言。</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">室内写作区</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">个人自然散文诗/短诗</td>\n    </tr>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">活动6：手工创造</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\"><strong>艺术迁移与生态再造</strong>：采用拓印、镶嵌等工艺制作生态文创。</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">农场＋室内</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">植物拓印手帕 + 植物徽章</td>\n    </tr>\n  </tbody>\n</table>\n\n[INSERT_ARTIFACT: nr_pbl_model]\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">4. 驱动性任务单设计（导览单架构）</h5>\n\n<p class=\"mb-4\">课程通过\"角色扮演机制\"赋予儿童探究主体地位：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>总驱动问题</strong>：\"如果你是农场宣传部的小成员，如何设计兼具文字特色与手工工艺的文创产品，并体现保护自然的意识？\"</li>\n  <li><strong>角色进阶路线</strong>：<strong>小小调查家</strong>（观察采集）➔ <strong>小小研究员</strong>（文本分析与解构）➔ <strong>小小设计师</strong>（创作小诗与实物文创）。</li>\n</ul>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[03 // DATA &amp; METRICS / 动态评价指标体系]</h4>\n\n<p class=\"mb-4\">项目构建了具有实证效度的评价评估系统，经历\"初建 ➔ 试用 ➔ 适应性修正\"的科学过程。</p>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 初始指标体系（基于《自然教育通识》构建）</h5>\n\n<p class=\"mb-4\">初期设立涵盖三维度的评估矩阵：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>身心人格素质</strong>：心理状况与意志品质、自我认知与评价、社会适应能力。</li>\n  <li><strong>多元核心能力</strong>：观察与思考、审美与感受、创新与实践。</li>\n  <li><strong>自然环境素养</strong>：自然科学知识、尊重自然与环保意识、人与自然的关系。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 实践检验与反馈发现</h5>\n\n<p class=\"mb-4\">基于多实践点项目开展的儿童与教师反馈，发现原指标局限：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li>低学段儿童在自然感知与感官审美上具备独特优势，但表达能力受限；</li>\n  <li>高学段儿童具有更强的问题解决与跨学科方案设计倾向；</li>\n  <li>整体评分中，\"自然环境素养\"因年龄差异呈现显著的分化特征。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">3. 适应性修正：分层化与行为化指标体系</h5>\n\n<p class=\"mb-4\">项目团队对指标体系进行了适应性优化，<strong>明确以\"自然科学素养\"为核心</strong>，按照低学段与高学段实施分层考核：</p>\n\n<pre class=\"font-mono text-xs text-sed-text/70 my-6 bg-sed-mist/10 p-4 overflow-x-auto\">\n                            ┌── 低学段：1. 自然感知与兴趣 (感官运用)\n       ┌── 1. 自然科学素养 ──┼── 高学段：1. 生态认知与探究 (系统理解)\n       │                    ├── 低学段：2. 基础环保意识 (基本原则)\n       │                    └── 高学段：2. 环境行动与责任 (方案实施)\n       │\n       │                    ┌── 低学段：3. 情绪管理与好奇心 / 4. 寻求合作与帮助\n关键能力评价 ├── 2. 身心人格素质 ──┤\n指标体系                    └── 高学段：3. 自我认知与评价 / 4. 风险应对与毅力\n       │\n       │                    ┌── 低学段：5. 观察与描述 / 6. 表达与分享\n       └── 3. 多元核心能力 ──┤\n                            └── 高学段：5. 问题提出与解决 / 6. 方案设计与创新\n</pre>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[04 // ACHIEVEMENTS / 多维度成果落地与社会辐射]</h4>\n\n<p class=\"mb-4\">项目通过\"产、学、研、媒\"一体化机制，实现了多维度的成果落地与社会辐射。</p>\n\n<pre class=\"font-mono text-xs text-sed-text/70 my-6 bg-sed-mist/10 p-4 overflow-x-auto\">\n                        ┌── 1. 论文与理论研究成果 (学术深化)\n                        ├── 2. 三类主体基地建设 (学校/社区/基地)\n翻阅自然成果矩阵 ────────┼── 3. 数字化开放平台搭建 (开源共享)\n                        ├── 4. 社区公益与故事会传播 (普惠覆盖)\n                        └── 5. 媒体报道与传播矩阵 (社会影响)\n</pre>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 理论与学术成果</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>学术论文</strong>：\n    <ul class=\"list-disc pl-5 mb-2 space-y-2\">\n      <li>《\"儿童的发现\"——儿童文学中的儿童本位呈现与其外延》（探讨卢梭与周作人两次\"儿童的发现\"及创作实践张力）。\n\n[INSERT_ARTIFACT: nr_research_title]\n\n[INSERT_ARTIFACT: nr_research_doc]\n\n[INSERT_ARTIFACT: nr_research_framework]</li>\n      <li>《\"春风牵起我的手\"——自然体验类PBL课程的开发与实施》（从教育科学视角提炼可复制的实践范式）。</li>\n    </ul>\n  </li>\n  <li><strong>实证研究报告</strong>：《基于苏、宁地区现状的自然教育实践研究》（荣获南京师范大学暑期社会实践优秀调研报告三等奖）。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 多场景基地协同建设与应用落地</h5>\n\n<p class=\"mb-4\">项目通过\"项目责任制\"，深度对接学校、自然中心与社区三类教育主体：</p>\n\n<pre class=\"font-mono text-xs text-sed-text/70 my-6 bg-sed-mist/10 p-4 overflow-x-auto\">\n[学校场景] 深圳市龙城高级中学教育集团\n   └─ 研发《花钟》跨学科导学单，引导科学语言向文学语言转化。\n\n[自然中心] 苏州震泽柴米多自然中心（详见 <a data-jump=\"chaimiduo-coop\" class=\"geo-link text-sed-accent hover:underline cursor-pointer\">【翻阅自然 × 柴米多农场】</a> 独立档案）\n   ├─ 举办\"春风牵起我的手\"（《春风带我去散步》）工作坊；\n   ├─ 举办\"虫子在叫什么\"（《虫子旁》）工作坊；\n   └─ 验证了市场化运营与可持续性商业模式。\n\n</pre>\n\n[INSERT_ARTIFACT: nr_workshop]\n\n<pre class=\"font-mono text-xs text-sed-text/70 my-6 bg-sed-mist/10 p-4 overflow-x-auto\">\n[社区场景] 南京景和园社区 &amp; 馨康苑社区\n   ├─ 景和园社区：开发\"虫子旁旅程书\"，开展自然阅读手工坊；\n   └─ 馨康苑社区：落地\"山闻水趣故事会\"（获南京市社区创益计划优胜奖）。\n</pre>\n\n[INSERT_ARTIFACT: nr_community]\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">3. 线上数字化平台与开源资源建设</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>儿童自然文学阅读数字平台</strong>：搭建涵盖\"自然深入\"、\"开卷有灵\"、\"自然发生\"、\"他山之石\"四大板块的数字化平台，向社会开放自然书单、文本阐释及PBL教案集。</li>\n  [INSERT_ARTIFACT: nr_website]\n\n<li><strong>线上\"小雏菊故事会\"</strong>：招募184名志愿者，录制23期自然故事音视频，实现线上自然教育资源的普惠共享。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">4. 传播矩阵与社会影响力</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li>自主运营\"翻阅自然\"微信公众号，常态化推介自然书单、课程案例与理论探索。</li>\n  <li>成果获国家级、校级等多家公共媒体报道，形成广泛的社会认知与二次传播。</li>\n</ul>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[05 // SEDIMENTATION / 总结与未来展望]</h4>\n\n<p class=\"mb-4\">\"翻阅自然\"项目通过回答\"<strong>为何读、读什么、怎么读、如何评</strong>\"的根本问题，建构了儿童文学阅读与自然教育融合的完整闭环：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>理论上</strong>：纠正了自然教育中重技能轻审美、重知识轻情感的倾向，丰富了接受美学在儿童阅读领域的应用。</li>\n  <li><strong>实践上</strong>：打通了从\"书本文字\"到\"户外探索\"再到\"创意表达\"的PBL实践链路，提供了可量化的关键能力评估体系。</li>\n  <li><strong>社会价值上</strong>：响应生态文明建设与新课标跨学科学习要求，为破解当代儿童\"自然缺失症\"提供了低成本、可复制、易推广的实践范式。</li>\n</ul>\n\n<p class=\"mb-4\">项目未来的方向将聚焦于深化数字化技术与自然阅读的跨界融合，扩充混合学段的课程库，推动自然教育的长效机制建设，让儿童在人文与自然的双重滋养下实现身心协调发展。</p>",
+      "artifacts": [
+        {
+          "id": "nr_textbook",
+          "type": "image",
+          "src": "images/nr_textbook.png",
+          "caption": "FIG 2.1 // 《春风带我去散步》课本设计——将文学阅读、自然感受与手脑表达融为一体的视觉化呈现"
+        },
+        {
+          "id": "nr_pbl_model",
+          "type": "image",
+          "src": "images/nr_pbl_model.png",
+          "caption": "FIG 2.2 // 自然体验类 PBL 课程教学模式示意图——从学习目标到活动实施与评价的完整链路"
+        },
+        {
+          "id": "nr_research_title",
+          "type": "image",
+          "src": "images/nr_research_03.jpg",
+          "caption": "FIG 4.1 // 《\"儿童的发现\"——儿童文学中的儿童本位呈现与其外延》"
+        },
+        {
+          "id": "nr_research_doc",
+          "type": "image",
+          "src": "images/nr_research_01.jpg",
+          "caption": "FIG 4.2 // 研究文献溯源框架——从卢梭《爱弥儿》到周作人儿童文学理论的比较文献谱系"
+        },
+        {
+          "id": "nr_research_framework",
+          "type": "image",
+          "src": "images/nr_research_02.jpg",
+          "caption": "FIG 4.3 // 研究理论框架手绘图——两次\"儿童的发现\"在不同历史语境中的路径差异与动态实践系统"
+        },
+        {
+          "id": "nr_workshop",
+          "type": "image",
+          "src": "images/nr_workshop.png",
+          "caption": "FIG 4.4 // 苏州柴米多自然中心工作坊——麦田中的共读场域"
+        },
+        {
+          "id": "nr_community",
+          "type": "image",
+          "src": "images/nr_community.png",
+          "caption": "FIG 4.5 // 社区自然阅读手工坊——《虫子旁》主题课程现场"
+        },
+        {
+          "id": "nr_website",
+          "type": "image",
+          "src": "images/nr_website.png",
+          "caption": "FIG 4.7 // 儿童自然文学阅读数字平台——书单推荐、课程设计与精彩瞬间一体化展示"
+        }
+      ]
+    },
+    "chaimiduo-coop": {
+      "id": "SED-2024-CM",
+      "title": "翻阅自然 × 柴米多农场 沉浸式自然阅读教育产品",
+      "date": "2024.03 — 2025.09",
+      "category": "PROJECT",
+      "era": "中生代 MESOZOIC",
+      "tags": [
+        "PRODUCT"
+      ],
+      "content": "<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[01 // BASELINE / 市场洞察与产品机会点]</h4>\n\n<p class=\"mb-4\"><strong>项目名称</strong>：\"翻阅自然\" × 柴米多农场 沉浸式自然阅读教育产品</p>\n<p class=\"mb-4\"><strong>产品定位</strong>：连接都市家庭自然教育需求与乡村商业生态空间的 B2B2C 内容型体验产品</p>\n<p class=\"mb-4\"><strong>个人角色</strong>：产品负责人（Product Lead）/ 商业合作与课程体系总架构</p>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. 痛点分析（Pain Points）</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>C 端（都市亲子家庭）</strong>：在\"自然经验缺失\"与\"泛娱乐化/模式化叙事\"的双重背景下，传统自然教育多停留在走马观花的科普，缺乏能引发深层精神共鸣与表达欲的高品质产品。</li>\n  <li><strong>B 端（文旅/生态农场空间）</strong>：柴米多拥有极佳的在地自然资源与极具审美的空间基础设施（66亩生态种植区、零废弃咖啡馆、蚕桑学堂），但需要具备<strong>高复购率、强传播力、深度文化附着力</strong>的内容产品充实商业场景，延长用户停留时长并带动二销。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 产品切入点（Product Positioning）</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>定位</strong>：以\"接受美学\"为底层逻辑，将\"文学阅读 + 自然五感体验 + PBL（项目式学习）手创成果\"封装为可复制、可标准化的深度体验产品。</li>\n  <li><strong>价值主张（Value Proposition）</strong>：为 C 端提供\"在自然中重建精神连接\"的沉浸式教育，为 B 端输出具备学术背书与商业吸引力的\"内容基础设施\"。</li>\n</ul>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[02 // FIELDWORK &amp; MECHANICS / 产品架构与标准化设计]</h4>\n\n<pre class=\"font-mono text-xs text-sed-text/70 my-6 bg-sed-mist/10 p-4 overflow-x-auto\">\n[底层理论框架] 接受美学 (以儿童为主体) + PBL 项目式学习设计\n       │\n       ▼\n[产品线设计] 依据季节节气与文学 IP 模块化封装\n       ├─ 春季 SKU：《春风拉起我的手》（文本：金波《春风带我去散步》）\n       │    ├─ 模块 1：五感探索（风的具象化感知）\n       │    ├─ 模块 2：文本精读（散文表达特征拆解）\n       │    └─ 模块 3：成果交付（植物拓印手创实物）\n       │\n       └─ 夏季 SKU：《虫鸣与微观宇宙》（文本：朱赢椿《虫子旁》）\n            ├─ 模块 1：微观观察（利用农场草木/树皮/缝隙场景）\n            ├─ 模块 2：生命叙事（构建微观生命样式）\n            └─ 模块 3：情感内化（听懂生命与自然的诉说）\n</pre>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">标准化交付设计</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>标准化 SOP</strong>：将原本抽象的文学解读转化为\"五感探索 - 文本映射 - 动手创物\"三段式 SOP 流程，确保团队不同导师落地时体验的一致性。</li>\n  <li><strong>可视化交付物（Physical Deliverable）</strong>：设计植物拓印等实体成果，既是用户\"自然记忆\"的载体，也是自然裂变传播的社交货币。</li>\n</ul>\n\n[INSERT_ARTIFACT: cm_01]\n\n[INSERT_ARTIFACT: cm_02]\n\n[INSERT_ARTIFACT: cm_03]\n\n[INSERT_ARTIFACT: cm_04]\n\n[INSERT_ARTIFACT: cm_05]\n\n[INSERT_ARTIFACT: cm_06]\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[03 // DATA &amp; MECHANICS / 跨界整合与运营落地]</h4>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">1. B2B2C 生态合作与商业模型（Partnership &amp; Commercial Model）</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>空间场景赋能</strong>：放弃常规室内课堂，将柴米多的生态种植格局（水稻-水八仙-食物森林）、木栈道及果园直接转化为\"无边界教室\"。</li>\n  <li><strong>文化/Context 绑定</strong>：契合柴米多所在震泽\"江村经济\"文化生态背景，将学术项目的深度人文色彩注入农场品牌，提升农场的文旅溢价空间。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">2. 长期长尾合作机制（LTV &amp; Sustained Value）</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>从单次活动到长期基地的转化</strong>：跳出常规\"单次快闪活动\"逻辑，与柴米多确立长达 <strong>1.5 年</strong> 的长线合作周期，将其打造为固定教学与科研实践基地。</li>\n  <li><strong>四季常态化运营</strong>：以季度和节气为研发周期（春风、夏虫、秋稻、冬雪），通过联合宣发打造品牌预售机制，实现稳定客流导入与商业价值的长尾延伸。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">3. 跨学科团队协同（Cross-functional Teamwork）</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>团队能力矩阵</strong>：联合文学专业（文本拆解/品牌叙事）、教育学专业（PBL 课程设计/儿童心理）及公关/志愿服务经验者，建立标准化分工。</li>\n  <li><strong>动线与安全性设计</strong>：结合农场水系交错的实际地形，精细规划儿童户外探索动线，兼顾体验沉浸感与户外安全管控。</li>\n</ul>\n\n<h5 class=\"font-serif text-lg mt-5 mb-2\">4. 品牌叙事与内容营销（Content &amp; Brand Storytelling）</h5>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>情感化文案唤醒</strong>：以\"虫子在叫什么\"等具有哲学意味和情感张力的叙事切入，击中都市中产家长对\"孩子自然经验缺失\"的焦虑与渴望。</li>\n  <li><strong>联名共创传播</strong>：依托柴米多官方自媒体及双方社群矩阵进行精准触达，以高质感的现场影像与文本二次发酵，完成高质量的用户转化与口碑沉淀。</li>\n</ul>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[04 // SEDIMENTATION / 我的沉淀与生长]</h4>\n\n<p class=\"mb-4\">与柴米多的合作，是我将学术研究与商业实践进行深度耦合的一次关键尝试。它让我完整经历了从市场洞察、产品架构、标准化设计到 B2B2C 生态合作落地的全流程——将原本抽象的教育理念，真正封装为具备商业竞争力与可持续性的内容产品。</p>\n\n<p class=\"mb-4\">这段经历让我深刻理解：优秀的自然教育产品，既需要学术理论的扎实支撑，也需要对商业逻辑的敏锐洞察。只有当产品能够同时回答\"用户为什么需要\"与\"合作伙伴为什么选择\"两个核心问题时，创意才能真正穿越从概念到现实的鸿沟，在真实的土地与市场中生根发芽。</p>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[05 // ARCHIVES / 活动推文归档]</h4>\n\n<p class=\"mb-4\">以下为翻阅自然 × 柴米多农场工作坊活动的公众号推送链接：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-1\">\n  <li><a href=\"https://mp.weixin.qq.com/s/ZXVaA9W_Yr5fEAeMO7NF8Q\" target=\"_blank\" class=\"text-sed-accent hover:underline\">翻阅自然 | \"春风带我去散步\" 柴米多农场工作坊活动纪实</a></li>\n  <li><a href=\"https://mp.weixin.qq.com/s/kPVwairxwjoUMg5emW1lIw\" target=\"_blank\" class=\"text-sed-accent hover:underline\">翻阅自然 | \"虫子在叫什么\" 柴米多农场工作坊活动纪实</a></li>\n</ul>",
+      "artifacts": [
+        {
+          "id": "cm_01",
+          "type": "image",
+          "src": "images/cm_01.jpg",
+          "caption": "FIG 2.1 // 柴米多农场自然阅读工作坊现场——田野中的共读时刻"
+        },
+        {
+          "id": "cm_02",
+          "type": "image",
+          "src": "images/cm_02.jpg",
+          "caption": "FIG 2.2 // 儿童在农场中进行五感探索与植物观察"
+        },
+        {
+          "id": "cm_03",
+          "type": "image",
+          "src": "images/cm_03.jpg",
+          "caption": "FIG 2.3 // 植物拓印手创环节——将自然记忆转化为实物成果"
+        },
+        {
+          "id": "cm_04",
+          "type": "image",
+          "src": "images/cm_04.jpg",
+          "caption": "FIG 2.4 // 小组成员协作完成自然文创作品"
+        },
+        {
+          "id": "cm_05",
+          "type": "image",
+          "src": "images/cm_05.jpg",
+          "caption": "FIG 2.5 // 柴米多农场生态种植区——水稻与食物森林间的无边界教室"
+        },
+        {
+          "id": "cm_06",
+          "type": "image",
+          "src": "images/cm_06.jpg",
+          "caption": "FIG 2.6 // 工作坊成果展示——从文本到自然再到手创的完整闭环"
+        }
+      ]
+    },
+    "ai-design": {
+      "id": "SED-2025-AI",
+      "title": "AIGC与AI产品设计",
+      "date": "2024.09 — 2025.06",
+      "category": "PROJECT",
+      "era": "新生代 CENOZOIC",
+      "tags": [
+        "AI",
+        "PRODUCT"
+      ],
+      "content": "<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[01 // BASELINE / 我的动机与起点]</h4>\n\n<p class=\"mb-4\">跨出文科的舒适区去接触AI设计，源于一个朴素但坚定的信念：在技术快速迭代的时代，人文背景不应成为与技术对话的壁垒，而应成为赋予技术以温度与意义的独特视角。我始终相信，最好的产品与设计，诞生于对\"人\"的深刻理解与对\"技术\"的灵活运用之间——而这正是文科训练赋予我的核心能力。</p>\n\n<p class=\"mb-4\">从Kiko学习规划助手的多Agent架构设计，到《静影沉璧 节彩盛唐》的Prompt工程体系，再到IELTS Teaching Assistant SKILL的教学工作流系统化封装——这三个项目虽然领域各异，但共享一条底层逻辑：<strong>用技术系统化地放大\"人\"的专业能力，而非替代\"人\"</strong>。</p>\n\n<div class=\"my-6 p-4 bg-sed-mist/10 border-l-2 border-sed-accent/40\">\n  <p class=\"font-mono text-xs tracking-widest text-sed-mist mb-3\">CONTENTS / 目录</p>\n  <ul class=\"space-y-2\">\n    <li><a href=\"#ai-kiko\" class=\"text-sed-accent hover:underline cursor-pointer\">1. Kiko：AI学习规划助手</a></li>\n    <li><a href=\"#ai-aigc\" class=\"text-sed-accent hover:underline cursor-pointer\">2. 《静影沉璧 节彩盛唐》AIGC数字内容创意设计</a></li>\n    <li><a href=\"#ai-skill\" class=\"text-sed-accent hover:underline cursor-pointer\">3. IELTS Teaching Assistant SKILL</a></li>\n  </ul>\n</div>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[02 // FIELDWORK &amp; MECHANICS / 项目架构与设计方法论]</h4>\n\n<h4 class=\"font-serif text-2xl mt-8 mb-4 pb-2 border-b border-sed-accent/30\" style=\"font-family: 'Times New Roman', serif;\" id=\"ai-kiko\">1. Kiko：AI学习规划助手</h4>\n\n<p class=\"mb-4\"><strong>核心洞察</strong>：市面上所有学习计划工具要么提供千篇一律的模板，要么让用户从头填写大量信息。真正影响用户满意度的，不是AI输出的计划本身有多完美，而是<strong>用户对生成结果的把控感</strong>——用户需要感觉到\"这个计划是我参与塑造的，而不是AI强加给我的\"。</p>\n\n<p class=\"mb-4\"><strong>产品框架设计：多轮对话 + 多Agent架构</strong></p>\n\n<p class=\"mb-4\">在产品框架设计阶段，我们做出了一个在当时具有前瞻性的决策：放弃单轮输入-输出的简单问答模式，采用多轮对话交互 + 多Agent协作架构。</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>多轮对话模式</strong>：系统不会在第一轮就要求用户填写所有信息，而是通过渐进式对话收集关键变量——当前水平、目标分数、可用时间、学科偏好、学习风格等。每一轮对话后，系统会给出阶段性反馈，让用户确认或修正。这种设计让用户始终处于\"主导者\"位置，AI是协作者而非决策者。</li>\n  <li><strong>多Agent架构分工</strong>：\n    <ul class=\"list-disc pl-5 mb-2 space-y-2\">\n      <li><strong>诊断Agent</strong>：负责解析用户输入，提取学习特征标签</li>\n      <li><strong>规划+调优Agent</strong>：基于诊断结果生成候选学习计划，并根据用户反馈动态调整</li>\n      <li><strong>验证Agent</strong>：检查计划的合理性（时间冲突、难度梯度、可持续性）</li>\n    </ul>\n  </li>\n</ul>\n\n<p class=\"mb-4\">三个Agent之间通过共享状态（Shared State）传递信息，每个Agent只负责自己擅长的环节，但又能看到全局上下文。这种架构验证了<strong>模块化Agent设计比单一巨型Prompt更稳定、更可维护</strong>。</p>\n\n<p class=\"mb-4\"><strong>核心产品逻辑：三阶智能建模</strong></p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>认知诊断</strong>：通过多轮对话收集用户的学科基础、时间安排、学习偏好，建立初始用户模型</li>\n  <li><strong>个性画像</strong>：将诊断信息结构化为可计算的标签体系（\"晨型/夜型学习者\"\"视觉/听觉偏好\"\"需要外部监督/自主驱动\"等维度）</li>\n  <li><strong>动态调优</strong>：用户使用过程中可以反馈\"今天任务完成了\"\"这部分太难了\"，系统自动调整后续计划</li>\n</ul>\n\n<p class=\"mb-4\"><strong>协作与落地</strong>：主导产品需求文档（PRD）撰写与交互流程设计，定义了每个Agent的输入输出规范、状态传递协议和异常处理策略。配合技术团队基于Next.js + FastAPI + 主流大语言模型API完成开发落地。在开发过程中，负责定义Prompt模板体系并参与模型输出质量的评估与迭代。</p>\n\n[INSERT_ARTIFACT: ai_kiko]\n\n<h4 class=\"font-serif text-2xl mt-8 mb-4 pb-2 border-b border-sed-accent/30\" style=\"font-family: 'Times New Roman', serif;\" id=\"ai-aigc\">2. 《静影沉璧 节彩盛唐》AIGC数字内容创意设计</h4>\n\n<p class=\"mb-4\">第十六届中数杯AIGC数字内容创意设计大赛二等奖。</p>\n\n<p class=\"mb-4\"><strong>项目概述</strong>：一套以唐代三大传统节日（花朝、乞巧、上元）为主题的新国风AIGC插画系列。作品以圆形月洞窗为核心视觉框架，将传统建筑、节日仪式与古典诗词融合在同一画面中，形成\"画中画\"的嵌套叙事结构。技术上运用Midjourney等专业生图工具进行画面生成，再通过人工精修完成细节调整、文字排版与肌理做旧处理。</p>\n\n<p class=\"mb-4\"><strong>Prompt体系构建</strong>：建立了结构化的Prompt库，不是零散的关键词堆砌，而是分层组织的模板体系：</p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>风格层</strong>：定义整体视觉风格（\"新国风插画，融合传统工笔重彩与当代数字绘画技法，敦煌壁画质感\"）</li>\n  <li><strong>构图层</strong>：控制画面结构（\"垂直分层构图，上部书法标题与天空留白，中部圆形月窗作为视觉核心，下部传统建筑屋檐与人物活动\"）</li>\n  <li><strong>元素层</strong>：指定具体视觉元素（\"唐代仕女、高腰襦裙、披帛、高髻、石质栏杆、回纹云纹雕刻\"）</li>\n  <li><strong>色彩层</strong>：约束色调（\"主色调朱砂红与石青，辅以土黄米白，做旧肌理与矿物颜料沉积感\"）</li>\n  <li><strong>氛围层</strong>：营造情绪（\"清冷雅致中透着温润，如雨后初晴的春日午后，光影柔和\"）</li>\n</ul>\n\n<p class=\"mb-4\">通过系统性的Prompt工程，我实现了<strong>风格一致性控制</strong>——三幅作品虽然主题不同，但在视觉语言上保持了统一的\"静影沉璧\"美学体系。</p>\n\n<p class=\"mb-4\"><strong>从生成到精修的完整工作流</strong>：概念草图 → AI生成（Midjourney批量生成候选画面）→ 人工精修（Photoshop细节调整）→ 文字融合 → 肌理处理。</p>\n\n[INSERT_ARTIFACT: ai_huazhao]\n\n[INSERT_ARTIFACT: ai_qiqiao]\n\n[INSERT_ARTIFACT: ai_shangyuan]\n\n<p class=\"mb-4\"><strong>对后续工作的价值</strong>：这段AIGC经验直接迁移到了我在读客文化的产品设计工作中。在出版产品的营销物料设计中，我运用同样的Prompt工程方法快速生成视觉概念图，为垂直账号的内容生产提供高质量配图。这证明了AIGC技能不仅能用于艺术创作，也能直接服务于商业产品场景。</p>\n\n<h4 class=\"font-serif text-2xl mt-8 mb-4 pb-2 border-b border-sed-accent/30\" style=\"font-family: 'Times New Roman', serif;\" id=\"ai-skill\">3. IELTS Teaching Assistant SKILL</h4>\n\n<p class=\"mb-4\">基于TRAE IDE的AI辅助教学SKILL，覆盖雅思教学全流程。</p>\n\n<p class=\"mb-4\"><strong>项目定位：个人工作流的系统化提效</strong>。这不是一个面向市场的通用产品，而是<strong>将我个人的雅思教学经验系统化、自动化、可复用的AI工作流</strong>。优秀教师的核心价值不在于\"知道什么\"，而在于<strong>如何把知识转化为学生可理解、可执行、可反馈的教学动作</strong>。SKILL的目标就是把这种\"教学转化能力\"封装成AI可以辅助执行的系统化流程。</p>\n\n<p class=\"mb-4\"><strong>SKILL架构设计：模块化 + 可迭代</strong></p>\n\n<table class=\"w-full border-collapse mb-4\">\n  <thead>\n    <tr class=\"bg-sed-mist/10\">\n      <th class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs text-left\">模块</th>\n      <th class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs text-left\">功能</th>\n      <th class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs text-left\">核心设计</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">课程规划</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">根据学生水平、目标分数、课时限制制定四阶段课程安排</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">内置目标分数配置逻辑（无小分要求时听力阅读拉高，有小分要求时按小分分配）</td>\n    </tr>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">试课设计</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">标准化120分钟试课流程</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">6个环节，每个环节有明确时长和交付物</td>\n    </tr>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">教案编写</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">基于教学参考文档生成可直接使用的上课材料</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">必须先读取对应科目的教学参考文档，再调用语料库，确保方法论一致性</td>\n    </tr>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">学情跟踪</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">阶段性成绩分析与教学建议</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">成绩趋势可视化 + 薄弱环节具体到题型和技能点</td>\n    </tr>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">作业批改</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">写作四维度评分 + 逐段批注 + 修改示范</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">雅思官方评分标准（TR/CC/LR/GRA）量化 + 语料库协同迭代</td>\n    </tr>\n    <tr>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">语料库管理</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">写作/口语语料库的持续迭代与更新</td>\n      <td class=\"border border-sed-text/20 px-3 py-2 font-mono text-xs\">三阶段迭代：初始积累→实战运用→固定输出</td>\n    </tr>\n  </tbody>\n</table>\n\n<p class=\"mb-4\"><strong>产出质量把控：对抗AI幻觉的四层机制</strong></p>\n\n<ul class=\"list-disc pl-5 mb-4 space-y-2\">\n  <li><strong>第一层：知识锚定（Knowledge Anchoring）</strong>——所有教学内容以教师提供的教学参考文档为准，AI只负责\"系统化整理和延伸\"，不凭空创造教学方法。</li>\n  <li><strong>第二层：结构化约束（Structured Constraint）</strong>——通过严格的输出模板限制AI的自由发挥。写作批改必须按固定结构输出，每个部分有明确的字数和内容范围限制。</li>\n  <li><strong>第三层：语料库校验（Corpus Validation）</strong>——写作/口语的输出必须调用语料库中的模板和表达，而非AI自由生成。语料库经过教师人工审核，确保内容的准确性和适用性。</li>\n  <li><strong>第四层：人工终审（Human-in-the-Loop）</strong>——SKILL生成的所有面向家长/机构的文档标注为\"需教师确认后发送\"。AI的定位是\"初稿生成器\"而非\"终审决策者\"。</li>\n</ul>\n\n<p class=\"mb-4\"><strong>持续迭代机制</strong>：SKILL内置反馈闭环——每次教学后，教师可以标注\"这次AI生成的教案哪里不对\"\"哪个Prompt需要调整\"，SKILL会学习并优化后续输出。这种\"使用→反馈→迭代\"的闭环让SKILL随着使用次数增加越来越贴合教师的个人风格。</p>\n\n<p class=\"mb-4\"><strong>项目仓库</strong>：<a href=\"https://github.com/CountAway/ielts-teaching-assistant\" target=\"_blank\" class=\"text-sed-accent hover:underline\">GitHub - ielts-teaching-assistant</a></p>\n\n<hr class=\"my-8 border-t border-sed-text/15\">\n\n<h4 class=\"font-serif text-xl mt-6 mb-3\" style=\"font-family: 'Times New Roman', serif;\">[03 // SEDIMENTATION / 我的沉淀与生长]</h4>\n\n<p class=\"mb-4\">这三个AI项目构成了我从\"技术使用者\"到\"技术设计者\"的完整转型路径。它们各自代表了不同的AI应用维度：Kiko是多Agent系统架构的产品化实践，《静影沉璧》是AIGC工具链与Prompt工程的系统化积累，IELTS SKILL则是垂直领域知识工作流与AI能力的深度融合。</p>\n\n<p class=\"mb-4\">更深层的沉淀在于，我找到了文科背景与技术对话的独特方式：我不追求成为技术栈最深的人，而是成为<strong>最擅长用技术放大专业能力的人</strong>。无论是Kiko中对\"用户把控感\"的产品设计洞察，还是SKILL中对抗AI幻觉的四层机制，这些思考的起点始终是\"人\"的需求与\"专业\"的底线——而这恰恰是纯技术背景产品设计者容易忽视的维度。</p>",
+      "artifacts": [
+        {
+          "id": "ai_kiko",
+          "type": "image",
+          "src": "images/ai_kiko.png",
+          "caption": "FIG 2.1 // Kiko功能展示——多轮对话交互与多Agent协作架构的产品界面"
+        },
+        {
+          "id": "ai_huazhao",
+          "type": "image",
+          "src": "images/ai_huazhao.jpg",
+          "caption": "FIG 2.2 // 《静影沉璧 节彩盛唐》花朝——圆形月洞窗中的春日花朝节"
+        },
+        {
+          "id": "ai_qiqiao",
+          "type": "image",
+          "src": "images/ai_qiqiao.jpg",
+          "caption": "FIG 2.3 // 《静影沉璧 节彩盛唐》乞巧——月窗中的七夕乞巧仪式"
+        },
+        {
+          "id": "ai_shangyuan",
+          "type": "image",
+          "src": "images/ai_shangyuan.jpg",
+          "caption": "FIG 2.4 // 《静影沉璧 节彩盛唐》上元——月窗中的上元灯节盛景"
+        }
+      ]
+    }
+  },
+  "tagProjects": {
+    "RESEARCH": [
+      "yunnan-laodabao",
+      "nature-reading"
+    ],
+    "AI": [
+      "ai-design"
+    ],
+    "PRODUCT": [
+      "time-music-concert",
+      "chaimiduo-coop",
+      "ai-design"
+    ],
+    "CONTENT": [
+      "wechat-ops",
+      "nature-reading"
+    ],
+    "EVENT": [
+      "time-music-concert",
+      "psych-weather"
+    ]
+  }
+}
