@@ -530,6 +530,40 @@
       margin: 3em 0;
     }
 
+    /* Links in project modal - slate blue, except for TOC links */
+    .side-panel .prose a {
+      color: #4A6B7C;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .side-panel .prose a:hover {
+      color: #3d5a68;
+    }
+    .side-panel .prose .bg-sed-mist\/10 a {
+      color: #C97B4C;
+      text-decoration: none;
+    }
+    .side-panel .prose .bg-sed-mist\/10 a:hover {
+      text-decoration: underline;
+      color: #C97B4C;
+    }
+
+    /* Close button touch target */
+    #closeProjectModal {
+      min-width: 44px;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Side panel scroll behavior on mobile */
+    #projectModalScroll {
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+
     /* Artifact figure: no border */
     .artifact-figure {
       border: none;
@@ -680,7 +714,7 @@
             </div>
             <div class="era-content mt-4 pt-4 border-t border-sed-mist">
               <p class="text-sm text-sed-text/80">
-                跨出文科的舒适区去接触<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="ai-design">AI设计</span>，用代码来丰富表达的可能性。尝试不同接触世界的方式，在<span class="project-keyword">国际NGO VIVA</span>，在<span class="project-keyword">出版文化公司 读客</span>……在为自己选择的真实世界中磨练自己的敏锐度与推进力。
+                跨出文科的舒适区去接触<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="ai-design" id="ai-hover-link">AI设计</span>，用代码来丰富表达的可能性。尝试不同接触世界的方式，在<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="viva-ngo" id="viva-hover-link">国际NGO VIVA</span>，在<span class="project-keyword underline cursor-pointer hover:text-sed-accent transition-colors" data-project="duke-publishing" id="duke-hover-link">出版文化公司 读客</span>……在为自己选择的真实世界中磨练自己的敏锐度与推进力。
               </p>
             </div>
           </div>
@@ -718,7 +752,7 @@
       
       <!-- Legend - Outside background image -->
       <div class="relative z-20 py-16 flex flex-col items-center border-t border-sed-mist">
-        <div class="bg-sed-bg border border-sed-mist" id="legendBar">
+        <div class="bg-sed-bg border border-sed-mist" id="legendBar" style="width:640px;max-width:90vw;">
           <div class="flex items-center gap-4 px-6 py-3">
             <div class="legend-item flex items-center gap-2 px-2 py-1 cursor-pointer hover:bg-sed-slate/10 transition-colors" data-category="RESEARCH">
               <span class="w-3 h-3 bg-sed-accent"></span>
@@ -836,6 +870,7 @@
                   <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">MARKETING</span>
                   <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">PRODUCT DESIGN</span>
                 </div>
+                <p class="mt-5 text-sm text-[#4A6B7C] font-light leading-relaxed cursor-pointer project-keyword" data-project="duke-publishing" id="duke-link-exp">读客文化公版书差异化研发与AI协同运营 —— 点击查看完整档案</p>
               </div>
               <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
             </div>
@@ -861,6 +896,7 @@
                   <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">COMMUNITY</span>
                   <span class="font-mono text-xs tracking-widest border border-sed-mist px-2 py-1">OPERATIONS</span>
                 </div>
+                <p class="mt-5 text-sm text-[#4A6B7C] font-light leading-relaxed cursor-pointer project-keyword" data-project="viva-ngo" id="viva-link-exp">VIVA LA VIDA 活动产品化与运营实践 —— 点击查看完整档案</p>
               </div>
               <span class="exp-toggle font-mono text-xs tracking-widest text-sed-slate mt-4 block hover:text-sed-accent transition-colors">+ EXPAND</span>
             </div>
@@ -1010,7 +1046,7 @@
         <!-- Header -->
         <div class="flex-shrink-0 px-10 py-6 md:px-16 md:py-7 flex items-center justify-between border-b border-sed-text/10">
           <span class="font-mono text-xs tracking-widest text-sed-text/70">PROJECT</span>
-          <button id="closeProjectModal" class="font-mono text-2xl text-sed-text/80 hover:text-sed-accent transition-all duration-300">×</button>
+          <button id="closeProjectModal" class="font-mono text-2xl text-sed-text/80 hover:text-sed-accent transition-colors duration-300 px-3 py-1">×</button>
         </div>
         <!-- Scrollable Content -->
         <div class="flex-1 overflow-y-auto px-10 py-10 md:px-16 md:py-14" id="projectModalScroll">
@@ -1582,6 +1618,30 @@
         // Only close if clicking on the overlay itself, not inside the side panel
         if (e.target === projectModal) closeProjectModal();
       });
+
+      // Swipe to close on mobile
+      let touchStartX = 0;
+      let touchEndX = 0;
+      let swipeTriggered = false;
+      sidePanelEl.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+        swipeTriggered = false;
+      }, { passive: true });
+      sidePanelEl.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        // Swipe right to close (threshold: 60px)
+        if (touchEndX - touchStartX > 60) {
+          swipeTriggered = true;
+          closeProjectModal();
+        }
+      }, { passive: true });
+      // Prevent click after swipe
+      sidePanelEl.addEventListener('click', function(e) {
+        if (swipeTriggered) {
+          e.stopPropagation();
+          swipeTriggered = false;
+        }
+      });
     }
     
     // Escape key to close modals
@@ -2044,6 +2104,21 @@
     <img src="images/cm_03.jpg" alt="柴米多合作" style="width:100%;height:auto;display:block;">
   </div>
 
+  <!-- Hover preview element for 国际NGO VIVA link -->
+  <div id="viva-hover-preview" class="hidden" style="position:fixed;pointer-events:none;z-index:9999;width:120px;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);transform:translate(12px,12px);">
+    <img src="images/viva_03.png" alt="VIVA" style="width:100%;height:auto;display:block;">
+  </div>
+
+  <!-- Hover preview element for AI设计 link -->
+  <div id="ai-hover-preview" class="hidden" style="position:fixed;pointer-events:none;z-index:9999;width:120px;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);transform:translate(12px,12px);">
+    <img src="images/ai_hover.png" alt="AI设计" style="width:100%;height:auto;display:block;">
+  </div>
+
+  <!-- Hover preview element for 读客 link -->
+  <div id="duke-hover-preview" class="hidden" style="position:fixed;pointer-events:none;z-index:9999;width:120px;border-radius:4px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.15);transform:translate(12px,12px);">
+    <img src="images/duke_hover.png" alt="读客文化" style="width:100%;height:auto;display:block;">
+  </div>
+
   <script>
     // Hover preview for 时光音乐会 links
     (function() {
@@ -2195,6 +2270,83 @@
       }
 
       attachHover('cm-hover-link');
+    })();
+
+    // Hover preview for 国际NGO VIVA links
+    (function() {
+      const preview = document.getElementById('viva-hover-preview');
+      if (!preview) return;
+
+      function attachHover(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('mouseenter', function(e) {
+          preview.classList.remove('hidden');
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mousemove', function(e) {
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mouseleave', function() {
+          preview.classList.add('hidden');
+        });
+      }
+
+      attachHover('viva-hover-link');
+      attachHover('viva-link-exp');
+    })();
+
+    // Hover preview for AI设计 link
+    (function() {
+      const preview = document.getElementById('ai-hover-preview');
+      if (!preview) return;
+
+      function attachHover(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('mouseenter', function(e) {
+          preview.classList.remove('hidden');
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mousemove', function(e) {
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mouseleave', function() {
+          preview.classList.add('hidden');
+        });
+      }
+
+      attachHover('ai-hover-link');
+    })();
+
+    // Hover preview for 读客 link
+    (function() {
+      const preview = document.getElementById('duke-hover-preview');
+      if (!preview) return;
+
+      function attachHover(id) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('mouseenter', function(e) {
+          preview.classList.remove('hidden');
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mousemove', function(e) {
+          preview.style.left = e.clientX + 'px';
+          preview.style.top = e.clientY + 'px';
+        });
+        el.addEventListener('mouseleave', function() {
+          preview.classList.add('hidden');
+        });
+      }
+
+      attachHover('duke-hover-link');
+      attachHover('duke-link-exp');
     })();
   </script>
 
